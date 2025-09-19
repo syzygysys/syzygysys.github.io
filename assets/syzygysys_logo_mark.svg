@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="120 80 784 1040" version="1.2" baseProfile="tiny">
+  <defs>
+    <style type="text/css"><![CDATA[
+      .brand-fill { fill: #5A2394; }
+      .brand-stroke { stroke: #5A2394; stroke-width: 40; fill: none; }
+      .brand-orbit { stroke-width: 30; }
+    ]]></style>
+  </defs>
+  <polygon class="brand-stroke" points="823.7691,332 823.7691,692 512,872 200.2309,692 200.2309,332 512,152" />
+  <ellipse class="brand-stroke brand-orbit" cx="512" cy="512" rx="220" ry="90" transform="rotate(0 512 512)" />
+  <ellipse class="brand-stroke brand-orbit" cx="512" cy="512" rx="220" ry="90" transform="rotate(60 512 512)" />
+  <ellipse class="brand-stroke brand-orbit" cx="512" cy="512" rx="220" ry="90" transform="rotate(-60 512 512)" />
+  <circle class="brand-fill" cx="512" cy="512" r="42" />
+  <text x="512" y="1070" fill="#5A2394" font-family="'Nunito', 'Segoe UI', 'Arial Rounded MT Bold', 'Trebuchet MS', sans-serif" font-size="160" font-weight="700" text-anchor="middle">SyzygySys</text>
+</svg>

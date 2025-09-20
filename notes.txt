@@ -1,0 +1,3 @@
+I want to create style for the business website.  I want a very clean stripped down version of LCARS.   
+
+First step, I want to connect to Github MCP server so you can search 

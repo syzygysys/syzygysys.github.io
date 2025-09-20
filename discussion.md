@@ -1,6 +1,6 @@
 SyzygySys & ACE
 
-SyzygySys is creating a control plane for trusted and deterministic collaboration between agentics, people, and infrastructure via manifested policy. 
+SyzygySys is architecting a control plane for trusted and deterministic collaboration between agentics, people, and infrastructure via manifested policy. 
 
 Our credo is simple: “Intelligence as Specification”.  We have recognized the pain points in reliability engineering for systems.  We are quite in awe of the limitless capabilities of individuals, organizations, and agentics and have developed a framework for collaborative intent based on clear manifest based specifications.   
 
@@ -16,7 +16,7 @@ HITL & Epistemic Humility: Humans remain in the loop. ACE proposes; operators ap
 
 How It Began 
 
-SyzygySys was formed around deep experience with building, maintaining, and extending complex technological stacks over a wide range of use cases.  Data center system engineering at scale, global Internet backbone engineering and operations, FinTech platform SRE and infrastructure as code management.  Our founder was there from the beginning, participating in university level network operations and engineering that predates.  And they were there on the day that NSF Net was turned off, as the public Internet went live.  From that time, through the continuous growth of the technology that connects humanity and brings our collective capabilites 
+SyzygySys was formed around deep experience with building, maintaining, and extending complex technological stacks over a wide range of use cases.  Data center system engineering at scale, global Internet backbone engineering and operations, FinTech platform SRE and infrastructure as code management.  Our founder was there from the beginning, participating in university level network operations and engineering that predates.  And they were there on the day that NSF Net was turned off, as the public Internet went live.  From that time, through the continuous growth of the technology that connects humanity and brings our collective capabilities 
 
 Community Signal
 

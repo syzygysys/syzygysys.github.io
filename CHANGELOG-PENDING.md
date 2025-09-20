@@ -3,3 +3,4 @@
 - 6049feb discussion.md (Kevin Broderick)
 - 98236ba Merge pull request #1 from syzygysys/initial (SyzygySys)
 - 19fa4ac version bump (Kevin Broderick)
+- 2236f7f changelog (Kevin Broderick)

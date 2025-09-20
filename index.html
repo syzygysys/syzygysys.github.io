@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SyzygySys</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <link rel="stylesheet" href="assets/css/lcars.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -504,14 +505,12 @@
       color: rgba(42, 31, 61, 0.6);
     }
 
-    .footer-ribbon {
-      display: flex;
-      justify-content: flex-end;
-      padding: 0 clamp(1.6rem, 6vw, 3.5rem) clamp(1.9rem, 6vw, 3.6rem);
-    }
-
-    .chip-strip--footer .chip {
-      border-radius: clamp(2.5rem, 8vw, 3rem) 0 0 clamp(2.5rem, 8vw, 3rem);
+    footer {
+      margin-top: auto;
+      padding: clamp(1.6rem, 5vw, 2.4rem);
+      text-align: center;
+      font-size: 0.85rem;
+      color: rgba(10, 7, 16, 0.55);
     }
 
     @media (max-width: 900px) {
@@ -663,7 +662,7 @@
             <details class="status-item">
               <summary>
                 <span class="status-dot" aria-hidden="true"></span>
-                <span class="status-heading">Loading Autonomic Compliance Ecosystem</span>
+                <span class="status-heading">Energizing ACE - Autonomic Compliance Ecosystem</span>
                 <span class="status-toggle" aria-hidden="true">›</span>
               </summary>
               <p class="status-body">Provisioning ACE services into the synthesis layer, mapping policy codices, validating systemic state manifests, rehydrating RAT.</p>
@@ -677,27 +676,28 @@
               <p class="status-body">Initiating live telemetry handshakes, promoting trusted pipelines, and unlocking comms for the compliance and research swarms.</p>
             </details>
           </div>
-          <p class="detail" id="panel-detail">Ecosystem Building...  keep this channel open for updates</p>
+          <p class="detail" id="panel-detail">Ecosystem Energizing...  keep this channel open for updates</p>
         </section>
       </main>
     </div>
 
-    <footer class="footer-ribbon">
-      <div class="chip-strip chip-strip--footer" aria-hidden="true">
-        <span class="chip chip-2"></span>
-        <span class="chip chip-3"></span>
-        <span class="chip chip-4"></span>
-      </div>
+    <footer>
+      © <span id="year"></span> SyzygySys · Intelligence as Spec.
     </footer>
   </div>
   <script>
     (() => {
+      const yearEl = document.getElementById('year');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
       const blurbs = {
         overview: {
           titleFull: 'ACE – Autonomic Compliance Ecosystem',
           titleShort: 'ACE',
           chip: { tone: 'tone-4', label: 'Overview' },
-          detail: 'Ecosystem Building...',
+          detail: 'Ecosystem Energizing...',
           status: [
             {
               heading: 'Architecting the Future',
@@ -708,7 +708,7 @@
               body: 'Authoring shared control schemas so human and agentic teams exchange signals with zero ambiguity across mission timelines.'
             },
             {
-              heading: 'Loading Autonomic Compliance Ecosystem',
+              heading: 'Energizing Autonomic Compliance Ecosystem',
               body: 'Provisioning ACE services into the synthesis layer, mapping policy codices, and validating automated guardrails.'
             },
             {
@@ -721,7 +721,7 @@
           titleFull: 'ACE – Autonomic Compliance Ecosystem',
           titleShort: 'ACE',
           chip: { tone: 'tone-3', label: 'Engineering' },
-          detail: 'Ecosystem Building...',
+          detail: 'Ecosystem Energizing...',
           status: [
             {
               heading: 'Mapping principal objectives',
@@ -741,7 +741,7 @@
           titleFull: 'ACE – Autonomic Compliance Ecosystem',
           titleShort: 'ACE',
           chip: { tone: 'tone-2', label: 'Status' },
-          detail: 'Ecosystem Building...',
+          detail: 'Ecosystem Energizing...',
           status: [
             {
               heading: 'Prototype control plane live in staging',

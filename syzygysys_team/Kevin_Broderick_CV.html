@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kevin Broderick - Platform & AI Infrastructure Engineer with 25+ years experience in SRE, DevOps, and Cloud Architecture">
+    <meta name="keywords" content="Platform Engineer, SRE, DevOps, AWS, Terraform, Python, AI Infrastructure, London">
+    <meta name="author" content="Kevin Broderick">
+    <title>Kevin Broderick - Platform & AI Infrastructure Engineer</title>
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+        
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #3498db;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.3em;
+            color: #3498db;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .contact-info {
+            font-size: 0.95em;
+            color: #555;
+            margin: 5px 0;
+        }
+        
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        /* Section Styles */
+        section {
+            margin-bottom: 35px;
+        }
+        
+        h2 {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #ecf0f1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        h3 {
+            font-size: 1.2em;
+            color: #34495e;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .job-title {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+        
+        .company {
+            color: #3498db;
+            font-weight: 500;
+        }
+        
+        .dates {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .description {
+            margin: 10px 0;
+            color: #555;
+        }
+        
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 12px;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        
+        .skill-category strong {
+            color: #2c3e50;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        
+        .skill-list {
+            color: #555;
+            font-size: 0.95em;
+        }
+        
+        /* Bullet Points */
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        /* Achievement Badges */
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .achievement {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .achievement strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        
+        /* Keywords Section */
+        .keywords {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .keywords-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .keyword {
+            background: #3498db;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            transition: background 0.3s;
+        }
+        
+        .keyword:hover {
+            background: #2980b9;
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .subtitle {
+                font-size: 1.1em;
+            }
+            
+            .achievements {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+            
+            .keyword {
+                background: none;
+                color: #333;
+                border: 1px solid #333;
+            }
+            
+            .achievement {
+                background: none;
+                color: #333;
+                border: 1px solid #333;
+            }
+            
+            a {
+                color: #333 !important;
+            }
+        }
+        
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+        
+        .mt-20 {
+            margin-top: 20px;
+        }
+        
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kevin Broderick</h1>
+            <div class="subtitle">Platform & AI Infrastructure Engineer</div>
+            <div class="contact-info">
+                London, UK | +44 7561 722 037 | <a href="mailto:kbroder@syzygysys.io">kbroder@syzygysys.io</a>
+            </div>
+            <div class="contact-info">
+                <a href="https://www.linkedin.com/in/kevin-broderick-342966231/" target="_blank">LinkedIn</a> | 
+                <a href="https://syzygysys.github.io" target="_blank">Portfolio</a>
+            </div>
+        </header>
+
+        <section id="summary">
+            <h2>Professional Summary</h2>
+            <p>Platform Engineer with 25+ years transforming complex systems into reliable, automated infrastructure. Specializing in legacy modernization, Site Reliability Engineering (SRE), and AI/automation integration. Track record: 30-40% cost reduction, 99.99% uptime across financial services. Led cross-functional teams using Agile/Scrum methodologies. Strong stakeholder management across technical and executive levels. Currently pioneering agent-collaborative engineering at SyzygySys.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Core Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <strong>Platform Engineering:</strong>
+                    <div class="skill-list">Microservices architecture, Terraform, Terragrunt, HCL, AWS, Azure DevOps, Linux, VMware, Atlassian Suite, Docker, Kubernetes</div>
+                </div>
+                <div class="skill-category">
+                    <strong>Site Reliability Engineering:</strong>
+                    <div class="skill-list">Datadog, Prometheus, Grafana, OpenTelemetry, SLO/SLA management, Performance optimization, Incident response</div>
+                </div>
+                <div class="skill-category">
+                    <strong>Development & Automation:</strong>
+                    <div class="skill-list">Python (FastAPI, asyncio, pytest), Bash, SQL, JavaScript, CI/CD (Jenkins, GitLab), DevOps, GitOps, Infrastructure as Code (IaC)</div>
+                </div>
+                <div class="skill-category">
+                    <strong>AI/ML Integration:</strong>
+                    <div class="skill-list">Human-in-the-Loop (HITL) governance, NATS message persistence, Model Context Protocol (MCP), Agent-Human interfaces, OpenLLM, vLLM, Ollama inference runtimes, LLaMA, Mistral, GPT, Deepseek model deployment, OpenAI ChatGPT, Anthropic Claude</div>
+                </div>
+                <div class="skill-category">
+                    <strong>Security & Compliance:</strong>
+                    <div class="skill-list">IAM/RBAC, WAF, Firewalls, Secrets management, Zero-trust architecture, Policy-as-code, Software Bill of Materials (SBOM), Open Policy Agent (OPA)/Rego</div>
+                </div>
+                <div class="skill-category">
+                    <strong>Data & Storage:</strong>
+                    <div class="skill-list">PostgreSQL, Redis, Amazon S3, Query optimization, Connection pooling, Time-series databases</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            
+            <div class="job">
+                <div class="job-title">Founder & Chief Architect</div>
+                <div class="company">SyzygySys</div>
+                <div class="dates">May 2025 - Present | Remote</div>
+                <div class="description">Building Autonomic Compliance Ecosphere (ACE) - self-aware infrastructure control plane (80% MVP complete)</div>
+                <ul>
+                    <li>Designed self-operating ecosystem integrating Jira, GitHub, Docker, Prometheus, and Grafana across 40+ microservices</li>
+                    <li>Implemented crypto-signed audit trails with immutable reasoning and action logs supporting idempotent replay</li>
+                    <li>Achieved 100% service validation coverage with self-diagnostics and compliance engine</li>
+                    <li>Developed Open Core architecture enabling zero vendor lock-in and sovereign deployment capabilities</li>
+                    <li>Reduced service onboarding time from 2 weeks to 2 hours via specification templates</li>
+                    <li>Pioneered autonomous agent collaboration systems as development partners in control plane</li>
+                    <li>Led cross-functional coordination with stakeholders across technical domains</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-title">Senior SysOps Engineer → Platform SRE Engineer</div>
+                <div class="company">YouLend</div>
+                <div class="dates">January 2024 - May 2025 | London, UK</div>
+                <div class="description">Promoted to Platform Engineer driving reliability initiatives</div>
+                <ul>
+                    <li>Delivered £325,000 annual AWS cost reduction via automated right-sizing and resource optimization</li>
+                    <li>Created 90% playbook coverage, automating 100+ incident response scenarios</li>
+                    <li>Achieved 80% false positive reduction through intelligent threshold tuning</li>
+                    <li>Optimized database performance with 100ms query improvement via strategic indexing</li>
+                    <li>Managed 500+ resources under Terraform/GitOps infrastructure as code</li>
+                    <li>Maintained 99.99% uptime for £4 billion+ merchant financing platform</li>
+                    <li>Collaborated with 5-person engineering team using Agile/Scrum methodologies</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-title">Career Transition & Professional Development</div>
+                <div class="dates">September 2022 - December 2023 | US to UK</div>
+                <ul>
+                    <li>Completed international relocation and UK residency establishment</li>
+                    <li>Contributed to open source projects and advanced technical skills</li>
+                    <li>Obtained cloud architecture certifications and modern platform engineering credentials</li>
+                    <li>Researched AI/ML applications for infrastructure automation</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-title">Network & Systems Engineer</div>
+                <div class="company">Dolan NW LLC</div>
+                <div class="dates">December 2013 - September 2022 | Portland, OR, USA</div>
+                <ul>
+                    <li>Migrated B2B/B2C platform with 1 million+ SKU ecommerce to hybrid cloud architecture</li>
+                    <li>Led disaster recovery efforts restoring 100+ employees after fire/tornado incidents</li>
+                    <li>Achieved 80% operational capacity within 7 days from total facility loss</li>
+                    <li>Managed infrastructure supporting hundreds of employees across dozens of servers</li>
+                    <li>Collaborated with development, operations, and business teams</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-title">Senior Network Engineer</div>
+                <div class="company">Accretive Technology Group</div>
+                <div class="dates">November 2005 - December 2013 | Seattle, WA, USA</div>
+                <ul>
+                    <li>Maintained 40Gbps+ global video streaming infrastructure at 99.99% availability</li>
+                    <li>Reduced incident response time from hours to minutes through monitoring improvements</li>
+                    <li>Led engineering teams in 24/7 Network Operations Center (NOC) operations</li>
+                    <li>Coordinated with clients and cross-functional teams on infrastructure projects</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-title">Senior Backbone Network Engineer</div>
+                <div class="company">Internap</div>
+                <div class="dates">1998 - 2001 | Seattle, WA, USA</div>
+                <ul>
+                    <li>Managed Fortune 500 backbone infrastructure operations and support</li>
+                    <li>Achieved 50% deployment time reduction through process automation improvements</li>
+                    <li>Built and trained 15-operator 24x7 NOC team from ground up</li>
+                    <li>Established monitoring and operational standards for SRE practices</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2>Key Achievements</h2>
+            <div class="achievements">
+                <div class="achievement">
+                    <strong>Disaster Recovery Excellence</strong>
+                    Successfully restored operations for 100+ staff after catastrophic facility losses (twice)
+                </div>
+                <div class="achievement">
+                    <strong>Cost Optimization</strong>
+                    £325,000 saved at YouLend, 35% reduction at Dolan through infrastructure optimization
+                </div>
+                <div class="achievement">
+                    <strong>Scale Management</strong>
+                    Scaled systems from SMB to enterprise (100,000+ merchants)
+                </div>
+                <div class="achievement">
+                    <strong>Innovation Impact</strong>
+                    90% manual operations reduction, compressed platform standup from 12 months to 30 days
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Current Projects</h2>
+            <h3>SyzygySys ACE Platform</h3>
+            <p>Self-orchestrating infrastructure control plane featuring Local Agent Proxy (LAP::CORE) integrations, Epistemic Humility Index (EHI) governed agent autonomy levels, StateGuard specification compliance, and SyzygySys Diagnostic Framework (SDF) achieving 100% service coverage.</p>
+            
+            <h3>Key Platform Innovations</h3>
+            <ul>
+                <li><strong>Policy-as-Specification:</strong> Declarative specification-driven infrastructure management</li>
+                <li><strong>Immutable Audit System:</strong> Cryptographically-signed reasoning and action logs with idempotent replay capability</li>
+                <li><strong>Zero Lock-in Architecture:</strong> Open Core design enabling sovereign cloud and on-premise deployment</li>
+                <li><strong>Agent Collaboration Framework:</strong> Production multi-agent development with human partners</li>
+            </ul>
+            
+            <p><strong>Open Source Contributions:</strong> 15+ public repositories available on request</p>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="job">
+                <div class="job-title">Associates of Science</div>
+                <div class="company">Seattle Central Community College</div>
+                <p class="description">Continuous professional development through practical implementation and industry certifications</p>
+            </div>
+        </section>
+
+        <section id="keywords" class="keywords">
+            <h2>Technical Keywords</h2>
+            <div class="keywords-list">
+                <span class="keyword">Platform Engineering</span>
+                <span class="keyword">SRE</span>
+                <span class="keyword">Terraform</span>
+                <span class="keyword">AWS</span>
+                <span class="keyword">Python</span>
+                <span class="keyword">FastAPI</span>
+                <span class="keyword">DevOps</span>
+                <span class="keyword">Infrastructure as Code</span>
+                <span class="keyword">Security</span>
+                <span class="keyword">Disaster Recovery</span>
+                <span class="keyword">AI Integration</span>
+                <span class="keyword">Machine Learning</span>
+                <span class="keyword">Agile</span>
+                <span class="keyword">Scrum</span>
+                <span class="keyword">Kubernetes</span>
+                <span class="keyword">Docker</span>
+                <span class="keyword">Microservices</span>
+                <span class="keyword">Cloud Architecture</span>
+                <span class="keyword">Cost Optimization</span>
+                <span class="keyword">Database Optimization</span>
+                <span class="keyword">PostgreSQL</span>
+                <span class="keyword">Redis</span>
+                <span class="keyword">Prometheus</span>
+                <span class="keyword">Grafana</span>
+                <span class="keyword">Datadog</span>
+                <span class="keyword">CI/CD</span>
+                <span class="keyword">GitOps</span>
+                <span class="keyword">Monitoring</span>
+                <span class="keyword">Observability</span>
+                <span class="keyword">High Availability</span>
+                <span class="keyword">Zero-Trust Security</span>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2025 Kevin Broderick | SyzygySys | Building the future of autonomous infrastructure</p>
+        </footer>
+    </div>
+</body>
+</html>

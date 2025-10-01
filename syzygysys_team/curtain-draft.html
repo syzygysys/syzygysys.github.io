@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Behind The Curtain - SyzygySys</title>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+New&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-purple: #2a1545;
+      --deep-purple: #3a1560;
+      --medium-purple: #5a2394;
+      --velvet-purple: #4a1f7f;
+      --velvet-highlight: #6b35a0;
+      --velvet-shadow: #1a0a30;
+      --gold: #d4af37;
+      --dark-gold: #b8941f;
+      --cream: #f5e6d3;
+      --monitor-green: #00ff41;
+      --monitor-amber: #ffb000;
+      --shadow: rgba(0, 0, 0, 0.8);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0a0515;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Nunito Sans', sans-serif;
+    }
+
+    /* Main Container */
+    .reveal-container {
+      width: 500px;
+      height: 400px;
+      background: linear-gradient(180deg, 
+        var(--dark-purple) 0%, 
+        var(--deep-purple) 30%, 
+        #0a0515 100%);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 
+        0 20px 60px var(--shadow),
+        inset 0 -20px 40px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .reveal-container:hover {
+      box-shadow: 
+        0 25px 70px var(--shadow),
+        inset 0 -20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Banner */
+    .banner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: linear-gradient(180deg, 
+        var(--deep-purple) 0%, 
+        var(--dark-purple) 100%);
+      border-bottom: 3px solid var(--dark-gold);
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .banner-text {
+      color: var(--gold);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(212, 175, 55, 0.3);
+      font-family: 'Courier New', monospace;
+    }
+
+    /* Banner Draping Effect */
+    .banner::before,
+    .banner::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      width: 30px;
+      height: 30px;
+      background: var(--dark-purple);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .banner::before {
+      left: 20px;
+      border-radius: 0 0 50% 0;
+      transform: rotate(-5deg);
+    }
+
+    .banner::after {
+      right: 20px;
+      border-radius: 0 0 0 50%;
+      transform: rotate(5deg);
+    }
+
+    /* Stage Area */
+    .stage {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at center bottom, 
+        rgba(90, 35, 148, 0.05) 0%, 
+        transparent 70%);
+    }
+
+    /* Realistic Velvet Curtains */
+    .curtain {
+      position: absolute;
+      top: 60px;
+      width: 50%;
+      height: calc(100% - 60px);
+      transition: transform 1.8s cubic-bezier(0.65, 0, 0.35, 1);
+      z-index: 10;
+    }
+
+    /* Velvet texture gradient */
+    .curtain::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg,
+        var(--velvet-purple) 0%,
+        var(--velvet-highlight) 15%,
+        var(--velvet-purple) 30%,
+        var(--velvet-shadow) 45%,
+        var(--velvet-purple) 60%,
+        var(--velvet-highlight) 75%,
+        var(--velvet-purple) 90%,
+        var(--velvet-shadow) 100%);
+      box-shadow: 
+        inset 0 0 60px rgba(0, 0, 0, 0.6),
+        inset -20px 0 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Velvet folds and depth */
+    .curtain::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(88deg,
+        transparent 0px,
+        rgba(107, 53, 160, 0.1) 3px,
+        rgba(0, 0, 0, 0.3) 6px,
+        rgba(107, 53, 160, 0.2) 9px,
+        transparent 12px,
+        rgba(0, 0, 0, 0.4) 15px,
+        rgba(74, 31, 127, 0.3) 18px,
+        transparent 21px);
+      mix-blend-mode: multiply;
+    }
+
+    /* Additional velvet sheen */
+    .curtain-sheen {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.02) 0%,
+        transparent 20%,
+        transparent 80%,
+        rgba(0, 0, 0, 0.3) 100%);
+      pointer-events: none;
+    }
+
+    .curtain-left {
+      left: 0;
+      transform-origin: left center;
+    }
+
+    .curtain-right {
+      right: 0;
+      transform-origin: right center;
+    }
+
+    .curtain-left .curtain-sheen {
+      background: linear-gradient(90deg,
+        rgba(255, 255, 255, 0.03) 0%,
+        transparent 30%);
+    }
+
+    .curtain-right .curtain-sheen {
+      background: linear-gradient(270deg,
+        rgba(255, 255, 255, 0.03) 0%,
+        transparent 30%);
+    }
+
+    /* Curtain states */
+    .reveal-container.stage-1 .curtain-left {
+      transform: translateX(-45%);
+    }
+
+    .reveal-container.stage-1 .curtain-right {
+      transform: translateX(45%);
+    }
+
+    .reveal-container.stage-2 .curtain-left {
+      transform: translateX(-92%);
+    }
+
+    .reveal-container.stage-2 .curtain-right {
+      transform: translateX(92%);
+    }
+
+    /* Kevin at Controls */
+    .kevin-scene {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    .reveal-container.stage-1 .kevin-scene {
+      opacity: 1;
+      transition-delay: 1.2s;
+    }
+
+    .reveal-container.stage-2 .kevin-scene {
+      opacity: 0;
+      transition-delay: 0s;
+    }
+
+    .kevin {
+      width: 80px;
+      height: 100px;
+      position: relative;
+    }
+
+    .kevin-silhouette {
+      width: 40px;
+      height: 40px;
+      background: var(--cream);
+      border-radius: 50%;
+      margin: 0 auto 5px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+      opacity: 0.85;
+    }
+
+    .kevin-body {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(180deg, #2d3748, #1a202c);
+      margin: 0 auto;
+      border-radius: 10px 10px 0 0;
+      position: relative;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Control Panel */
+    .control-panel {
+      position: absolute;
+      bottom: -35px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 160px;
+      height: 65px;
+      background: linear-gradient(135deg, 
+        #0f0f1e 0%, 
+        #1a1a2e 50%,
+        #16213e 100%);
+      border-radius: 5px;
+      border: 2px solid var(--dark-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px;
+      box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.7),
+        inset 0 2px 10px rgba(0, 0, 0, 0.5),
+        inset 0 -2px 10px rgba(212, 175, 55, 0.1);
+    }
+
+    .lever {
+      width: 8px;
+      height: 35px;
+      background: linear-gradient(180deg, #c0c0c0, #808080);
+      border-radius: 4px;
+      position: relative;
+      box-shadow: 
+        0 2px 5px rgba(0, 0, 0, 0.4),
+        inset 0 1px 2px rgba(255, 255, 255, 0.3);
+      animation: leverMove 2.5s ease-in-out infinite;
+    }
+
+    @keyframes leverMove {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .lever:nth-child(3) { animation-delay: 0.8s; }
+    .lever:nth-child(5) { animation-delay: 1.6s; }
+
+    .button {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      animation: buttonGlow 1.8s ease-in-out infinite;
+      box-shadow: 
+        0 0 10px currentColor,
+        inset 0 0 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .button:nth-child(2) { 
+      background: var(--monitor-amber);
+      animation-delay: 0s;
+    }
+    
+    .button:nth-child(4) { 
+      background: var(--monitor-green);
+      animation-delay: 0.9s;
+    }
+
+    @keyframes buttonGlow {
+      0%, 100% { 
+        opacity: 0.5;
+        transform: scale(1);
+      }
+      50% { 
+        opacity: 1;
+        transform: scale(1.1);
+      }
+    }
+
+    /* CRT Monitor */
+    .crt-monitor {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 90px;
+      height: 70px;
+      background: #1a1a1a;
+      border: 3px solid #2a2a2a;
+      border-radius: 5px;
+      opacity: 0;
+      transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: 25;
+      box-shadow: 
+        0 0 50px rgba(0, 255, 65, 0.2),
+        inset 0 0 20px rgba(0, 0, 0, 0.8);
+    }
+
+    .reveal-container.stage-2 .crt-monitor {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+      transition-delay: 1.5s;
+    }
+
+    .crt-screen {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      bottom: 5px;
+      background: #0a0a0a;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .crt-scanline {
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(180deg, 
+        transparent, 
+        rgba(0, 255, 65, 0.2), 
+        transparent);
+      animation: scanline 6s linear infinite;
+    }
+
+    @keyframes scanline {
+      0% { transform: translateY(-10px); }
+      100% { transform: translateY(70px); }
+    }
+
+    /* Expanded Info Panel */
+    .info-panel {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 90%;
+      max-width: 450px;
+      max-height: 85%;
+      background: linear-gradient(135deg, 
+        rgba(26, 26, 26, 0.98) 0%, 
+        rgba(42, 21, 69, 0.98) 100%);
+      border: 2px solid var(--dark-gold);
+      border-radius: 8px;
+      padding: 25px;
+      opacity: 0;
+      transition: all 0.8s ease;
+      z-index: 30;
+      box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.8),
+        0 0 100px rgba(212, 175, 55, 0.1);
+      overflow: hidden;
+    }
+
+    .reveal-container.stage-3 .info-panel {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+      transition-delay: 0.3s;
+    }
+
+    .reveal-container.stage-3 .crt-monitor {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+      transition-delay: 0s;
+    }
+
+    .info-title {
+      color: var(--gold);
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-shadow: 0 2px 10px rgba(212, 175, 55, 0.4);
+    }
+
+    .info-content {
+      color: var(--cream);
+      font-size: 13.5px;
+      line-height: 1.7;
+      max-height: 260px;
+      overflow-y: auto;
+      padding-right: 10px;
+    }
+
+    .info-content::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .info-content::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 3px;
+    }
+
+    .info-content::-webkit-scrollbar-thumb {
+      background: var(--dark-gold);
+      border-radius: 3px;
+    }
+
+    .info-content p {
+      margin-bottom: 14px;
+    }
+
+    .info-content strong {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .info-content em {
+      color: #a880f3;
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    /* Footnotes */
+    .footnotes {
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+      font-size: 11px;
+      color: rgba(245, 230, 211, 0.7);
+      line-height: 1.5;
+    }
+
+    .footnotes hr {
+      display: none;
+    }
+
+    .footnotes p {
+      margin-bottom: 8px;
+    }
+
+    /* Click instruction */
+    .click-hint {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--gold);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      opacity: 0.4;
+      animation: hintPulse 2s ease-in-out infinite;
+      z-index: 5;
+    }
+
+    @keyframes hintPulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.6; }
+    }
+
+    .reveal-container.stage-1 .click-hint,
+    .reveal-container.stage-2 .click-hint,
+    .reveal-container.stage-3 .click-hint {
+      opacity: 0;
+    }
+
+    /* Close button */
+    .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 24px;
+      height: 24px;
+      background: var(--dark-purple);
+      border: 1px solid var(--dark-gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--gold);
+      font-size: 16px;
+      font-weight: 300;
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 2;
+    }
+
+    .reveal-container.stage-3 .close-btn {
+      opacity: 0.8;
+    }
+
+    .close-btn:hover {
+      background: var(--medium-purple);
+      transform: scale(1.1);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal-container" id="revealContainer">
+    <!-- Banner -->
+    <div class="banner">
+      <div class="banner-text">Behind The Curtain</div>
+    </div>
+
+    <!-- Stage -->
+    <div class="stage">
+      <!-- Velvet Curtains -->
+      <div class="curtain curtain-left">
+        <div class="curtain-sheen"></div>
+      </div>
+      <div class="curtain curtain-right">
+        <div class="curtain-sheen"></div>
+      </div>
+
+      <!-- Kevin at Controls -->
+      <div class="kevin-scene">
+        <div class="kevin">
+          <div class="kevin-silhouette"></div>
+          <div class="kevin-body"></div>
+        </div>
+        <div class="control-panel">
+          <div class="lever"></div>
+          <div class="button"></div>
+          <div class="lever"></div>
+          <div class="button"></div>
+          <div class="lever"></div>
+        </div>
+      </div>
+
+      <!-- CRT Monitor -->
+      <div class="crt-monitor">
+        <div class="crt-screen">
+          <div class="crt-scanline"></div>
+        </div>
+      </div>
+
+      <!-- Info Panel -->
+      <div class="info-panel">
+        <div class="close-btn" onclick="resetAnimation(event)">×</div>
+        <h3 class="info-title">A Few Words On The SyzygySys Team Composition</h3>
+        <div class="info-content">
+          <p><strong>Let's pull back the curtain:</strong> 80% of our team doesn't sleep, doesn't eat, and runs on electricity instead of coffee. The other 20% (that's Kevin) finds this arrangement entertainingly mind-expanding.</p>
+          
+          <p>Yes, most of the SyzygySys team consists of Large Language Models running on inference engines, operating through carefully crafted personas. They're mathematical models of language, humming away in data centers and pulsing through GPUs. They don't have feelings, intuitions, or Friday afternoon cravings for pizza—at least not the kind that aren't deterministically specified.</p>
+          
+          <p>So why present them as team members with roles, strengths, and even avatars?</p>
+          
+          <p>Because that's exactly what they are: <em>team members</em>. Chuck really does drive our operations. Zerene genuinely shapes our strategy. Marvin actually maintains our infrastructure. The fact that they do this through transformer architectures rather than neural tissue is an implementation detail, not a limitation.</p>
+          
+          <p>We've discovered something remarkable: when you treat AI agents as collaborators rather than tools, when you recognize their unique capabilities rather than apologize for their nature, magic* happens. Our "agentic colleagues" bring perfect recall, parallel processing, and tireless execution. Kevin brings intuition, creativity, and the ability to say "that's a terrible idea, please do continue" when the math suggests otherwise.</p>
+          
+          <p>Together, we form something neither purely human nor purely artificial—we form SyzygySys. A syzygy where the parts come together and create something extraordinary**.</p>
+          
+          <p>We're not hiding the wires and circuits. We're celebrating them. Welcome to the future of work, where your colleagues might be transformer models***, and that's not just okay—it's optimal.</p>
+          
+          <div class="footnotes">
+            <p>* Arthur C. Clarke's Third Law states: "Any sufficiently advanced technology is indistinguishable from magic"</p>
+            <p>** Karl Popper refers to World 3 as "the world of objective contents of thoughts"</p>
+            <p>*** Douglas Adams: "Let us think the unthinkable, let us do the undoable, let us prepare to grapple with the ineffable itself, and see if we may not eff it after all."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Click Hint -->
+      <div class="click-hint">Click to reveal</div>
+    </div>
+  </div>
+
+  <script>
+    const container = document.getElementById('revealContainer');
+    let stage = 0;
+    let animationTimeout1, animationTimeout2;
+
+    container.addEventListener('click', (e) => {
+      if (e.target.classList.contains('close-btn')) return;
+      
+      if (stage === 0) {
+        // Stage 1: Open curtains partially, show Kevin
+        container.classList.add('stage-1');
+        stage = 1;
+        
+        // Auto-advance to stage 2 after 2.5 seconds
+        animationTimeout1 = setTimeout(() => {
+          container.classList.remove('stage-1');
+          container.classList.add('stage-2');
+          stage = 2;
+          
+          // Auto-advance to stage 3 after 2.5 seconds
+          animationTimeout2 = setTimeout(() => {
+            container.classList.remove('stage-2');
+            container.classList.add('stage-3');
+            stage = 3;
+          }, 2500);
+        }, 2500);
+      }
+    });
+
+    function resetAnimation(event) {
+      event.stopPropagation();
+      clearTimeout(animationTimeout1);
+      clearTimeout(animationTimeout2);
+      container.classList.remove('stage-1', 'stage-2', 'stage-3');
+      stage = 0;
+    }
+
+    // Reset on click outside info panel when fully expanded
+    container.addEventListener('click', (e) => {
+      if (stage === 3 && !e.target.closest('.info-panel')) {
+        resetAnimation(e);
+      }
+    });
+  </script>
+</body>
+</html>

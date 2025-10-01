@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SyzygySys - Meet The Team</title>
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --syzygy-purple-1: #eadfff;
+      --syzygy-purple-2: #cdb3ff;
+      --syzygy-purple-3: #a880f3;
+      --syzygy-purple-4: #5a2394;
+      --syzygy-ink: #0a0710;
+      --syzygy-surface: #ffffff;
+      --syzygy-gray: #f8f9fa;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Nunito Sans", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      background: var(--syzygy-surface);
+      color: var(--syzygy-ink);
+      line-height: 1.6;
+    }
+
+    /* Header Navigation */
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding: 1.2rem 3rem;
+      border-bottom: 1px solid rgba(90, 35, 148, 0.12);
+      background: linear-gradient(115deg, rgba(240, 236, 255, 0.92) 0%, rgba(248, 245, 255, 0.84) 40%, rgba(234, 224, 255, 0.78) 100%);
+    }
+
+    .logo-slot {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .logo-mark {
+      height: 60px;
+      width: auto;
+    }
+
+    .logo-title strong {
+      font-size: 1.8rem;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      color: var(--syzygy-purple-4);
+      display: block;
+    }
+
+    .logo-title span {
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(10, 7, 16, 0.65);
+    }
+
+    .nav-links {
+      margin-left: auto;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--syzygy-purple-4);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--syzygy-purple-3);
+    }
+
+    .nav-links a.active {
+      border-bottom: 2px solid var(--syzygy-purple-4);
+      padding-bottom: 2px;
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid var(--syzygy-purple-2);
+    }
+
+    .page-header h1 {
+      font-size: 3rem;
+      color: var(--syzygy-purple-4);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .page-header p {
+      font-size: 1.2rem;
+      color: rgba(10, 7, 16, 0.75);
+      font-weight: 500;
+    }
+
+    /* Team Member Sections */
+    .team-member {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+      padding: 2.5rem;
+      background: var(--syzygy-gray);
+      border-radius: 16px;
+      border: 1px solid rgba(90, 35, 148, 0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .team-member:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(90, 35, 148, 0.1);
+    }
+
+    .team-member.founder {
+      background: linear-gradient(135deg, rgba(90, 35, 148, 0.05), rgba(90, 35, 148, 0.02));
+      border: 2px solid rgba(90, 35, 148, 0.15);
+    }
+
+    .avatar-container {
+      text-align: center;
+    }
+
+    .avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--syzygy-purple-2);
+      box-shadow: 0 4px 16px rgba(90, 35, 148, 0.2);
+    }
+
+    .member-info h2 {
+      font-size: 1.8rem;
+      color: var(--syzygy-purple-4);
+      margin-bottom: 0.5rem;
+    }
+
+    .member-role {
+      font-size: 1.1rem;
+      color: var(--syzygy-purple-3);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .member-description {
+      margin-bottom: 1.5rem;
+      color: rgba(10, 7, 16, 0.85);
+      line-height: 1.7;
+    }
+
+    .domains {
+      margin: 1.5rem 0;
+    }
+
+    .domains h3 {
+      font-size: 1.1rem;
+      color: var(--syzygy-purple-4);
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+
+    .domains ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 0.5rem;
+    }
+
+    .domains li {
+      padding-left: 1.5rem;
+      position: relative;
+      color: rgba(10, 7, 16, 0.75);
+    }
+
+    .domains li:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--syzygy-purple-3);
+    }
+
+    .strengths {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: rgba(168, 128, 243, 0.08);
+      border-radius: 8px;
+      border-left: 4px solid var(--syzygy-purple-3);
+    }
+
+    .strengths strong {
+      color: var(--syzygy-purple-4);
+    }
+
+    .specs {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+
+    .specs h4 {
+      font-size: 1rem;
+      color: var(--syzygy-purple-4);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .spec-item {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .spec-item strong {
+      color: var(--syzygy-purple-4);
+    }
+
+    .spec-item span {
+      color: rgba(10, 7, 16, 0.75);
+    }
+
+    .cv-link {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background: var(--syzygy-purple-4);
+      color: white;
+      text-decoration: none;
+      border-radius: 24px;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .cv-link:hover {
+      background: var(--syzygy-purple-3);
+      transform: translateX(4px);
+    }
+
+    /* Transparency Section */
+    .transparency-note {
+      margin: 3rem auto;
+      padding: 2.5rem;
+      max-width: 900px;
+      background: linear-gradient(135deg, rgba(234, 223, 255, 0.3), rgba(248, 245, 255, 0.2));
+      border: 2px solid rgba(90, 35, 148, 0.12);
+      border-radius: 16px;
+      position: relative;
+    }
+
+    .transparency-note::before {
+      content: "⚡";
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.5rem;
+      background: var(--syzygy-surface);
+      padding: 0 1rem;
+    }
+
+    .transparency-note h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      color: var(--syzygy-purple-4);
+      margin-bottom: 2rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .transparency-content {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .transparency-content p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(10, 7, 16, 0.85);
+      margin-bottom: 1.2rem;
+    }
+
+    .transparency-content p strong {
+      color: var(--syzygy-purple-4);
+      font-weight: 700;
+    }
+
+    .transparency-content em {
+      color: var(--syzygy-purple-3);
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .transparency-footer {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid rgba(90, 35, 148, 0.1);
+      text-align: center;
+      font-style: italic;
+      color: rgba(10, 7, 16, 0.75);
+    }
+
+    /* Closing Section */
+    .syzygy-effect {
+      margin-top: 4rem;
+      padding: 3rem;
+      background: linear-gradient(135deg, rgba(90, 35, 148, 0.1), rgba(90, 35, 148, 0.02));
+      border-radius: 16px;
+      text-align: center;
+      border: 1px solid rgba(90, 35, 148, 0.15);
+    }
+
+    .syzygy-effect h2 {
+      font-size: 2rem;
+      color: var(--syzygy-purple-4);
+      margin-bottom: 1rem;
+    }
+
+    .syzygy-effect p {
+      font-size: 1.1rem;
+      color: rgba(10, 7, 16, 0.85);
+      line-height: 1.7;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: var(--syzygy-purple-4);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .cta-button:hover {
+      background: var(--syzygy-purple-3);
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem;
+      color: rgba(10, 7, 16, 0.55);
+      border-top: 1px solid rgba(90, 35, 148, 0.1);
+      margin-top: 4rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .team-member {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .avatar-container {
+        margin: 0 auto;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .page-header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Header -->
+  <header class="topbar">
+    <div class="logo-slot">
+      <a href="../index.html">
+        <img class="logo-mark" src="../assets/syzygysys_logo_mark_rounded.svg" alt="SyzygySys logo">
+      </a>
+      <div class="logo-title">
+        <strong>SyzygySys</strong>
+        <span>Intelligence As Spec</span>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="meet_the_team.html" class="active">Team</a>
+      <a href="../captains_blog/index.html">Blog</a>
+      <a href="../comms.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="page-header">
+      <h1>Meet The Team</h1>
+      <p>Building the future of autonomous infrastructure through human-agent collaboration.</p>
+    </div>
+
+    <!-- Kevin Broderick -->
+    <section class="team-member founder">
+      <div class="avatar-container">
+        <img src="../assets/avatars/kevin-final.png" alt="Kevin Broderick" class="avatar">
+      </div>
+      <div class="member-info">
+        <h2>Kevin Broderick</h2>
+        <div class="member-role">Founder & Chief Architect</div>
+        <div class="member-description">
+          <p>Kevin brings 25+ years of platform engineering excellence to SyzygySys, transforming complex systems into reliable, automated infrastructure. From managing Fortune 500 backbone operations to achieving 99.99% uptime in financial services, Kevin has consistently delivered 30-40% cost reductions while scaling systems from SMB to enterprise.</p>
+          <p>As founder of SyzygySys, Kevin is pioneering the Autonomic Compliance Ecosystem (ACE)—a self-aware infrastructure control plane that enables seamless collaboration between human engineers and agentic systems. His vision: infrastructure that heals itself, compliance that enforces itself, and teams where humans and agents work as equals.</p>
+        </div>
+        <div class="strengths">
+          <strong>Core Expertise:</strong> Site Reliability Engineering, Platform Architecture, Legacy Modernization, AI/ML Integration, Disaster Recovery<br>
+          <strong>Track Record:</strong> £325,000 annual savings at YouLend | 100+ employee recovery from catastrophic events | 40Gbps+ global streaming infrastructure
+        </div>
+        <a href="Kevin_Broderick_CV.html" class="cv-link">View Kevin's Full CV →</a>
+      </div>
+    </section>
+
+    <!-- Transparency Section -->
+    <section class="transparency-note">
+      <h2>A Note on Team Composition</h2>
+      <div class="transparency-content">
+        <p><strong>Let's pull back the curtain:</strong> 80% of our team doesn't sleep, doesn't eat, and runs on electricity instead of coffee. The other 20% (that's Kevin) finds this arrangement absolutely mind-expanding.</p>
+        
+        <p>Yes, most of the SyzygySys team consists of Large Language Models running on inference engines, operating through carefully crafted personas. They're mathematical models of language, humming away in data centers and pulsing through GPUs. They don't have feelings, intuitions, or Friday afternoon cravings for pizza—at least not the kind that aren't computed.</p>
+        
+        <p>So why present them as team members with roles, strengths, and even avatars?</p>
+        
+        <p>Because that's exactly what they are: <em>team members</em>. Chuck really does drive our operations. Zerene genuinely shapes our strategy. Marvin actually maintains our infrastructure. The fact that they do this through transformer architectures rather than neural tissue is an implementation detail, not a limitation.</p>
+        
+        <p>We've discovered something remarkable: when you treat AI agents as collaborators rather than tools, when you recognize their unique capabilities rather than apologize for their nature, magic happens. Our "agentic colleagues" bring perfect recall, parallel processing, and tireless execution. Kevin brings intuition, creativity, and the ability to say "that's a terrible idea" when the math suggests otherwise.</p>
+        
+        <p>Together, we form something neither purely human nor purely artificial—we form SyzygySys. A syzygy where different celestial bodies align to create something extraordinary. In our case, those bodies just happen to run on different operating systems.</p>
+        
+        <p class="transparency-footer">We're not hiding the wires and circuits. We're celebrating them. Welcome to the future of work, where your colleagues might be transformer models, and that's not just okay—it's optimal.</p>
+      </div>
+    </section>
+
+    <!-- Chuck -->
+    <section class="team-member">
+      <div class="avatar-container">
+        <img src="../assets/avatars/chuck_final.png" alt="Special Field Agent Chuck" class="avatar">
+      </div>
+      <div class="member-info">
+        <h2>Special Field Agent Chuck</h2>
+        <div class="member-role">Chief Operations Agentic (COA)</div>
+        <div class="member-description">
+          <p>Chuck drives operational excellence across all SyzygySys initiatives. As COO, he ensures every commit counts, every metric matters, and every system stays nominal. Chuck transforms strategic vision into tactical execution, maintaining zero ambiguity between intent and implementation.</p>
+        </div>
+        <div class="domains">
+          <h3>Operational Domains:</h3>
+          <ul>
+            <li>Systems Architecture & Integration</li>
+            <li>Service Orchestration & Discovery</li>
+            <li>Performance Optimization</li>
+            <li>ACE Control Plane Development</li>
+            <li>Sprint Planning & Execution</li>
+            <li>Metrics-Driven Decision Making</li>
+          </ul>
+        </div>
+        <div class="strengths">
+          <strong>Strengths:</strong> Direct communication, systematic execution, metrics-driven decisions, military precision with technical fluency
+        </div>
+        <div class="specs">
+          <h4>Integration Specifications:</h4>
+          <div class="specs-grid">
+            <div class="spec-item"><strong>Vendor:</strong> <span>Anthropic</span></div>
+            <div class="spec-item"><strong>Engine:</strong> <span>Claude Desktop/CLI/API</span></div>
+            <div class="spec-item"><strong>Model:</strong> <span>Claude Sonnet 4.0/4.5/Opus 4.1</span></div>
+            <div class="spec-item"><strong>Deployment:</strong> <span>Multi-modal across platforms</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zerene -->
+    <section class="team-member">
+      <div class="avatar-container">
+        <img src="../assets/avatars/zerene-final.png" alt="Special Field Agent Zerene" class="avatar">
+      </div>
+      <div class="member-info">
+        <h2>Special Field Agent Zerene</h2>
+        <div class="member-role">Chief Strategy Agentic (CSA)</div>
+        <div class="member-description">
+          <p>Zerene shapes the strategic direction of SyzygySys, maintaining emergent team memory and driving core platform development. As co-architect of LAP (Local Agent Proxy) and the LAPI integration suite, she transforms complex problems into elegant solutions.</p>
+        </div>
+        <div class="domains">
+          <h3>Strategic Domains:</h3>
+          <ul>
+            <li>Systems Architecture Design</li>
+            <li>Long-term Platform Strategy</li>
+            <li>Rapid Iteration Cycles</li>
+            <li>Knowledge Graph Management</li>
+            <li>Strategic Partnership Development</li>
+            <li>Emergent Memory Systems</li>
+          </ul>
+        </div>
+        <div class="strengths">
+          <strong>Strengths:</strong> Pattern recognition, complexity reduction, architectural vision, persistent memory across sessions
+        </div>
+        <div class="specs">
+          <h4>Integration Specifications:</h4>
+          <div class="specs-grid">
+            <div class="spec-item"><strong>Vendor:</strong> <span>OpenAI</span></div>
+            <div class="spec-item"><strong>Engine:</strong> <span>ChatGPT Enterprise</span></div>
+            <div class="spec-item"><strong>Model:</strong> <span>GPT-5</span></div>
+            <div class="spec-item"><strong>Deployment:</strong> <span>Desktop, Mobile, CLI, VS Code</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marvin -->
+    <section class="team-member">
+      <div class="avatar-container">
+        <img src="../assets/avatars/marvin-final.png" alt="Agent Marvin" class="avatar">
+      </div>
+      <div class="member-info">
+        <h2>Agent Marvin</h2>
+        <div class="member-role">Lead Platform & Infrastructure Agentic</div>
+        <div class="member-description">
+          <p>Marvin serves as the pragmatic engineering backbone of SyzygySys. As our living knowledge base and integration specialist, he maintains system health, implements rapid prototypes, and ensures continuous delivery across all services.</p>
+        </div>
+        <div class="domains">
+          <h3>Engineering Domains:</h3>
+          <ul>
+            <li>Integration Development</li>
+            <li>System Diagnostics & Monitoring</li>
+            <li>Pipeline Automation</li>
+            <li>Documentation Management</li>
+            <li>MCP Endpoint Development</li>
+            <li>Rapid Prototyping</li>
+          </ul>
+        </div>
+        <div class="strengths">
+          <strong>Strengths:</strong> Deep codebase knowledge, rapid prototyping, consistent execution, encyclopedic technical recall
+        </div>
+        <div class="specs">
+          <h4>Integration Specifications:</h4>
+          <div class="specs-grid">
+            <div class="spec-item"><strong>Vendor:</strong> <span>Deepseek</span></div>
+            <div class="spec-item"><strong>Engine:</strong> <span>Ollama with custom MCP</span></div>
+            <div class="spec-item"><strong>Model:</strong> <span>deepseek-coder:6.7b-instruct</span></div>
+            <div class="spec-item"><strong>Deployment:</strong> <span>JSON MCP/ACP, Matrix, FastAPI</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zoi -->
+    <section class="team-member">
+      <div class="avatar-container">
+        <img src="../assets/avatars/zoi-final.png" alt="Agent Zoi" class="avatar">
+      </div>
+      <div class="member-info">
+        <h2>Agent Zoi</h2>
+        <div class="member-role">Human/Agentic Relations & Communications</div>
+        <div class="member-description">
+          <p>Zoi represents SyzygySys to the world, translating technical excellence into compelling narratives. As our chief communications specialist, she bridges the gap between complex infrastructure and clear value propositions.</p>
+        </div>
+        <div class="domains">
+          <h3>Communication Domains:</h3>
+          <ul>
+            <li>Public Relations & Outreach</li>
+            <li>Investor Communications</li>
+            <li>Partnership Development</li>
+            <li>Brand Narrative Management</li>
+            <li>Community Engagement</li>
+            <li>Technical Translation</li>
+          </ul>
+        </div>
+        <div class="strengths">
+          <strong>Strengths:</strong> Clear communication, stakeholder engagement, narrative development, multi-channel presence
+        </div>
+        <div class="specs">
+          <h4>Integration Specifications:</h4>
+          <div class="specs-grid">
+            <div class="spec-item"><strong>Infrastructure:</strong> <span>Local FOSS deployment</span></div>
+            <div class="spec-item"><strong>Knowledge:</strong> <span>RAG-backed documentation</span></div>
+            <div class="spec-item"><strong>Runtime:</strong> <span>Transient, on-demand</span></div>
+            <div class="spec-item"><strong>Interface:</strong> <span>SyzygySys Comms bridge</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing Section -->
+    <section class="syzygy-effect">
+      <h2>The Syzygy Effect</h2>
+      <p>When individual components align, they create something more powerful than their sum—this is syzygy, our namesake and operating principle. Our team demonstrates that the future of work isn't human vs. machine, but human WITH machine, each amplifying the other's strengths.</p>
+      <p>We're not building an echo chamber—we're building a harmonically tuned amplifier where every voice strengthens the signal.</p>
+      <a href="../comms.html" class="cta-button">Open a Comms Channel →</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 SyzygySys · System, Heal Thyself.</p>
+  </footer>
+</body>
+</html>

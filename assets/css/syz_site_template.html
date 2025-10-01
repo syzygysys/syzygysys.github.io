@@ -3,57 +3,67 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SYZ — {PAGE_TITLE}</title>
-  <link rel="stylesheet" href="/assets/css/syz.css">
+  <title>SYZ — {{PAGE_TITLE}}</title>
+  <link rel="stylesheet" href="syz.css">
 </head>
 <body>
   <div class="app">
     <div class="shell">
+      <!-- Header -->
       <header class="header">
         <div class="brand">
+          <!-- Optional logo -->
           <div class="pills">
-            <a class="pill" href="index.html"><span class="dot"></span>OVERVIEW</a>
-            <a class="pill" href="engineering.html"><span class="dot"></span>ENGINEERING</a>
-            <a class="pill" href="comms.html"><span class="dot"></span>COMMS</a>
-            <a class="pill" href="status.html"><span class="dot"></span>STATUS</a>
+            <a class="pill" href="index.html#engineering"><span class="dot"></span>ENGINEERING</a>
             <a class="pill secondary" href="toc_links_index.html"><span class="dot"></span>REFERENCE</a>
           </div>
         </div>
-        <div class="pills"></div>
+        <!-- Right-side actions (optional) -->
+        <div class="pills">
+          <!-- placeholder for extra actions -->
+        </div>
       </header>
 
+      <!-- Grid -->
       <div class="grid">
+        <!-- Sidebar -->
         <aside class="side">
           <div class="card ace-banner">
             <h3>ACE</h3>
             <h2 class="ace-title">Autonomic Compliance Ecosystem</h2>
             <p class="small">Aligning compliance mandates, partner ecosystems, and automation roadmaps into a single platform control plane.</p>
           </div>
+
           <div class="card">
             <h3>NAVIGATION</h3>
             <nav class="nav">
-              <div><a href="index.html">Overview</a></div>
-              <div><a href="engineering.html">Engineering</a></div>
-              <div><a href="comms.html">Comms</a></div>
-              <div><a href="status.html">Status</a></div>
+              <div><a href="index.html#engineering">Engineering</a></div>
               <div><a href="toc_links_index.html">Reference Index</a></div>
+              <div><a href="status.html">Status</a></div>
+              <div><a href="about.html">About</a></div>
             </nav>
           </div>
+
           <div class="card">
             <h3>SIGNALS</h3>
             <p class="small">ROADMAP SIGNALS SYNCHRONIZED.</p>
           </div>
         </aside>
 
+        <!-- Center Content (variable per page) -->
         <main class="center" role="main">
           <div class="panel-header">
-            <h2 class="panel-title">{CENTER_TITLE}</h2>
+            <h2 class="panel-title">{{CENTER_TITLE}}</h2>
             <div class="panel-actions">
+              <!-- example action pills -->
+              <a class="pill secondary" href="reports/state_guard_report_20251001_152041_summary.html">STATE REPORT</a>
               <a class="pill secondary" href="toc_links_index.html">REFERENCE</a>
             </div>
           </div>
 
-          {CENTER_CONTENT}
+          <!-- === BEGIN PAGE-SPECIFIC CONTENT === -->
+          {{CENTER_CONTENT}}
+          <!-- === END PAGE-SPECIFIC CONTENT === -->
 
           <div class="footer">© SyzygySys LTD</div>
         </main>

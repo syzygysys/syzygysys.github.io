@@ -15,6 +15,9 @@ Zone.Identifier
 */Zone.Identifier
 *:[Zz]one.Identifier
 
+# WIA
+
+
 # --- Archives & dumps ---
 *.zip
 *.tar
@@ -28,8 +31,9 @@ Zone.Identifier
 *.swo
 *.log
 tmp/
-*-bak*
-*-old*
+*_bak*
+*_old*
+*_draft*
 # --- Editors/IDEs ---
 .vscode/
 .idea/

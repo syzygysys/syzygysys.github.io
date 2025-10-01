@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StateGuard System Report - SyzygySys</title>
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --syzygy-purple-1: #eadfff;
+      --syzygy-purple-2: #cdb3ff;
+      --syzygy-purple-3: #a880f3;
+      --syzygy-purple-4: #5a2394;
+      --syzygy-ink: #0a0710;
+      --syzygy-surface: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Nunito Sans", system-ui, sans-serif;
+      background: linear-gradient(135deg, rgba(234, 223, 255, 0.3) 0%, rgba(255, 255, 255, 1) 50%);
+      color: var(--syzygy-ink);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background: linear-gradient(135deg, rgba(90, 35, 148, 0.1), rgba(90, 35, 148, 0.02));
+      border-radius: 2rem;
+      border: 2px solid rgba(90, 35, 148, 0.2);
+    }
+
+    .header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      color: var(--syzygy-purple-4);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .header .subtitle {
+      font-size: 1rem;
+      color: rgba(10, 7, 16, 0.7);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .metadata {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .metadata-item {
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 1rem;
+      border: 1px solid rgba(90, 35, 148, 0.15);
+      text-align: center;
+    }
+
+    .metadata-item .label {
+      font-size: 0.85rem;
+      color: rgba(10, 7, 16, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.3rem;
+    }
+
+    .metadata-item .value {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--syzygy-purple-4);
+    }
+
+    .json-link {
+      display: inline-block;
+      margin: 2rem 0;
+      padding: 0.8rem 1.5rem;
+      background: var(--syzygy-purple-4);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 2rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+      box-shadow: 0 0.5rem 1.5rem rgba(90, 35, 148, 0.3);
+    }
+
+    .json-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.8rem 2rem rgba(90, 35, 148, 0.4);
+    }
+
+    .section {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(90, 35, 148, 0.15);
+      box-shadow: 0 0.5rem 1.5rem rgba(34, 13, 66, 0.08);
+    }
+
+    .section h2 {
+      font-size: 1.5rem;
+      color: var(--syzygy-purple-4);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--syzygy-purple-2);
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .summary-card {
+      padding: 1.5rem;
+      background: linear-gradient(135deg, rgba(234, 223, 255, 0.4), rgba(255, 255, 255, 0.8));
+      border-radius: 1rem;
+      border: 1px solid rgba(90, 35, 148, 0.2);
+      text-align: center;
+    }
+
+    .summary-card .number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--syzygy-purple-4);
+      margin-bottom: 0.3rem;
+    }
+
+    .summary-card .label {
+      font-size: 0.9rem;
+      color: rgba(10, 7, 16, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .service-group {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: rgba(234, 223, 255, 0.2);
+      border-radius: 1rem;
+      border-left: 4px solid var(--syzygy-purple-3);
+    }
+
+    .service-group h3 {
+      font-size: 1.2rem;
+      color: var(--syzygy-purple-4);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .service-group h3::before {
+      content: '📦';
+      font-size: 1.4rem;
+    }
+
+    .compose-path {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: rgba(10, 7, 16, 0.6);
+      margin-bottom: 1rem;
+    }
+
+    .service-list {
+      list-style: none;
+      padding-left: 1rem;
+    }
+
+    .service-list li {
+      padding: 0.4rem 0;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      color: rgba(10, 7, 16, 0.8);
+    }
+
+    .service-list li::before {
+      content: '├─';
+      margin-right: 0.5rem;
+      color: var(--syzygy-purple-3);
+    }
+
+    .service-list li:last-child::before {
+      content: '└─';
+    }
+
+    .repo-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    .repo-item {
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 0.8rem;
+      border: 1px solid rgba(90, 35, 148, 0.1);
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+    }
+
+    .repo-item.clean {
+      border-left: 4px solid #4caf50;
+    }
+
+    .repo-item.off-nominal {
+      border-left: 4px solid #ff9800;
+    }
+
+    .repo-name {
+      font-weight: 600;
+      color: var(--syzygy-purple-4);
+      margin-bottom: 0.3rem;
+    }
+
+    .repo-branch {
+      color: rgba(10, 7, 16, 0.6);
+      font-size: 0.8rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .repo-status {
+      color: rgba(10, 7, 16, 0.7);
+      font-size: 0.8rem;
+    }
+
+    .security-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 1.5rem;
+      background: linear-gradient(135deg, #4caf50, #45a049);
+      color: #fff;
+      border-radius: 2rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 0.5rem 1.5rem rgba(76, 175, 80, 0.3);
+    }
+
+    .security-badge::before {
+      content: '🔒';
+      font-size: 1.5rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.7rem 1.3rem;
+      background: rgba(90, 35, 148, 0.1);
+      color: var(--syzygy-purple-4);
+      text-decoration: none;
+      border-radius: 2rem;
+      font-weight: 600;
+      border: 1px solid var(--syzygy-purple-3);
+      transition: all 160ms ease;
+    }
+
+    .back-link:hover {
+      background: var(--syzygy-purple-4);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>StateGuard System Report</h1>
+      <p class="subtitle">Autonomic Compliance Monitoring</p>
+    </div>
+
+    <div class="metadata">
+      <div class="metadata-item">
+        <div class="label">Timestamp</div>
+        <div class="value">2025-09-29 14:54</div>
+      </div>
+      <div class="metadata-item">
+        <div class="label">Runner Version</div>
+        <div class="value">1.3.0</div>
+      </div>
+      <div class="metadata-item">
+        <div class="label">Report ID</div>
+        <div class="value">20251001_152041</div>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="json_explorer.html?file=state_guard_report_20251001_152041.json" class="json-link">
+        📊 View Full StateGuard Report (JSON Explorer)
+      </a>
+    </div>
+
+    <div class="section">
+      <h2>Quick Summary</h2>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <div class="number">31</div>
+          <div class="label">Total Repositories</div>
+        </div>
+        <div class="summary-card">
+          <div class="number">26</div>
+          <div class="label">Need Attention</div>
+        </div>
+        <div class="summary-card">
+          <div class="number">35</div>
+          <div class="label">Active Services</div>
+        </div>
+        <div class="summary-card">
+          <div class="number">0</div>
+          <div class="label">Port Conflicts</div>
+        </div>
+        <div class="summary-card">
+          <div class="number">0</div>
+          <div class="label">Security Issues</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Active Services & Ports</h2>
+      
+      <div class="service-group">
+        <h3>ace_ledger</h3>
+        <div class="compose-path">ace_ledger/docker-compose.yml</div>
+        <ul class="service-list">
+          <li>nats → 0.0.0.0:4222</li>
+          <li>postgres → 0.0.0.0:5435</li>
+          <li>dashboard → 0.0.0.0:8600</li>
+        </ul>
+      </div>
+
+      <div class="service-group">
+        <h3>ace_registry</h3>
+        <div class="compose-path">ace_registry/docker-compose.yml</div>
+        <ul class="service-list">
+          <li>postgres → 0.0.0.0:5436</li>
+          <li>registry → 0.0.0.0:8400</li>
+          <li>dashboard → 0.0.0.0:8500</li>
+        </ul>
+      </div>
+
+      <div class="service-group">
+        <h3>lap_core</h3>
+        <div class="compose-path">lap_core/docker-compose.yml</div>
+        <ul class="service-list">
+          <li>lap-app → 0.0.0.0:8000</li>
+        </ul>
+      </div>
+
+      <div class="service-group">
+        <h3>inference_engines</h3>
+        <div class="compose-path">inference_engines/docker-compose.yml</div>
+        <ul class="service-list">
+          <li>agent_marvin_db → 0.0.0.0:5434</li>
+          <li>agent_marvin → 0.0.0.0:8010</li>
+          <li>mcp_marvin → 0.0.0.0:8050</li>
+          <li>agent_marvin_postgres_exporter → 0.0.0.0:9187</li>
+          <li>runtime_marvin → 0.0.0.0:11434</li>
+        </ul>
+      </div>
+
+      <div class="service-group">
+        <h3>platform</h3>
+        <div class="compose-path">platform/docker-compose.yml</div>
+        <ul class="service-list">
+          <li>caddy → 0.0.0.0:80</li>
+          <li>caddy → 0.0.0.0:443</li>
+          <li>grafana → 0.0.0.0:3000</li>
+          <li>caddy → 0.0.0.0:8448</li>
+          <li>prometheus → 0.0.0.0:9090</li>
+        </ul>
+      </div>
+
+      <p style="margin-top: 2rem; font-weight: 600; color: var(--syzygy-purple-4);">
+        Total: 35 services across 19 projects
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Repository Status</h2>
+      
+      <h3 style="color: #4caf50; margin-bottom: 1rem;">✅ Clean Repos (5)</h3>
+      <div class="repo-list">
+        <div class="repo-item clean">
+          <div class="repo-name">repoin7jr5yu</div>
+        </div>
+        <div class="repo-item clean">
+          <div class="repo-name">repok68fks2t</div>
+        </div>
+        <div class="repo-item clean">
+          <div class="repo-name">repoqh9y5e5c</div>
+        </div>
+        <div class="repo-item clean">
+          <div class="repo-name">repov2if3lhi</div>
+        </div>
+        <div class="repo-item clean">
+          <div class="repo-name">repoxeiza949</div>
+        </div>
+      </div>
+
+      <h3 style="color: #ff9800; margin: 2rem 0 1rem;">⚠️ Off-Nominal Repos (26)</h3>
+      <div class="repo-list">
+        <div class="repo-item off-nominal">
+          <div class="repo-name">core_reference</div>
+          <div class="repo-status">19 unstaged, 73 untracked</div>
+        </div>
+        <div class="repo-item off-nominal">
+          <div class="repo-name">ace_registry</div>
+          <div class="repo-branch">[feat/ace_31_integration_tests]</div>
+          <div class="repo-status">19 unstaged, 51 untracked</div>
+        </div>
+        <div class="repo-item off-nominal">
+          <div class="repo-name">network</div>
+          <div class="repo-status">2 unstaged, 62 untracked</div>
+        </div>
+        <div class="repo-item off-nominal">
+          <div class="repo-name">lapi_dash</div>
+          <div class="repo-status">5 unstaged, 50 untracked</div>
+        </div>
+        <div class="repo-item off-nominal">
+          <div class="repo-name">lap_core</div>
+          <div class="repo-branch">[feat/lap_core_ace_ledger_integration]</div>
+          <div class="repo-status">16 unstaged, 20 untracked</div>
+        </div>
+        <div class="repo-item off-nominal">
+          <div class="repo-name">ace_agentics</div>
+          <div class="repo-branch">[HEAD]</div>
+          <div class="repo-status">27 untracked</div>
+        </div>
+        <div class="repo-item off-nominal">
+          <div class="repo-name">inference_engines</div>
+          <div class="repo-branch">[fix/sdf_improvements]</div>
+          <div class="repo-status">8 unstaged, 11 untracked</div>
+        </div>
+        <div class="repo-item off-nominal">
+          <div class="repo-name">syzygysys.github.io</div>
+          <div class="repo-status">5 untracked</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Security Scan</h2>
+      <div style="text-align: center; padding: 2rem;">
+        <div class="security-badge">
+          ✅ CLEAN - No Secrets Detected
+        </div>
+        <p style="margin-top: 1.5rem; color: rgba(10, 7, 16, 0.7);">
+          31 repositories scanned with Gitleaks<br>
+          Scanner: /usr/local/bin/gitleaks
+        </p>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="../index.html" class="back-link">← Return to SyzygySys</a>
+    </div>
+  </div>
+</body>
+</html>

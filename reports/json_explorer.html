@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JSON Explorer - SyzygySys</title>
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --syzygy-purple-4: #5a2394;
+      --syzygy-ink: #0a0710;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Fira Code', monospace;
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 2rem 1rem;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .header {
+      background: #252526;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid #3e3e42;
+    }
+
+    .header h1 {
+      color: #a880f3;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .header .filename {
+      color: #858585;
+      font-size: 0.9rem;
+    }
+
+    .controls {
+      background: #252526;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      border: 1px solid #3e3e42;
+    }
+
+    .controls button {
+      padding: 0.5rem 1rem;
+      background: var(--syzygy-purple-4);
+      color: #fff;
+      border: none;
+      border-radius: 0.3rem;
+      cursor: pointer;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      transition: all 160ms ease;
+    }
+
+    .controls button:hover {
+      background: #7347b8;
+    }
+
+    .json-container {
+      background: #1e1e1e;
+      border: 1px solid #3e3e42;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      overflow-x: auto;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    pre {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .json-key {
+      color: #9cdcfe;
+    }
+
+    .json-string {
+      color: #ce9178;
+    }
+
+    .json-number {
+      color: #b5cea8;
+    }
+
+    .json-boolean {
+      color: #569cd6;
+    }
+
+    .json-null {
+      color: #569cd6;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 3rem;
+      color: #858585;
+    }
+
+    .error {
+      background: #f44336;
+      color: #fff;
+      padding: 1rem;
+      border-radius: 0.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.7rem 1.3rem;
+      background: #252526;
+      color: #a880f3;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      border: 1px solid #3e3e42;
+      transition: all 160ms ease;
+    }
+
+    .back-link:hover {
+      background: var(--syzygy-purple-4);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📊 JSON Explorer</h1>
+      <div class="filename" id="filename">Loading...</div>
+    </div>
+
+    <div class="controls">
+      <button onclick="toggleCollapse()">Expand/Collapse All</button>
+      <button onclick="copyToClipboard()">Copy JSON</button>
+      <button onclick="downloadJSON()">Download</button>
+    </div>
+
+    <div id="error-container"></div>
+    <div class="json-container" id="json-container">
+      <div class="loading">Loading JSON data...</div>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="state_guard_report_20251001_152041_summary.html" class="back-link">← Back to Summary</a>
+    </div>
+  </div>
+
+  <script>
+    let jsonData = null;
+
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function syntaxHighlight(json) {
+      if (typeof json !== 'string') {
+        json = JSON.stringify(json, null, 2);
+      }
+      json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+        let cls = 'json-number';
+        if (/^"/.test(match)) {
+          if (/:$/.test(match)) {
+            cls = 'json-key';
+          } else {
+            cls = 'json-string';
+          }
+        } else if (/true|false/.test(match)) {
+          cls = 'json-boolean';
+        } else if (/null/.test(match)) {
+          cls = 'json-null';
+        }
+        return '<span class="' + cls + '">' + match + '</span>';
+      });
+    }
+
+    async function loadJSON() {
+      const filename = getQueryParam('file');
+      if (!filename) {
+        document.getElementById('error-container').innerHTML = 
+          '<div class="error">No file specified in URL</div>';
+        document.getElementById('json-container').innerHTML = '';
+        return;
+      }
+
+      document.getElementById('filename').textContent = filename;
+
+      try {
+        const response = await fetch(filename);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        jsonData = await response.json();
+        
+        const highlighted = syntaxHighlight(jsonData);
+        document.getElementById('json-container').innerHTML = '<pre>' + highlighted + '</pre>';
+      } catch (error) {
+        document.getElementById('error-container').innerHTML = 
+          '<div class="error">Error loading JSON: ' + error.message + '</div>';
+        document.getElementById('json-container').innerHTML = '';
+      }
+    }
+
+    function toggleCollapse() {
+      // Simple implementation - would need more complex code for actual collapsing
+      alert('Expand/Collapse functionality - use browser DevTools for full JSON tree navigation');
+    }
+
+    function copyToClipboard() {
+      if (!jsonData) return;
+      const text = JSON.stringify(jsonData, null, 2);
+      navigator.clipboard.writeText(text).then(() => {
+        alert('JSON copied to clipboard!');
+      }).catch(err => {
+        alert('Failed to copy: ' + err);
+      });
+    }
+
+    function downloadJSON() {
+      if (!jsonData) return;
+      const filename = getQueryParam('file') || 'data.json';
+      const text = JSON.stringify(jsonData, null, 2);
+      const blob = new Blob([text], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    // Load JSON on page load
+    loadJSON();
+  </script>
+</body>
+</html>

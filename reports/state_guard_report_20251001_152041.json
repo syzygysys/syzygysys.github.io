@@ -1,0 +1,1300 @@
+{
+  "state_guard_report": {
+    "metadata": {
+      "timestamp": "20251001_152041",
+      "runner_version": "1.3.0",
+      "projects_root": "./projects",
+      "report_id": "state_guard_20251001_152041"
+    },
+    "scans": {
+      "repos": {
+        "results": [
+          {
+            "repo_path": "./projects/syzygysys.github.io",
+            "branch": "fix/adjust_curtain",
+            "staged_count": 6,
+            "unstaged_count": 3,
+            "untracked_count": 0,
+            "behind_main_count": 0,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/lapi_git",
+            "branch": "feat/self_register",
+            "staged_count": 1,
+            "unstaged_count": 1,
+            "untracked_count": 2,
+            "behind_main_count": 0,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/lapi_synapse_comms",
+            "branch": "main",
+            "staged_count": 0,
+            "unstaged_count": 1,
+            "untracked_count": 1,
+            "behind_main_count": 0,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/ace_ledger",
+            "branch": "qa/testing_lap_core_submissions",
+            "staged_count": 0,
+            "unstaged_count": 0,
+            "untracked_count": 2,
+            "behind_main_count": 0,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/scripts",
+            "branch": "main",
+            "staged_count": 0,
+            "unstaged_count": 3,
+            "untracked_count": 5,
+            "behind_main_count": 0,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/lap_core",
+            "branch": "feat/lap_core_ace_ledger_integration",
+            "staged_count": 0,
+            "unstaged_count": 16,
+            "untracked_count": 20,
+            "behind_main_count": 0,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/lapi_synapse_admin",
+            "branch": "main",
+            "staged_count": 0,
+            "unstaged_count": 2,
+            "untracked_count": 1,
+            "behind_main_count": 0,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/lapi_prometheus",
+            "branch": "main",
+            "staged_count": 0,
+            "unstaged_count": 5,
+            "untracked_count": 1,
+            "behind_main_count": 0,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/ace_agentics",
+            "branch": "HEAD",
+            "staged_count": 0,
+            "unstaged_count": 0,
+            "untracked_count": 28,
+            "behind_main_count": null,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/lapi_synapse_manage",
+            "branch": "main",
+            "staged_count": 0,
+            "unstaged_count": 3,
+            "untracked_count": 2,
+            "behind_main_count": 0,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/lapi_jira",
+            "branch": "main",
+            "staged_count": 0,
+            "unstaged_count": 1,
+            "untracked_count": 0,
+            "behind_main_count": 0,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/lapi_dash",
+            "branch": "main",
+            "staged_count": 0,
+            "unstaged_count": 6,
+            "untracked_count": 47,
+            "behind_main_count": null,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/lapi_docker",
+            "branch": "main",
+            "staged_count": 0,
+            "unstaged_count": 3,
+            "untracked_count": 0,
+            "behind_main_count": 0,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/lapi_state_guard",
+            "branch": "feat/runner-fix-security-count",
+            "staged_count": 0,
+            "unstaged_count": 1,
+            "untracked_count": 1,
+            "behind_main_count": 0,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/ace_registry",
+            "branch": "feat/ace_31_integration_tests",
+            "staged_count": 0,
+            "unstaged_count": 19,
+            "untracked_count": 51,
+            "behind_main_count": 0,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/platform",
+            "branch": "main",
+            "staged_count": 0,
+            "unstaged_count": 3,
+            "untracked_count": 0,
+            "behind_main_count": 0,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/network",
+            "branch": "main",
+            "staged_count": 0,
+            "unstaged_count": 2,
+            "untracked_count": 62,
+            "behind_main_count": 0,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/network/.pre-commit-cache/reposlrhy95y",
+            "branch": "HEAD",
+            "staged_count": 0,
+            "unstaged_count": 0,
+            "untracked_count": 35,
+            "behind_main_count": null,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/network/.pre-commit-cache/repok68fks2t",
+            "branch": "HEAD",
+            "staged_count": 0,
+            "unstaged_count": 0,
+            "untracked_count": 0,
+            "behind_main_count": null,
+            "source": "local git",
+            "status": "nominal"
+          },
+          {
+            "repo_path": "./projects/network/.pre-commit-cache/repoin7jr5yu",
+            "branch": "HEAD",
+            "staged_count": 0,
+            "unstaged_count": 0,
+            "untracked_count": 0,
+            "behind_main_count": null,
+            "source": "local git",
+            "status": "nominal"
+          },
+          {
+            "repo_path": "./projects/network/.pre-commit-cache/repov2if3lhi",
+            "branch": "HEAD",
+            "staged_count": 0,
+            "unstaged_count": 0,
+            "untracked_count": 0,
+            "behind_main_count": null,
+            "source": "local git",
+            "status": "nominal"
+          },
+          {
+            "repo_path": "./projects/network/.pre-commit-cache/repoqh9y5e5c",
+            "branch": "HEAD",
+            "staged_count": 0,
+            "unstaged_count": 0,
+            "untracked_count": 0,
+            "behind_main_count": null,
+            "source": "local git",
+            "status": "nominal"
+          },
+          {
+            "repo_path": "./projects/network/.pre-commit-cache/repo2uv93_u0",
+            "branch": "HEAD",
+            "staged_count": 0,
+            "unstaged_count": 0,
+            "untracked_count": 6,
+            "behind_main_count": null,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/network/.pre-commit-cache/repoxeiza949",
+            "branch": "HEAD",
+            "staged_count": 0,
+            "unstaged_count": 0,
+            "untracked_count": 0,
+            "behind_main_count": null,
+            "source": "local git",
+            "status": "nominal"
+          },
+          {
+            "repo_path": "./projects/inference_engines",
+            "branch": "fix/sdf_improvements",
+            "staged_count": 0,
+            "unstaged_count": 8,
+            "untracked_count": 11,
+            "behind_main_count": 0,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/core_reference",
+            "branch": "main",
+            "staged_count": 0,
+            "unstaged_count": 35,
+            "untracked_count": 87,
+            "behind_main_count": 0,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/syzygysys",
+            "branch": "main",
+            "staged_count": 0,
+            "unstaged_count": 4,
+            "untracked_count": 10,
+            "behind_main_count": 0,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/lapi_cookiecutter/staging/lapi_dash",
+            "branch": "main",
+            "staged_count": 0,
+            "unstaged_count": 1,
+            "untracked_count": 14,
+            "behind_main_count": null,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/lapi_cookiecutter",
+            "branch": "main",
+            "staged_count": 0,
+            "unstaged_count": 2,
+            "untracked_count": 7,
+            "behind_main_count": 0,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/lapi_cookiecutter/staging/ace_registry",
+            "branch": "main",
+            "staged_count": 0,
+            "unstaged_count": 20,
+            "untracked_count": 16,
+            "behind_main_count": null,
+            "source": "local git",
+            "status": "off-nominal"
+          },
+          {
+            "repo_path": "./projects/lapi_cookiecutter/ace_template_draft",
+            "branch": "feat/phase_2b",
+            "staged_count": 0,
+            "unstaged_count": 24,
+            "untracked_count": 1,
+            "behind_main_count": 0,
+            "source": "local git",
+            "status": "off-nominal"
+          }
+        ],
+        "runtime": {
+          "root": "./projects",
+          "repos_scanned": 31,
+          "ts": 1759328441.7526913,
+          "version": "0.9.4",
+          "mode": "local"
+        }
+      },
+      "ports": {
+        "results": [
+          {
+            "host_ip": null,
+            "host": 8130,
+            "container": 8130,
+            "protocol": "tcp",
+            "service": "lapi_synapse_comms",
+            "compose_file": "./projects/lapi_synapse_comms/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 8200,
+            "container": 8000,
+            "protocol": "tcp",
+            "service": "lapi_git",
+            "compose_file": "./projects/lapi_git/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 8110,
+            "container": 8110,
+            "protocol": "tcp",
+            "service": "lapi_synapse_admin",
+            "compose_file": "./projects/lapi_synapse_admin/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 8115,
+            "container": 8000,
+            "protocol": "tcp",
+            "service": "lapi_prometheus",
+            "compose_file": "./projects/lapi_prometheus/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 8000,
+            "container": 8000,
+            "protocol": "tcp",
+            "service": "lap-app",
+            "compose_file": "./projects/lap_core/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 4222,
+            "container": 4222,
+            "protocol": "tcp",
+            "service": "nats",
+            "compose_file": "./projects/ace_ledger/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 5435,
+            "container": 5432,
+            "protocol": "tcp",
+            "service": "postgres",
+            "compose_file": "./projects/ace_ledger/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 8600,
+            "container": 8600,
+            "protocol": "tcp",
+            "service": "dashboard",
+            "compose_file": "./projects/ace_ledger/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 8201,
+            "container": 8000,
+            "protocol": "tcp",
+            "service": "lapi_jira",
+            "compose_file": "./projects/lapi_jira/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 8120,
+            "container": 8120,
+            "protocol": "tcp",
+            "service": "lapi_synapse_manage",
+            "compose_file": "./projects/lapi_synapse_manage/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 8700,
+            "container": 8700,
+            "protocol": "tcp",
+            "service": "lapi-dash",
+            "compose_file": "./projects/lapi_dash/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 8001,
+            "container": 8000,
+            "protocol": "tcp",
+            "service": "lapi_docker",
+            "compose_file": "./projects/lapi_docker/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 8400,
+            "container": 8400,
+            "protocol": "tcp",
+            "service": "registry",
+            "compose_file": "./projects/ace_registry/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 5436,
+            "container": 5432,
+            "protocol": "tcp",
+            "service": "postgres",
+            "compose_file": "./projects/ace_registry/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 8500,
+            "container": 8500,
+            "protocol": "tcp",
+            "service": "dashboard",
+            "compose_file": "./projects/ace_registry/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 18085,
+            "container": 8000,
+            "protocol": "tcp",
+            "service": "lapi_state_guard",
+            "compose_file": "./projects/lapi_state_guard/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 80,
+            "container": 80,
+            "protocol": "tcp",
+            "service": "caddy",
+            "compose_file": "./projects/platform/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 443,
+            "container": 443,
+            "protocol": "tcp",
+            "service": "caddy",
+            "compose_file": "./projects/platform/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 8448,
+            "container": 8448,
+            "protocol": "tcp",
+            "service": "caddy",
+            "compose_file": "./projects/platform/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 9090,
+            "container": 9090,
+            "protocol": "tcp",
+            "service": "prometheus",
+            "compose_file": "./projects/platform/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 3000,
+            "container": 3000,
+            "protocol": "tcp",
+            "service": "grafana",
+            "compose_file": "./projects/platform/docker-compose.yml"
+          },
+          {
+            "host_ip": "127.0.0.1",
+            "host": 5432,
+            "container": 5432,
+            "protocol": "tcp",
+            "service": "synapse_db",
+            "compose_file": "./projects/platform/comms/matrix/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 8008,
+            "container": 8008,
+            "protocol": "tcp",
+            "service": "synapse_svc",
+            "compose_file": "./projects/platform/comms/matrix/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 9189,
+            "container": 9187,
+            "protocol": "tcp",
+            "service": "postgres_exporter_synapse",
+            "compose_file": "./projects/platform/comms/matrix/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 53,
+            "container": 53,
+            "protocol": "tcp",
+            "service": "pihole",
+            "compose_file": "./projects/network/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 53,
+            "container": 53,
+            "protocol": "udp",
+            "service": "pihole",
+            "compose_file": "./projects/network/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 8081,
+            "container": 8081,
+            "protocol": "tcp",
+            "service": "pihole",
+            "compose_file": "./projects/network/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 8080,
+            "container": 8000,
+            "protocol": "tcp",
+            "service": "mkdocs",
+            "compose_file": "./projects/core_reference/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 11434,
+            "container": 11434,
+            "protocol": "tcp",
+            "service": "runtime_marvin",
+            "compose_file": "./projects/inference_engines/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 8010,
+            "container": 8000,
+            "protocol": "tcp",
+            "service": "agent_marvin",
+            "compose_file": "./projects/inference_engines/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 8050,
+            "container": 8050,
+            "protocol": "tcp",
+            "service": "mcp_marvin",
+            "compose_file": "./projects/inference_engines/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 5434,
+            "container": 5432,
+            "protocol": "tcp",
+            "service": "agent_marvin_db",
+            "compose_file": "./projects/inference_engines/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 9187,
+            "container": 9187,
+            "protocol": "tcp",
+            "service": "agent_marvin_postgres_exporter",
+            "compose_file": "./projects/inference_engines/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 8000,
+            "container": 8000,
+            "protocol": "tcp",
+            "service": "lapi_dash",
+            "compose_file": "./projects/lapi_cookiecutter/staging/lapi_dash/docker-compose.yml"
+          },
+          {
+            "host_ip": null,
+            "host": 8300,
+            "container": 8300,
+            "protocol": "tcp",
+            "service": "ace_registry",
+            "compose_file": "./projects/lapi_cookiecutter/staging/ace_registry/docker-compose.yml"
+          }
+        ],
+        "runtime": {
+          "root": "./projects",
+          "ports_scanned": 35,
+          "exceptions_found": 2,
+          "ts": 1759328442.0493784
+        },
+        "exceptions": [
+          "./projects/lapi_cookiecutter/cookiecutter/{{cookiecutter.plugin_slug}}/docker-compose.yml: while scanning for the next token\nfound character '%' that cannot start any token\n  in \"<unicode string>\", line 1, column 2:\n    {% if cookiecutter.include_docker ... \n     ^",
+          "./projects/lapi_cookiecutter/ace_template_draft/docker-compose.yml: 'str' object has no attribute 'get'"
+        ]
+      },
+      "security": {
+        "results": {
+          "findings_count": 0,
+          "findings": []
+        },
+        "tools": {
+          "gitleaks": {
+            "summary": {
+              "ok": true,
+              "rc": 0,
+              "repos_scanned": 31
+            },
+            "per_repo": [
+              {
+                "repo": "./projects/scripts",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/scripts",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 123ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/syzygysys.github.io",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/syzygysys.github.io",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 151ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/lapi_synapse_comms",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/lapi_synapse_comms",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 155ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/lapi_git",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/lapi_git",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 98.4ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/lapi_synapse_admin",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/lapi_synapse_admin",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 133ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/lapi_prometheus",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/lapi_prometheus",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 210ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/lap_core",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/lap_core",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 47.7ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/ace_ledger",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/ace_ledger",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 327ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/ace_agentics",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/ace_agentics",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 2.95ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/lapi_jira",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/lapi_jira",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 120ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/lapi_synapse_manage",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/lapi_synapse_manage",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 36.6ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/lapi_dash",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/lapi_dash",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 150ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/lapi_docker",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/lapi_docker",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 172ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/ace_registry",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/ace_registry",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 216ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/lapi_state_guard",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/lapi_state_guard",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 95.7ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/platform",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/platform",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 74.5ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/network",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/network",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[1m\u001b[31mERR\u001b[0m\u001b[0m  \u001b[36merror=\u001b[0m\u001b[31m\"2 error(s) occurred:\\n* open ./projects/network/infra/pihole/etc-pihole/cli_pw: permission denied\\n* open ./projects/network/infra/pihole/etc-pihole/logrotate: permission denied\"\u001b[0m\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 930ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/network/.pre-commit-cache/repov2if3lhi",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/network/.pre-commit-cache/repov2if3lhi",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 60.3ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/network/.pre-commit-cache/reposlrhy95y",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/network/.pre-commit-cache/reposlrhy95y",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 37.3ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/network/.pre-commit-cache/repoin7jr5yu",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/network/.pre-commit-cache/repoin7jr5yu",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 44.7ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/network/.pre-commit-cache/repok68fks2t",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/network/.pre-commit-cache/repok68fks2t",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 40.1ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/network/.pre-commit-cache/repoqh9y5e5c",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/network/.pre-commit-cache/repoqh9y5e5c",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 43.2ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/network/.pre-commit-cache/repoxeiza949",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/network/.pre-commit-cache/repoxeiza949",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 13.2ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/network/.pre-commit-cache/repo2uv93_u0",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/network/.pre-commit-cache/repo2uv93_u0",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 29.1ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/core_reference",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/core_reference",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 925ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/inference_engines",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/inference_engines",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 883ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/syzygysys",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/syzygysys",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 86.2ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/lapi_cookiecutter",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/lapi_cookiecutter",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 164ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/lapi_cookiecutter/staging/lapi_dash",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/lapi_cookiecutter/staging/lapi_dash",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 31.2ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/lapi_cookiecutter/staging/ace_registry",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/lapi_cookiecutter/staging/ace_registry",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 11.6ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              },
+              {
+                "repo": "./projects/lapi_cookiecutter/ace_template_draft",
+                "ok": true,
+                "rc": 0,
+                "cmd": [
+                  "/usr/local/bin/gitleaks",
+                  "detect",
+                  "-s",
+                  "./projects/lapi_cookiecutter/ace_template_draft",
+                  "--report-format",
+                  "json",
+                  "--no-banner",
+                  "--redact",
+                  "--no-git"
+                ],
+                "stderr": "\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 1.06ms\n\u001b[90m3:20PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found",
+                "stdout_len": 0,
+                "findings_count": 0
+              }
+            ],
+            "binary": "/usr/local/bin/gitleaks",
+            "requested": "/usr/local/bin/gitleaks"
+          }
+        },
+        "runtime": {
+          "root": "./projects",
+          "ts": 1759328447.8281286,
+          "duration_s": 5.742,
+          "mode": "worktree",
+          "recursive": true,
+          "workers": 0,
+          "targets": [
+            "./projects/scripts",
+            "./projects/syzygysys.github.io",
+            "./projects/lapi_synapse_comms",
+            "./projects/lapi_git",
+            "./projects/lapi_synapse_admin",
+            "./projects/lapi_prometheus",
+            "./projects/lap_core",
+            "./projects/ace_ledger",
+            "./projects/ace_agentics",
+            "./projects/lapi_jira",
+            "./projects/lapi_synapse_manage",
+            "./projects/lapi_dash",
+            "./projects/lapi_docker",
+            "./projects/ace_registry",
+            "./projects/lapi_state_guard",
+            "./projects/platform",
+            "./projects/network",
+            "./projects/network/.pre-commit-cache/repov2if3lhi",
+            "./projects/network/.pre-commit-cache/reposlrhy95y",
+            "./projects/network/.pre-commit-cache/repoin7jr5yu",
+            "./projects/network/.pre-commit-cache/repok68fks2t",
+            "./projects/network/.pre-commit-cache/repoqh9y5e5c",
+            "./projects/network/.pre-commit-cache/repoxeiza949",
+            "./projects/network/.pre-commit-cache/repo2uv93_u0",
+            "./projects/core_reference",
+            "./projects/inference_engines",
+            "./projects/syzygysys",
+            "./projects/lapi_cookiecutter",
+            "./projects/lapi_cookiecutter/staging/lapi_dash",
+            "./projects/lapi_cookiecutter/staging/ace_registry",
+            "./projects/lapi_cookiecutter/ace_template_draft"
+          ]
+        },
+        "exceptions": []
+      },
+      "caddy": {
+        "results": {
+          "external": {},
+          "internal": {},
+          "dns": {}
+        },
+        "runtime": {
+          "endpoints_tested": 0,
+          "exceptions_found": 0
+        },
+        "exceptions": [
+          "scan failed"
+        ]
+      }
+    },
+    "summary": {
+      "total_repos": 31,
+      "repos_off_nominal": 26,
+      "total_ports": 35,
+      "port_conflicts": 0,
+      "security_findings": 0,
+      "caddy_endpoints": 0,
+      "caddy_failures": 0
+    }
+  }
+}

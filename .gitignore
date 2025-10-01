@@ -1,0 +1,73 @@
+# --- Core: keep site files tracked ---
+# (Do NOT ignore .html, .css, .js, images, CNAME, etc.)
+
+# --- OS cruft ---
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- Windows ADS / Zone.Identifier (sometimes materializes as files on copy/extract) ---
+Zone.Identifier
+*/Zone.Identifier
+*:[Zz]one.Identifier
+
+# --- Archives & dumps ---
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+*.bak
+*.tmp
+*.swp
+*.swo
+*.log
+tmp/
+*-bak*
+*-old*
+# --- Editors/IDEs ---
+.vscode/
+.idea/
+*.iml
+
+# --- Python (if you test locally with scripts) ---
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# --- Node / Frontend toolchains (optional, safe to keep ignored even if not used yet) ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-store/
+.pnp.*
+.eslintcache
+.stylelintcache
+.parcel-cache/
+.cache/
+dist/
+build/
+out/
+
+# --- Jekyll / GitHub Pages (only applies if you switch to Jekyll later) ---
+_site/
+.jekyll-cache/
+.sass-cache/
+.jekyll-metadata
+
+# --- Static site generators (general) ---
+.hugo_build.lock
+public/
+
+# --- Coverage / test artifacts ---
+coverage/
+.nyc_output/

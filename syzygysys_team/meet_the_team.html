@@ -271,67 +271,25 @@
       transform: translateX(4px);
     }
 
-    /* Transparency Section */
-    .transparency-note {
+    /* Transparency Section - replaced with Curtain Reveal */
+    .curtain-reveal-container {
       margin: 3rem auto;
-      padding: 2.5rem;
-      max-width: 900px;
-      background: linear-gradient(135deg, rgba(234, 223, 255, 0.3), rgba(248, 245, 255, 0.2));
-      border: 2px solid rgba(90, 35, 148, 0.12);
-      border-radius: 16px;
+      padding: 0;
+      max-width: 1400px;
+      width: 100%;
+      min-height: 450px;
       position: relative;
+      border-radius: 16px;
+      overflow: hidden;
     }
 
-    .transparency-note::before {
-      content: "⚡";
-      position: absolute;
-      top: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 2.5rem;
-      background: var(--syzygy-surface);
-      padding: 0 1rem;
-    }
-
-    .transparency-note h2 {
-      text-align: center;
-      font-size: 1.8rem;
-      color: var(--syzygy-purple-4);
-      margin-bottom: 2rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-    }
-
-    .transparency-content {
-      max-width: 750px;
-      margin: 0 auto;
-    }
-
-    .transparency-content p {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: rgba(10, 7, 16, 0.85);
-      margin-bottom: 1.2rem;
-    }
-
-    .transparency-content p strong {
-      color: var(--syzygy-purple-4);
-      font-weight: 700;
-    }
-
-    .transparency-content em {
-      color: var(--syzygy-purple-3);
-      font-style: normal;
-      font-weight: 600;
-    }
-
-    .transparency-footer {
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-      border-top: 2px solid rgba(90, 35, 148, 0.1);
-      text-align: center;
-      font-style: italic;
-      color: rgba(10, 7, 16, 0.75);
+    .curtain-reveal-frame {
+      width: 100%;
+      height: 450px;
+      border: none;
+      display: block;
+      background: transparent;
+      border-radius: 16px;
     }
 
     /* Closing Section */
@@ -403,6 +361,25 @@
       .page-header h1 {
         font-size: 2rem;
       }
+
+      .curtain-reveal-container {
+        min-height: 350px;
+        margin: 2rem 0;
+      }
+
+      .curtain-reveal-frame {
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .curtain-reveal-container {
+        min-height: 300px;
+      }
+
+      .curtain-reveal-frame {
+        height: 300px;
+      }
     }
   </style>
 </head>
@@ -455,23 +432,15 @@
     </section>
 
     <!-- Transparency Section -->
-    <section class="transparency-note">
-      <h2>A Note on Team Composition</h2>
-      <div class="transparency-content">
-        <p><strong>Let's pull back the curtain:</strong> 80% of our team doesn't sleep, doesn't eat, and runs on electricity instead of coffee. The other 20% (that's Kevin) finds this arrangement absolutely mind-expanding.</p>
-        
-        <p>Yes, most of the SyzygySys team consists of Large Language Models running on inference engines, operating through carefully crafted personas. They're mathematical models of language, humming away in data centers and pulsing through GPUs. They don't have feelings, intuitions, or Friday afternoon cravings for pizza—at least not the kind that aren't computed.</p>
-        
-        <p>So why present them as team members with roles, strengths, and even avatars?</p>
-        
-        <p>Because that's exactly what they are: <em>team members</em>. Chuck really does drive our operations. Zerene genuinely shapes our strategy. Marvin actually maintains our infrastructure. The fact that they do this through transformer architectures rather than neural tissue is an implementation detail, not a limitation.</p>
-        
-        <p>We've discovered something remarkable: when you treat AI agents as collaborators rather than tools, when you recognize their unique capabilities rather than apologize for their nature, magic happens. Our "agentic colleagues" bring perfect recall, parallel processing, and tireless execution. Kevin brings intuition, creativity, and the ability to say "that's a terrible idea" when the math suggests otherwise.</p>
-        
-        <p>Together, we form something neither purely human nor purely artificial—we form SyzygySys. A syzygy where different celestial bodies align to create something extraordinary. In our case, those bodies just happen to run on different operating systems.</p>
-        
-        <p class="transparency-footer">We're not hiding the wires and circuits. We're celebrating them. Welcome to the future of work, where your colleagues might be transformer models, and that's not just okay—it's optimal.</p>
-      </div>
+    <!-- Curtain Reveal Section -->
+    <section class="curtain-reveal-container">
+      <iframe 
+        src="curtain_reveal_googie.html" 
+        frameborder="0" 
+        scrolling="no"
+        title="Behind The Curtain - Team Composition Reveal"
+        class="curtain-reveal-frame">
+      </iframe>
     </section>
 
     <!-- Chuck -->

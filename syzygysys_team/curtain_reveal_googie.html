@@ -20,6 +20,15 @@
       --tv-body: #2a2a3e;
       --screen-glow: #6fbf73;
       --shadow: rgba(0, 0, 0, 0.8);
+      
+      /* Syzygy colors to match meet_the_team */
+      --syzygy-purple-1: #eadfff;
+      --syzygy-purple-2: #cdb3ff;
+      --syzygy-purple-3: #a880f3;
+      --syzygy-purple-4: #5a2394;
+      --syzygy-ink: #0a0710;
+      --syzygy-surface: #ffffff;
+      --syzygy-gray: #f8f9fa;
     }
 
     * {
@@ -29,36 +38,34 @@
     }
 
     body {
-      background: #0a0515;
+      background: transparent;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       font-family: 'Nunito Sans', sans-serif;
+      padding: 0;
+      margin: 0;
     }
 
     /* Main Container */
     .reveal-container {
-      width: 500px;
+      width: 100%;
+      max-width: 1400px;
       height: 400px;
-      background: linear-gradient(180deg, 
-        var(--dark-purple) 0%, 
-        var(--deep-purple) 30%, 
-        #0a0515 100%);
-      border-radius: 8px;
+      background: var(--syzygy-gray);
+      border-radius: 16px;
       overflow: hidden;
       position: relative;
       cursor: pointer;
-      box-shadow: 
-        0 20px 60px var(--shadow),
-        inset 0 -20px 40px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(90, 35, 148, 0.08);
       transition: all 0.3s ease;
+      pointer-events: auto;
     }
 
     .reveal-container:hover {
-      box-shadow: 
-        0 25px 70px var(--shadow),
-        inset 0 -20px 40px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 8px 24px rgba(90, 35, 148, 0.1);
+      transform: translateY(-2px);
     }
 
     /* Banner */
@@ -68,51 +75,27 @@
       left: 0;
       right: 0;
       height: 60px;
-      background: linear-gradient(180deg, 
-        var(--deep-purple) 0%, 
-        var(--dark-purple) 100%);
-      border-bottom: 3px solid var(--dark-gold);
+      background: linear-gradient(115deg, 
+        rgba(240, 236, 255, 0.92) 0%, 
+        rgba(248, 245, 255, 0.84) 40%, 
+        rgba(234, 224, 255, 0.78) 100%);
+      border-bottom: 2px solid var(--syzygy-purple-2);
       z-index: 20;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 2px 8px rgba(90, 35, 148, 0.08);
+      pointer-events: none;
     }
 
     .banner-text {
-      color: var(--gold);
+      color: var(--syzygy-purple-4);
       font-size: 22px;
       font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
-      text-shadow: 
-        2px 2px 4px rgba(0, 0, 0, 0.8),
-        0 0 20px rgba(212, 175, 55, 0.3);
-      font-family: 'Courier New', monospace;
-    }
-
-    /* Banner Draping Effect */
-    .banner::before,
-    .banner::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      width: 30px;
-      height: 30px;
-      background: var(--dark-purple);
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .banner::before {
-      left: 20px;
-      border-radius: 0 0 50% 0;
-      transform: rotate(-5deg);
-    }
-
-    .banner::after {
-      right: 20px;
-      border-radius: 0 0 0 50%;
-      transform: rotate(5deg);
+      text-shadow: 0 1px 2px rgba(90, 35, 148, 0.1);
+      font-family: 'Nunito Sans', sans-serif;
     }
 
     /* Stage Area */
@@ -125,16 +108,91 @@
       background: radial-gradient(ellipse at center, 
         rgba(90, 35, 148, 0.03) 0%, 
         transparent 70%);
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      pointer-events: none;
+    }
+
+    /* Side Panels */
+    .side-panel {
+      flex: 1;
+      min-width: 0;
+      background: linear-gradient(90deg,
+        var(--velvet-shadow) 0%,
+        var(--velvet-purple) 20%,
+        var(--velvet-highlight) 35%,
+        var(--velvet-purple) 50%,
+        var(--velvet-highlight) 65%,
+        var(--velvet-purple) 80%,
+        var(--velvet-shadow) 100%);
+      position: relative;
+      box-shadow: 
+        inset 0 0 40px rgba(0, 0, 0, 0.6),
+        inset 20px 0 30px rgba(0, 0, 0, 0.3),
+        inset -20px 0 30px rgba(0, 0, 0, 0.3);
+      pointer-events: none;
+    }
+
+    /* Add directional lighting to side panels */
+    .side-panel:first-child {
+      background: linear-gradient(90deg,
+        var(--velvet-shadow) 0%,
+        var(--velvet-purple) 30%,
+        var(--velvet-highlight) 50%,
+        var(--velvet-purple) 70%,
+        var(--velvet-highlight) 85%,
+        var(--velvet-purple) 100%);
+      pointer-events: none;
+    }
+
+    .side-panel:last-child {
+      background: linear-gradient(90deg,
+        var(--velvet-purple) 0%,
+        var(--velvet-highlight) 15%,
+        var(--velvet-purple) 30%,
+        var(--velvet-highlight) 50%,
+        var(--velvet-purple) 70%,
+        var(--velvet-shadow) 100%);
+      pointer-events: none;
+    }
+
+    .side-panel::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(88deg,
+        transparent 0px,
+        rgba(107, 53, 160, 0.1) 3px,
+        rgba(0, 0, 0, 0.3) 6px,
+        rgba(107, 53, 160, 0.2) 9px,
+        transparent 12px,
+        rgba(0, 0, 0, 0.4) 15px,
+        rgba(74, 31, 127, 0.3) 18px,
+        transparent 21px);
+      mix-blend-mode: multiply;
+      pointer-events: none;
+    }
+
+    /* Center Stage for Curtains */
+    .center-stage {
+      width: 100%;
+      max-width: 500px;
+      position: relative;
+      flex-shrink: 0;
+      pointer-events: none;
     }
 
     /* Realistic Velvet Curtains */
     .curtain {
       position: absolute;
-      top: 60px;
+      top: 0;
       width: 50%;
-      height: calc(100% - 60px);
+      height: 100%;
       transition: transform 1.8s cubic-bezier(0.65, 0, 0.35, 1);
       z-index: 10;
+      pointer-events: none;
     }
 
     /* Velvet texture gradient */
@@ -194,23 +252,9 @@
       transform: translateX(92%);
     }
 
-    /* Googie Astro Age TV */
+    /* Googie Astro Age TV - Hidden */
     .astro-tv {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0);
-      width: 180px;
-      height: 140px;
-      opacity: 0;
-      transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      z-index: 25;
-    }
-
-    .reveal-container.stage-1 .astro-tv {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 1;
-      transition-delay: 1.5s;
+      display: none;
     }
 
     /* TV Body - Retro Futuristic Shape */
@@ -434,49 +478,45 @@
       left: 50%;
       transform: translate(-50%, -50%) scale(0);
       width: 90%;
-      max-width: 450px;
+      max-width: 600px;
       max-height: 85%;
-      background: linear-gradient(135deg, 
-        rgba(26, 26, 26, 0.98) 0%, 
-        rgba(42, 21, 69, 0.98) 100%);
-      border: 2px solid var(--dark-gold);
-      border-radius: 8px;
+      background: var(--syzygy-surface);
+      border: 2px solid var(--syzygy-purple-4);
+      border-radius: 16px;
       padding: 25px;
       opacity: 0;
       transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
       z-index: 30;
       box-shadow: 
-        0 20px 60px rgba(0, 0, 0, 0.8),
-        0 0 100px rgba(212, 175, 55, 0.1);
+        0 20px 60px rgba(90, 35, 148, 0.2),
+        0 0 40px rgba(168, 128, 243, 0.1);
       overflow: hidden;
+      pointer-events: auto;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
     }
 
-    .reveal-container.stage-2 .info-panel {
+    .reveal-container.stage-1 .info-panel {
       transform: translate(-50%, -50%) scale(1);
       opacity: 1;
-      transition-delay: 0.5s;
-    }
-
-    .reveal-container.stage-2 .astro-tv {
-      transform: translate(-50%, -50%) scale(0.8);
-      opacity: 0.3;
-      filter: blur(2px);
-      transition-delay: 0s;
+      transition-delay: 1.5s;
     }
 
     .info-title {
-      color: var(--gold);
+      color: var(--syzygy-purple-4);
       font-size: 17px;
       font-weight: 700;
       margin-bottom: 20px;
       text-align: center;
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      text-shadow: 0 2px 10px rgba(212, 175, 55, 0.4);
+      text-shadow: none;
     }
 
     .info-content {
-      color: var(--cream);
+      color: var(--syzygy-ink);
       font-size: 13.5px;
       line-height: 1.7;
       max-height: 260px;
@@ -489,12 +529,12 @@
     }
 
     .info-content::-webkit-scrollbar-track {
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(90, 35, 148, 0.05);
       border-radius: 3px;
     }
 
     .info-content::-webkit-scrollbar-thumb {
-      background: var(--dark-gold);
+      background: var(--syzygy-purple-3);
       border-radius: 3px;
     }
 
@@ -503,12 +543,12 @@
     }
 
     .info-content strong {
-      color: var(--gold);
+      color: var(--syzygy-purple-4);
       font-weight: 600;
     }
 
     .info-content em {
-      color: #a880f3;
+      color: var(--syzygy-purple-3);
       font-style: normal;
       font-weight: 500;
     }
@@ -517,9 +557,9 @@
     .footnotes {
       margin-top: 20px;
       padding-top: 15px;
-      border-top: 1px solid rgba(212, 175, 55, 0.3);
+      border-top: 1px solid rgba(90, 35, 148, 0.2);
       font-size: 11px;
-      color: rgba(245, 230, 211, 0.7);
+      color: rgba(10, 7, 16, 0.65);
       line-height: 1.5;
     }
 
@@ -534,29 +574,108 @@
       right: 12px;
       width: 24px;
       height: 24px;
-      background: var(--dark-purple);
-      border: 1px solid var(--dark-gold);
+      background: var(--syzygy-gray);
+      border: 1px solid var(--syzygy-purple-4);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      color: var(--gold);
+      color: var(--syzygy-purple-4);
       font-size: 16px;
       font-weight: 300;
       opacity: 0;
       transition: all 0.3s ease;
       z-index: 2;
+      pointer-events: auto;
     }
 
-    .reveal-container.stage-2 .close-btn {
+    .reveal-container.stage-1 .close-btn {
       opacity: 0.8;
     }
 
     .close-btn:hover {
-      background: var(--medium-purple);
+      background: var(--syzygy-purple-3);
+      color: white;
       transform: scale(1.1);
       opacity: 1;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .reveal-container {
+        height: 300px;
+      }
+
+      .banner {
+        height: 50px;
+      }
+
+      .banner-text {
+        font-size: 16px;
+        letter-spacing: 2px;
+      }
+
+      .center-stage {
+        max-width: 300px;
+        min-width: 250px;
+      }
+
+      .info-panel {
+        max-width: 90%;
+        padding: 20px;
+      }
+
+      .info-title {
+        font-size: 15px;
+      }
+
+      .info-content {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 20px 10px;
+      }
+
+      .reveal-container {
+        height: 280px;
+      }
+
+      .banner {
+        height: 45px;
+      }
+
+      .banner-text {
+        font-size: 14px;
+        letter-spacing: 1px;
+      }
+
+      .center-stage {
+        max-width: 250px;
+        min-width: 200px;
+      }
+
+      .side-panel:first-child,
+      .side-panel:last-child {
+        min-width: 30px;
+      }
+
+      .info-panel {
+        padding: 15px;
+      }
+
+      .info-title {
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+
+      .info-content {
+        font-size: 11px;
+        max-height: 180px;
+      }
     }
   </style>
 </head>
@@ -569,9 +688,18 @@
 
     <!-- Stage -->
     <div class="stage">
-      <!-- Velvet Curtains -->
-      <div class="curtain curtain-left"></div>
-      <div class="curtain curtain-right"></div>
+      <!-- Left Side Panel -->
+      <div class="side-panel"></div>
+      
+      <!-- Center Stage with Curtains -->
+      <div class="center-stage">
+        <!-- Velvet Curtains -->
+        <div class="curtain curtain-left"></div>
+        <div class="curtain curtain-right"></div>
+      </div>
+      
+      <!-- Right Side Panel -->
+      <div class="side-panel"></div>
 
       <!-- Googie Astro Age TV -->
       <div class="astro-tv">
@@ -605,9 +733,10 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Info Panel -->
-      <div class="info-panel">
+    <!-- Info Panel -->
+    <div class="info-panel">
         <div class="close-btn" onclick="resetAnimation(event)">×</div>
         <h3 class="info-title">A Few Words On The SyzygySys Team Composition</h3>
         <div class="info-content">
@@ -638,39 +767,45 @@
   <script>
     const container = document.getElementById('revealContainer');
     let stage = 0;
-    let animationTimeout1, animationTimeout2;
+
+    // Add explicit debug logging
+    console.log('Script loaded, container:', container);
+
+    // Make sure container can receive events
+    container.style.pointerEvents = 'auto';
 
     container.addEventListener('click', (e) => {
-      if (e.target.classList.contains('close-btn')) return;
+      console.log('Click detected!', e.target, 'stage:', stage);
+      
+      // Don't handle clicks on close button
+      if (e.target.classList.contains('close-btn')) {
+        console.log('Close button clicked');
+        return;
+      }
+      
+      // Don't reset if clicking inside info panel (unless it's the background)
+      if (stage === 1 && e.target.closest('.info-panel') && !e.target.classList.contains('reveal-container')) {
+        console.log('Click inside info panel');
+        return;
+      }
       
       if (stage === 0) {
-        // Stage 1: Open curtains, show TV
+        console.log('Opening curtains!');
         container.classList.add('stage-1');
         stage = 1;
-        
-        // Linger on TV for 4 seconds (increased from 2.5)
-        animationTimeout1 = setTimeout(() => {
-          // Stage 2: Expand to info panel
-          container.classList.add('stage-2');
-          stage = 2;
-        }, 4000);
+      } else if (stage === 1) {
+        console.log('Closing curtains!');
+        container.classList.remove('stage-1');
+        stage = 0;
       }
     });
 
     function resetAnimation(event) {
+      console.log('Reset button clicked');
       event.stopPropagation();
-      clearTimeout(animationTimeout1);
-      clearTimeout(animationTimeout2);
-      container.classList.remove('stage-1', 'stage-2');
+      container.classList.remove('stage-1');
       stage = 0;
     }
-
-    // Reset on click outside info panel when fully expanded
-    container.addEventListener('click', (e) => {
-      if (stage === 2 && !e.target.closest('.info-panel')) {
-        resetAnimation(e);
-      }
-    });
   </script>
 </body>
 </html>

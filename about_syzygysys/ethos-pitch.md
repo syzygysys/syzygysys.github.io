@@ -1,3 +1,3 @@
 # SyzygySys — Investor Blurb (Concise)
 
-**SyzygySys** is the **sovereign AI operations layer**: a FOSS-first, standards-based agent platform that orchestrates and audits enterprise workflows—designed to scale, swap components freely, and **run itself** via a self-healing loop. We commercialize with an open-core model (no copyleft drag) so customers get control without lock-in.
+**SyzygySys** Is the company.  **Autonomic Compliance Ecosystem** is the **sovereign AI operations layer**: a FOSS-first, standards-based agent platform that orchestrates and audits enterprise workflows—designed to scale, swap components freely, and **run itself** via a self-healing loop. We commercialize with an open-core model (no copyleft drag) so customers get control without lock-in. **LAP::CORE** is the central control plane for the ecosystem and leverages dynamic **LAPI** interfaces to communicate with and use internal components of ACE and external resources and services.

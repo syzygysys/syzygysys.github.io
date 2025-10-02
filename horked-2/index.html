@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SyzygySys</title>
+  <title>SyzygySys — Overview</title>
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <link rel="stylesheet" href="assets/css/lcars.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -243,7 +243,7 @@
       align-items: flex-start;
       justify-content: flex-start;
       gap: clamp(0.7rem, 2.4vw, 1.2rem);
-      padding: clamp(0.6rem, 1.5vw, 1rem) clamp(0.6rem, 4.6vw, 2.6rem) clamp(2rem, 6vw, 3rem);
+      padding: clamp(2.2rem, 6.5vw, 4.6rem) clamp(0.6rem, 4.6vw, 2.6rem) clamp(2.6rem, 8vw, 5.2rem);
       width: 100%;
       box-sizing: border-box;
       position: relative;
@@ -253,7 +253,7 @@
       position: relative;
       max-width: 720px;
       width: min(720px, calc(100% - clamp(0.6rem, 4.6vw, 3rem)));
-      margin: 0 auto clamp(0.25rem, 1.1vw, 0.55rem) clamp(0.6rem, 2.2vw, 1.4rem);
+      margin: clamp(-0.25rem, -0.7vw, 0.05rem) auto clamp(0.25rem, 1.1vw, 0.55rem) clamp(0.6rem, 2.2vw, 1.4rem);
       padding: clamp(1.65rem, 4vw, 2.5rem) clamp(1.45rem, 4.2vw, 2.6rem) clamp(1.85rem, 4.4vw, 2.75rem) clamp(1.45rem, 4.2vw, 2.6rem);
       border-radius: clamp(2rem, 7vw, 3.2rem);
       background: linear-gradient(135deg, rgba(90, 35, 148, 0.1), rgba(90, 35, 148, 0.02));
@@ -749,7 +749,7 @@
     <div class="content-shell">
       <nav class="side-menu" aria-label="Mission channels">
         <p class="menu-heading">Mission Brief</p>
-        <a class="menu-item tone-4" href="#" data-panel="overview" aria-current="page">
+        <a class="menu-item tone-4" href="#" data-panel="overview">
           Overview
           <span class="menu-indicator" aria-hidden="true"></span>
         </a>
@@ -767,51 +767,50 @@
         </a>
       </nav>
 
-      <main class="main"><section class="panel" aria-live="polite">
-          <div class="panel-chip tone-4" id="panel-chip">
-            <span class="panel-chip-dot" aria-hidden="true"></span>
-            <span class="panel-chip-label" id="panel-chip-label">Overview</span>
+      <main class="main">
+        <div class="panel-heading">
+          <div class="panel-title" id="panel-title">
+            <span class="panel-title__short">ACE</span>
+            <span class="panel-title__full">
+              <span class="panel-word">ACE</span>
+              <span class="panel-word panel-word--symbol">–</span>
+              <span class="panel-word">Autonomic</span>
+              <span class="panel-word">Compliance</span>
+              <span class="panel-word">Ecosystem</span>
+            </span>
           </div>
-          <div class="panel-status" id="panel-status" aria-label="Session progress">
-            <details class="status-item" open>
-              <summary>
-                <span class="status-dot" aria-hidden="true"></span>
-                <span class="status-heading">Engineering Sovereign Autonomic Systems</span>
-                <span class="status-toggle" aria-hidden="true">›</span>
-              </summary>
-              <p class="status-body">Building ACE: a self-managing platform where policy and infrastructure stay aligned. Systems anticipate compliance drift and remediate before incidents occur.</p>
-            </details>
-            <details class="status-item">
-              <summary>
-                <span class="status-dot" aria-hidden="true"></span>
-                <span class="status-heading">Seamless Human + Agent Collaboration</span>
-                <span class="status-toggle" aria-hidden="true">›</span>
-              </summary>
-              <p class="status-body">Authoring shared schemas and control surfaces so engineers and agentic services exchange signals with zero ambiguity across the delivery lifecycle.</p>
-            </details>
-            <details class="status-item">
-              <summary>
-                <span class="status-dot" aria-hidden="true"></span>
-                <span class="status-heading">Operational Guardrails, Built-In</span>
-                <span class="status-toggle" aria-hidden="true">›</span>
-              </summary>
-              <p class="status-body">Provisioning ACE services with SDF + StateGuard diagnostics to validate guardrails and enforce compliance continuously.</p>
-            </details>
-            <details class="status-item">
-              <summary>
-                <span class="status-dot" aria-hidden="true"></span>
-                <span class="status-heading">Bringing Agentic Control Core Online</span>
-                <span class="status-toggle" aria-hidden="true">›</span>
-              </summary>
-              <p class="status-body">Initiating live telemetry handshakes, promoting trusted pipelines, and unlocking comms for the compliance and research swarms.</p>
-            </details>
-          </div>
-          <p class="detail" id="panel-detail">Ecosystem Energizing...  keep this channel open for updates</p>
-        </section>
-<a href="reports/state_guard_report_20251001_152041_summary.html" class="panel-action-btn" id="statusReportBtn">
+          <a href="reports/state_guard_report_20251001_152041_summary.html" class="panel-action-btn" id="statusReportBtn">
             State Report
           </a>
-        </div></main>
+        </div>
+        <section class="panel" aria-live="polite"><div class="panel-chip tone-4" id="panel-chip"><span class="panel-chip-dot" aria-hidden="true"></span><span class="panel-chip-label" id="panel-chip-label">Overview</span></div>
+<div class="panel-status" id="panel-status" aria-label="Session progress">
+<details class="status-item" open>
+  <summary>
+    <span class="status-dot" aria-hidden="true"></span>
+    <span class="status-heading">Engineering Sovereign Autonomic Systems</span>
+    <span class="status-toggle" aria-hidden="true">›</span>
+  </summary>
+  <p class="status-body">Building ACE: a self-managing platform where policy and infrastructure stay aligned. Systems anticipate compliance drift and remediate before incidents occur.</p>
+</details>
+<details class="status-item">
+  <summary>
+    <span class="status-dot" aria-hidden="true"></span>
+    <span class="status-heading">Seamless Human + Agent Collaboration</span>
+    <span class="status-toggle" aria-hidden="true">›</span>
+  </summary>
+  <p class="status-body">Authoring shared schemas and control surfaces so engineers and agentic services exchange signals with zero ambiguity across the delivery lifecycle.</p>
+</details>
+<details class="status-item">
+  <summary>
+    <span class="status-dot" aria-hidden="true"></span>
+    <span class="status-heading">Operational Guardrails, Built-In</span>
+    <span class="status-toggle" aria-hidden="true">›</span>
+  </summary>
+  <p class="status-body">Provisioning ACE services with SDF + StateGuard diagnostics to validate guardrails and enforce compliance continuously.</p>
+</details>
+</div></section>
+      </main>
     </div>
 
     <footer>

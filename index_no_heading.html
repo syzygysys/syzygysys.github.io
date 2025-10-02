@@ -19,7 +19,6 @@
       --syzygy-ink: #0a0710;
       --syzygy-surface: #ffffff;
     }
-
     body {
       margin: 0;
       min-height: 100vh;
@@ -28,13 +27,11 @@
       color: var(--syzygy-ink);
       line-height: 1.55;
     }
-
     .page {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
-
     .topbar {
       display: flex;
       align-items: center;
@@ -43,7 +40,6 @@
       border-bottom: 1px solid rgba(90, 35, 148, 0.12);
       background: linear-gradient(115deg, rgba(240, 236, 255, 0.92) 0%, rgba(248, 245, 255, 0.84) 40%, rgba(234, 224, 255, 0.78) 100%);
     }
-
     .logo-slot {
       display: flex;
       align-items: center;
@@ -51,14 +47,12 @@
       min-width: 0;
       margin-right: clamp(1rem, 3.5vw, 2rem);
     }
-
     .logo-mark {
       height: clamp(110px, 18vw, 160px);
       width: auto;
       flex-shrink: 0;
       display: block;
     }
-
     .logo-title {
       display: flex;
       flex-direction: column;
@@ -66,7 +60,6 @@
       gap: 0.2rem;
       min-width: 0;
     }
-
     .logo-title strong {
       font-size: clamp(1.83rem, 3.9vw, 2.5rem);
       letter-spacing: 0.1em;
@@ -74,14 +67,12 @@
       font-weight: 700;
       color: var(--syzygy-purple-4);
     }
-
     .logo-title span {
       font-size: clamp(0.95rem, 2.6vw, 1.2rem);
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: rgba(10, 7, 16, 0.65);
     }
-
     .top-actions {
       position: relative;
       margin-left: auto;
@@ -90,7 +81,6 @@
       align-items: flex-end;
       gap: clamp(0.65rem, 2.4vw, 1.2rem);
     }
-
     .cta {
       position: relative;
       display: inline-flex;
@@ -109,38 +99,32 @@
       box-shadow: 0 0.85rem 1.7rem rgba(90, 35, 148, 0.3);
       transition: transform 160ms ease, box-shadow 160ms ease;
     }
-
     .cta:hover {
       transform: translateY(-1px);
       box-shadow: 0 1rem 2rem rgba(90, 35, 148, 0.34);
     }
-
     .chip-track {
       display: flex;
       align-items: center;
       gap: clamp(0.4rem, 1.8vw, 0.9rem);
       pointer-events: none;
     }
-
     .chip {
       display: block;
       width: clamp(2.8rem, 9vw, 6rem);
       height: clamp(0.55rem, 1.6vw, 0.85rem);
       border-radius: 0 clamp(2.5rem, 8vw, 3rem) clamp(2.5rem, 8vw, 3rem) 0;
     }
-
     .chip-1 { background: var(--syzygy-purple-1); }
     .chip-2 { background: var(--syzygy-purple-2); }
     .chip-3 { background: var(--syzygy-purple-3); }
     .chip-4 { background: var(--syzygy-purple-4); }
-
     .content-shell {
       flex: 1;
       display: flex;
       align-items: stretch;
       min-height: 0;
     }
-
     .side-menu {
       position: relative;
       display: flex;
@@ -152,7 +136,6 @@
       border-right: 1px solid rgba(90, 35, 148, 0.16);
       border-radius: 0 clamp(2.4rem, 5vw, 3rem) clamp(2.4rem, 5vw, 3rem) 0;
     }
-
     .side-menu::before {
       content: '';
       position: absolute;
@@ -164,7 +147,6 @@
       background: var(--syzygy-purple-4);
       opacity: 0.25;
     }
-
     .menu-heading {
       margin: 0 0 0.35rem;
       font-size: clamp(0.95rem, 2.6vw, 1.2rem);
@@ -176,7 +158,6 @@
       align-self: flex-end;
       padding-right: clamp(0.6rem, 2vw, 1.2rem);
     }
-
     .menu-item {
       display: inline-flex;
       align-items: center;
@@ -191,42 +172,34 @@
       text-decoration: none;
       transition: transform 160ms ease, box-shadow 160ms ease;
     }
-
     .menu-item:focus-visible {
       outline: 2px solid rgba(42, 31, 61, 0.4);
       outline-offset: 3px;
     }
-
     .menu-item:hover {
       transform: translateX(4px);
       box-shadow: 0 0.4rem 1.2rem rgba(34, 13, 66, 0.18);
     }
-
     .menu-item.is-active {
       transform: translateX(4px);
       box-shadow: 0 0.55rem 1.6rem rgba(34, 13, 66, 0.2);
     }
-
     .tone-1 {
       background: var(--syzygy-purple-1);
       color: #1a0e2e;
     }
-
     .tone-2 {
       background: var(--syzygy-purple-2);
       color: #291947;
     }
-
     .tone-3 {
       background: var(--syzygy-purple-3);
       color: #fff;
     }
-
     .tone-4 {
       background: var(--syzygy-purple-4);
       color: #fff;
     }
-
     .menu-indicator {
       display: inline-block;
       width: 0.75rem;
@@ -235,7 +208,6 @@
       background: rgba(0, 0, 0, 0.18);
       opacity: 0.4;
     }
-
     .main {
       flex: 1;
       display: flex;
@@ -243,17 +215,16 @@
       align-items: flex-start;
       justify-content: flex-start;
       gap: clamp(0.7rem, 2.4vw, 1.2rem);
-      padding: clamp(0.6rem, 1.5vw, 1rem) clamp(0.6rem, 4.6vw, 2.6rem) clamp(2rem, 6vw, 3rem);
+      padding: clamp(2.2rem, 6.5vw, 4.6rem) clamp(0.6rem, 4.6vw, 2.6rem) clamp(2.6rem, 8vw, 5.2rem);
       width: 100%;
       box-sizing: border-box;
       position: relative;
     }
-
     .panel {
       position: relative;
       max-width: 720px;
       width: min(720px, calc(100% - clamp(0.6rem, 4.6vw, 3rem)));
-      margin: 0 auto clamp(0.25rem, 1.1vw, 0.55rem) clamp(0.6rem, 2.2vw, 1.4rem);
+      margin: clamp(-0.25rem, -0.7vw, 0.05rem) auto clamp(0.25rem, 1.1vw, 0.55rem) clamp(0.6rem, 2.2vw, 1.4rem);
       padding: clamp(1.65rem, 4vw, 2.5rem) clamp(1.45rem, 4.2vw, 2.6rem) clamp(1.85rem, 4.4vw, 2.75rem) clamp(1.45rem, 4.2vw, 2.6rem);
       border-radius: clamp(2rem, 7vw, 3.2rem);
       background: linear-gradient(135deg, rgba(90, 35, 148, 0.1), rgba(90, 35, 148, 0.02));
@@ -261,7 +232,6 @@
       box-shadow: 0 1.2rem 2.6rem rgba(34, 13, 66, 0.08);
       text-align: left;
     }
-
     .panel::before {
       content: '';
       position: absolute;
@@ -272,7 +242,6 @@
       background: var(--syzygy-purple-3);
       opacity: 0.45;
     }
-
     .panel::after {
       content: '';
       position: absolute;
@@ -283,14 +252,11 @@
       background: var(--syzygy-purple-1);
       opacity: 0.55;
     }
-
-
     p {
       margin: 0 0 1.25rem;
       font-size: 1.05rem;
       line-height: 1.65;
     }
-
     .panel-heading {
       width: min(720px, calc(100% - clamp(0.3rem, 4vw, 2.8rem)));
       display: flex;
@@ -304,7 +270,6 @@
       border: 2px solid rgba(90, 35, 148, 0.28);
       box-shadow: 0 1.1rem 2.2rem rgba(34, 13, 66, 0.08), inset 0 0 0 1px rgba(240, 236, 255, 0.35);
     }
-
     .panel-title {
       display: flex;
       align-items: center;
@@ -312,7 +277,6 @@
       gap: clamp(0.35rem, 1.4vw, 0.8rem);
       width: 100%;
     }
-
     .panel-title__full {
       display: inline-flex;
       align-items: baseline;
@@ -324,7 +288,6 @@
       line-height: 1.05;
       word-spacing: clamp(0.5rem, 1.6vw, 0.95rem);
     }
-
     .panel-title__short {
       display: none;
       font-weight: 700;
@@ -332,7 +295,6 @@
       letter-spacing: 0.14em;
       color: #06040a;
     }
-
     .panel-word {
       display: inline-flex;
       align-items: baseline;
@@ -341,19 +303,16 @@
       color: #0a0710;
       text-transform: none;
     }
-
     .panel-word::first-letter {
       font-weight: 700;
       color: var(--syzygy-purple-4);
       margin-right: clamp(0.16rem, 0.45vw, 0.28rem);
     }
-
     .panel-word.panel-word--symbol {
       font-weight: 600;
       color: var(--syzygy-purple-4);
       margin: 0 clamp(0.18rem, 0.6vw, 0.32rem);
     }
-
     .panel-chip {
       display: inline-flex;
       align-items: center;
@@ -372,13 +331,11 @@
       overflow: visible;
       background: var(--syzygy-purple-4);
     }
-
     .panel-chip-label {
       display: inline-flex;
       align-items: center;
       gap: clamp(0.25rem, 0.9vw, 0.45rem);
     }
-
     .panel-chip-dot {
       width: clamp(0.5rem, 1.4vw, 0.75rem);
       height: clamp(0.5rem, 1.4vw, 0.75rem);
@@ -386,7 +343,6 @@
       background: rgba(255, 255, 255, 0.85);
       box-shadow: inset 0 0 0.35rem rgba(34, 13, 66, 0.22);
     }
-
     .panel-chip::before {
       content: '';
       position: absolute;
@@ -400,11 +356,9 @@
       box-shadow: 0 0.45rem 1.2rem rgba(34, 13, 66, 0.18);
       z-index: -1;
     }
-
     .panel-title__short {
       display: none;
     }
-
     .panel-action-btn {
       position: absolute;
       right: clamp(0.8rem, 2vw, 1.5rem);
@@ -429,22 +383,18 @@
       box-shadow: 0 0.5rem 1rem rgba(90, 35, 148, 0.3);
       animation: pulse-border 2s ease-in-out infinite;
     }
-
     .panel-action-btn.visible {
       display: inline-flex;
     }
-
     .panel-action-btn:hover {
       transform: translateY(-50%) translateY(-2px);
       box-shadow: 0 0.7rem 1.5rem rgba(90, 35, 148, 0.4);
       animation: none;
     }
-
     .panel-action-btn::before {
       content: '📊';
       font-size: clamp(0.9rem, 2vw, 1.1rem);
     }
-
     @keyframes pulse-border {
       0%, 100% {
         box-shadow: 0 0.5rem 1rem rgba(90, 35, 148, 0.3), 0 0 0 0 rgba(90, 35, 148, 0.4);
@@ -453,16 +403,13 @@
         box-shadow: 0 0.5rem 1rem rgba(90, 35, 148, 0.3), 0 0 0 6px rgba(90, 35, 148, 0);
       }
     }
-
     @media (max-width: 640px) {
       .panel-title__full {
         display: none;
       }
-
       .panel-title__short {
         display: inline-flex;
       }
-
       .panel-action-btn {
         position: static;
         transform: none;
@@ -470,13 +417,10 @@
         width: 100%;
         justify-content: center;
       }
-
       .panel-action-btn:hover {
         transform: translateY(-2px);
       }
     }
-
-
     .panel-status {
       margin: clamp(0.8rem, 3.2vw, 1.6rem) 0 clamp(0.7rem, 2.6vw, 1.2rem);
       padding: clamp(1rem, 4vw, 1.6rem);
@@ -487,7 +431,6 @@
       display: grid;
       gap: clamp(0.55rem, 2vw, 0.9rem);
     }
-
     .status-item {
       border-radius: clamp(0.8rem, 3vw, 1.2rem);
       border: 1px solid transparent;
@@ -496,12 +439,10 @@
       box-shadow: inset 0 0 0 1px rgba(90, 35, 148, 0.08);
       transition: box-shadow 160ms ease, border-color 160ms ease;
     }
-
     .status-item[open] {
       border-color: rgba(90, 35, 148, 0.18);
       box-shadow: inset 0 0 0 1px rgba(90, 35, 148, 0.24), 0 0.6rem 1.6rem rgba(34, 13, 66, 0.08);
     }
-
     .status-item summary {
       list-style: none;
       display: grid;
@@ -514,16 +455,13 @@
       letter-spacing: 0.04em;
       color: rgba(42, 31, 61, 0.86);
     }
-
     .status-item summary::-webkit-details-marker {
       display: none;
     }
-
     .status-item summary:focus-visible {
       outline: 2px solid rgba(90, 35, 148, 0.4);
       outline-offset: 3px;
     }
-
     .status-item .status-dot {
       width: clamp(0.65rem, 1.8vw, 0.9rem);
       height: clamp(0.65rem, 1.8vw, 0.9rem);
@@ -532,23 +470,19 @@
       background: radial-gradient(circle at 30% 30%, rgba(240, 236, 255, 0.95), rgba(168, 128, 243, 0.55));
       box-shadow: 0 0 0.4rem rgba(90, 35, 148, 0.15);
     }
-
     .status-heading {
       text-transform: capitalize;
       text-transform: none;
     }
-
     .status-toggle {
       font-size: 1.2rem;
       font-weight: 500;
       color: rgba(90, 35, 148, 0.65);
       transition: transform 160ms ease;
     }
-
     .status-item[open] .status-toggle {
       transform: rotate(90deg);
     }
-
     .status-body {
       margin: 0;
       padding: 0 clamp(0.9rem, 3vw, 1.2rem) clamp(0.9rem, 3vw, 1.2rem) clamp(0.9rem, 3vw, 1.2rem);
@@ -558,7 +492,6 @@
       border-top: 1px dashed rgba(90, 35, 148, 0.18);
       background: rgba(240, 236, 255, 0.45);
     }
-
     .detail {
       margin: 0;
       font-size: 0.95rem;
@@ -566,7 +499,6 @@
       text-transform: uppercase;
       color: rgba(42, 31, 61, 0.6);
     }
-
     .status-body a {
       color: var(--syzygy-purple-4);
       text-decoration: none;
@@ -575,12 +507,10 @@
       transition: border-color 160ms ease, opacity 160ms ease;
       cursor: pointer;
     }
-
     .status-body a:hover {
       opacity: 0.75;
       border-bottom-color: var(--syzygy-purple-4);
     }
-
     .image-modal {
       display: none;
       position: fixed;
@@ -596,11 +526,9 @@
       padding: 2rem;
       box-sizing: border-box;
     }
-
     .image-modal.active {
       display: flex;
     }
-
     .image-modal-content {
       position: relative;
       max-width: 95%;
@@ -610,14 +538,12 @@
       box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.5);
       border: 2px solid rgba(168, 128, 243, 0.5);
     }
-
     .image-modal-content img {
       display: block;
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
-
     .image-modal-close {
       position: absolute;
       top: 1rem;
@@ -637,12 +563,10 @@
       transition: transform 160ms ease, background 160ms ease;
       z-index: 1001;
     }
-
     .image-modal-close:hover {
       transform: scale(1.1);
       background: rgba(90, 35, 148, 1);
     }
-
     footer {
       margin-top: auto;
       padding: clamp(1.6rem, 5vw, 2.4rem);
@@ -650,34 +574,28 @@
       font-size: 0.85rem;
       color: rgba(10, 7, 16, 0.55);
     }
-
     @media (max-width: 900px) {
       .cta {
         padding: 0.5rem 1.4rem;
         border-radius: clamp(2.4rem, 9vw, 3.4rem);
       }
-
       .chip {
         width: clamp(2.2rem, 16vw, 4.8rem);
       }
     }
-
     @media (max-width: 720px) {
       .topbar {
         flex-wrap: wrap;
         row-gap: 1rem;
       }
-
       .top-actions {
         width: 100%;
         justify-content: flex-end;
         padding-top: 0;
       }
-
       .content-shell {
         flex-direction: column;
       }
-
       .side-menu {
         flex-direction: row;
         flex-wrap: wrap;
@@ -688,29 +606,23 @@
         border-right: none;
         border-bottom: 1px solid rgba(90, 35, 148, 0.16);
       }
-
       .side-menu::before {
         display: none;
       }
-
       .menu-heading {
         width: 100%;
       }
-
       .menu-item {
         border-radius: clamp(2.6rem, 9vw, 3.4rem);
         justify-content: center;
         padding: 0.55rem 1.2rem;
       }
-
       .main {
         padding-top: clamp(3.2rem, 11vw, 4.8rem);
       }
-
       .panel {
         text-align: left;
       }
-
       .panel-heading {
         align-self: stretch;
         width: 100%;
@@ -718,13 +630,18 @@
         justify-content: center;
         flex-direction: column;
       }
-
       .panel-title {
         flex-wrap: wrap;
         justify-content: center;
       }
     }
-  </style>
+.main{padding-top: clamp(0.6rem,2vw,1rem) !important;}
+.panel{margin-top:0!important;}
+
+/* Remove banner spacing */
+.main{padding-top:clamp(0.6rem,2vw,1rem)!important}
+.panel{margin-top:0!important}
+</style>
 </head>
 <body>
   <div class="page">
@@ -745,7 +662,6 @@
         </div>
       </div>
     </header>
-
     <div class="content-shell">
       <nav class="side-menu" aria-label="Mission channels">
         <p class="menu-heading">Mission Brief</p>
@@ -766,8 +682,12 @@
           <span class="menu-indicator" aria-hidden="true"></span>
         </a>
       </nav>
-
-      <main class="main"><section class="panel" aria-live="polite">
+      <main class="main">
+<a href="reports/state_guard_report_20251001_152041_summary.html" class="panel-action-btn" id="statusReportBtn">
+            State Report
+          </a>
+        </div>
+        <section class="panel" aria-live="polite">
           <div class="panel-chip tone-4" id="panel-chip">
             <span class="panel-chip-dot" aria-hidden="true"></span>
             <span class="panel-chip-label" id="panel-chip-label">Overview</span>
@@ -808,33 +728,25 @@
           </div>
           <p class="detail" id="panel-detail">Ecosystem Energizing...  keep this channel open for updates</p>
         </section>
-<a href="reports/state_guard_report_20251001_152041_summary.html" class="panel-action-btn" id="statusReportBtn">
-            State Report
-          </a>
-        </div></main>
+      </main>
     </div>
-
     <footer>
       © <span id="year"></span> SyzygySys · Intelligence as Spec.
     </footer>
   </div>
-
   <div class="image-modal" id="imageModal">
     <button class="image-modal-close" id="modalClose" aria-label="Close">&times;</button>
     <div class="image-modal-content">
       <img id="modalImage" src="" alt="">
     </div>
   </div>
-
   <script>
     (() => {
       const yearEl = document.getElementById('year');
       if (yearEl) {
         yearEl.textContent = new Date().getFullYear();
       }
-
       const statusReportBtn = document.getElementById('statusReportBtn');
-
       const blurbs = {
         overview: {
           titleFull: 'ACE – Autonomic Compliance Ecosystem',
@@ -897,14 +809,12 @@
           ]
         }
       };
-
       const buttons = document.querySelectorAll('.menu-item[data-panel]');
       const acronymEl = document.getElementById('panel-title');
       const detailEl = document.getElementById('panel-detail');
       const statusEl = document.getElementById('panel-status');
       const chipEl = document.getElementById('panel-chip');
       const chipLabelEl = document.getElementById('panel-chip-label');
-
       function renderTitle(fullTitle, shortTitle) {
         const tokens = fullTitle.split(/\s+/).filter(Boolean);
         const fullMarkup = tokens
@@ -917,26 +827,21 @@
             return `<span class="panel-word">${normalized}</span>`;
           })
           .join('');
-
         const shortMarkup = (shortTitle || fullTitle).trim();
-
         return `
           <span class="panel-title__short">${shortMarkup}</span>
           <span class="panel-title__full">${fullMarkup}</span>
         `;
       }
-
       function setPanel(key) {
         const blurb = blurbs[key];
         if (!blurb) return;
-
         // Show/hide status report button based on panel
         if (key === 'status' && statusReportBtn) {
           statusReportBtn.classList.add('visible');
         } else if (statusReportBtn) {
           statusReportBtn.classList.remove('visible');
         }
-
         buttons.forEach(btn => {
           const isActive = btn.dataset.panel === key;
           btn.classList.toggle('is-active', isActive);
@@ -946,14 +851,11 @@
             btn.removeAttribute('aria-current');
           }
         });
-
         if (acronymEl) {
           acronymEl.innerHTML = renderTitle(blurb.titleFull, blurb.titleShort);
         }
         detailEl.textContent = blurb.detail;
-
         if (!statusEl) return;
-
         if (chipEl && chipLabelEl) {
           ['tone-1', 'tone-2', 'tone-3', 'tone-4'].forEach(cls => chipEl.classList.remove(cls));
           if (blurb.chip) {
@@ -963,12 +865,9 @@
             chipLabelEl.textContent = blurb.chip.label || blurb.titleShort || blurb.titleFull;
           }
         }
-
         statusEl.innerHTML = '';
-
         if (Array.isArray(blurb.status) && blurb.status.length) {
           statusEl.removeAttribute('hidden');
-
           blurb.status.forEach((entry, index) => {
             const data = typeof entry === 'string' ? { heading: entry, body: entry } : entry;
             const wrapper = document.createElement('details');
@@ -976,29 +875,22 @@
             if (index === 0) {
               wrapper.setAttribute('open', '');
             }
-
             const dot = document.createElement('span');
             dot.className = 'status-dot';
             dot.setAttribute('aria-hidden', 'true');
-
             const heading = document.createElement('span');
             heading.className = 'status-heading';
             heading.textContent = data.heading;
-
             const summary = document.createElement('summary');
             const toggle = document.createElement('span');
             toggle.className = 'status-toggle';
             toggle.setAttribute('aria-hidden', 'true');
             toggle.textContent = '›';
-
             summary.append(dot, heading, toggle);
-
             const body = document.createElement('p');
             body.className = 'status-body';
-            
             // Process body text to add image links
             let bodyHTML = data.body;
-            
             // Replace "all subsystems" with clickable link in Current State section
             if (data.heading === 'Current State') {
               bodyHTML = bodyHTML.replace(
@@ -1006,7 +898,6 @@
                 '<a href="#" data-image="assets/images/oxker_2025_10_01_status.png">all subsystems</a>'
               );
             }
-            
             // Replace "starship in dock under stealth construction" with clickable link in Ongoing Construction section
             if (data.heading === 'Ongoing Construction') {
               bodyHTML = bodyHTML.replace(
@@ -1014,9 +905,7 @@
                 '<a href="#" data-image="assets/images/starship_ace_v_0.8.3.png">starship in dock under stealth construction</a>'
               );
             }
-            
             body.innerHTML = bodyHTML;
-
             wrapper.append(summary, body);
             statusEl.append(wrapper);
           });
@@ -1024,13 +913,11 @@
           statusEl.setAttribute('hidden', 'true');
         }
       }
-
       buttons.forEach(btn => {
         btn.addEventListener('click', event => {
           event.preventDefault();
           setPanel(btn.dataset.panel);
         });
-
         btn.addEventListener('keydown', event => {
           if (event.key === ' ' || event.key === 'Enter') {
             event.preventDefault();
@@ -1038,39 +925,32 @@
           }
         });
       });
-
       setPanel('overview');
-
       // Modal functionality
       const modal = document.getElementById('imageModal');
       const modalImg = document.getElementById('modalImage');
       const modalClose = document.getElementById('modalClose');
-
       function openModal(imageSrc) {
         modalImg.src = imageSrc;
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
       }
-
       function closeModal() {
         modal.classList.remove('active');
         modalImg.src = '';
         document.body.style.overflow = '';
       }
-
       modalClose.addEventListener('click', closeModal);
       modal.addEventListener('click', (e) => {
         if (e.target === modal) {
           closeModal();
         }
       });
-
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.classList.contains('active')) {
           closeModal();
         }
       });
-
       // Add image link handlers to status body
       document.addEventListener('click', (e) => {
         if (e.target.matches('.status-body a[data-image]')) {

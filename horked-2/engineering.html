@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SyzygySys</title>
+  <title>SyzygySys — Engineering</title>
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <link rel="stylesheet" href="assets/css/lcars.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -406,7 +406,6 @@
     }
 
     .panel-action-btn {
-      /* shared style */
       position: absolute;
       right: clamp(0.8rem, 2vw, 1.5rem);
       top: 50%;
@@ -455,7 +454,6 @@
       }
     }
 
-        .panel-ref-btn { right: calc(clamp(0.8rem, 2vw, 1.5rem) + 9.5rem); }
     @media (max-width: 640px) {
       .panel-title__full {
         display: none;
@@ -466,7 +464,6 @@
       }
 
       .panel-action-btn {
-      /* shared style */
         position: static;
         transform: none;
         margin-top: 0.8rem;
@@ -752,7 +749,7 @@
     <div class="content-shell">
       <nav class="side-menu" aria-label="Mission channels">
         <p class="menu-heading">Mission Brief</p>
-        <a class="menu-item tone-4" href="#" data-panel="overview" aria-current="page">
+        <a class="menu-item tone-4" href="#" data-panel="overview">
           Overview
           <span class="menu-indicator" aria-hidden="true"></span>
         </a>
@@ -785,49 +782,18 @@
           <a href="reports/state_guard_report_20251001_152041_summary.html" class="panel-action-btn" id="statusReportBtn">
             State Report
           </a>
-          <a href="toc_links_index.html" class="panel-action-btn panel-ref-btn" id="referenceBtn">Reference</a>
         </div>
-        <section class="panel" aria-live="polite">
-          <div class="panel-chip tone-4" id="panel-chip">
-            <span class="panel-chip-dot" aria-hidden="true"></span>
-            <span class="panel-chip-label" id="panel-chip-label">Overview</span>
-          </div>
-          <div class="panel-status" id="panel-status" aria-label="Session progress">
-            <details class="status-item" open>
-              <summary>
-                <span class="status-dot" aria-hidden="true"></span>
-                <span class="status-heading">Engineering Sovereign Autonomic Systems</span>
-                <span class="status-toggle" aria-hidden="true">›</span>
-              </summary>
-              <p class="status-body">Building ACE: a self-managing platform where policy and infrastructure stay aligned. Systems anticipate compliance drift and remediate before incidents occur.</p>
-            </details>
-            <details class="status-item">
-              <summary>
-                <span class="status-dot" aria-hidden="true"></span>
-                <span class="status-heading">Seamless Human + Agent Collaboration</span>
-                <span class="status-toggle" aria-hidden="true">›</span>
-              </summary>
-              <p class="status-body">Authoring shared schemas and control surfaces so engineers and agentic services exchange signals with zero ambiguity across the delivery lifecycle.</p>
-            </details>
-            <details class="status-item">
-              <summary>
-                <span class="status-dot" aria-hidden="true"></span>
-                <span class="status-heading">Operational Guardrails, Built-In</span>
-                <span class="status-toggle" aria-hidden="true">›</span>
-              </summary>
-              <p class="status-body">Provisioning ACE services with SDF + StateGuard diagnostics to validate guardrails and enforce compliance continuously.</p>
-            </details>
-            <details class="status-item">
-              <summary>
-                <span class="status-dot" aria-hidden="true"></span>
-                <span class="status-heading">Bringing Agentic Control Core Online</span>
-                <span class="status-toggle" aria-hidden="true">›</span>
-              </summary>
-              <p class="status-body">Initiating live telemetry handshakes, promoting trusted pipelines, and unlocking comms for the compliance and research swarms.</p>
-            </details>
-          </div>
-          <p class="detail" id="panel-detail">Ecosystem Energizing...  keep this channel open for updates</p>
-        </section>
+        <section class="panel" aria-live="polite"><div class="panel-chip tone-3" id="panel-chip"><span class="panel-chip-dot" aria-hidden="true"></span><span class="panel-chip-label" id="panel-chip-label">Engineering</span></div>
+<div class="panel-status" id="panel-status" aria-label="Session progress">
+<details class="status-item" open>
+  <summary>
+    <span class="status-dot" aria-hidden="true"></span>
+    <span class="status-heading">What is it?</span>
+    <span class="status-toggle" aria-hidden="true">›</span>
+  </summary>
+  <p class="status-body">SyzygySys is the company. Autonomic Compliance Ecosystem (ACE) is the product: a sovereign AI operations layer built FOSS-first with swappable, standards-based components. ACE orchestrates and audits enterprise workflows through self-healing loops—designed to scale without vendor lock-in. We commercialize via open-core (no copyleft strings), giving customers control over their stack. LAP::CORE serves as the central control plane, coordinating the ecosystem through dynamic LAPI interfaces that bridge internal ACE components with external resources and services.</p>
+</details>
+</div></section>
       </main>
     </div>
 
@@ -851,7 +817,6 @@
       }
 
       const statusReportBtn = document.getElementById('statusReportBtn');
-      const referenceBtn = document.getElementById('referenceBtn');
 
       const blurbs = {
         overview: {
@@ -953,11 +918,6 @@
           statusReportBtn.classList.add('visible');
         } else if (statusReportBtn) {
           statusReportBtn.classList.remove('visible');
-        }
-
-        if (referenceBtn) {
-          if (key === 'engineering') referenceBtn.classList.add('visible');
-          else referenceBtn.classList.remove('visible');
         }
 
         buttons.forEach(btn => {

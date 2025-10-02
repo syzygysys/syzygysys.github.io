@@ -243,7 +243,7 @@
       align-items: flex-start;
       justify-content: flex-start;
       gap: clamp(0.7rem, 2.4vw, 1.2rem);
-      padding: clamp(0.6rem, 1.5vw, 1rem) clamp(0.6rem, 4.6vw, 2.6rem) clamp(2rem, 6vw, 3rem);
+      padding: clamp(2.2rem, 6.5vw, 4.6rem) clamp(0.6rem, 4.6vw, 2.6rem) clamp(2.6rem, 8vw, 5.2rem);
       width: 100%;
       box-sizing: border-box;
       position: relative;
@@ -253,7 +253,7 @@
       position: relative;
       max-width: 720px;
       width: min(720px, calc(100% - clamp(0.6rem, 4.6vw, 3rem)));
-      margin: 0 auto clamp(0.25rem, 1.1vw, 0.55rem) clamp(0.6rem, 2.2vw, 1.4rem);
+      margin: clamp(-0.25rem, -0.7vw, 0.05rem) auto clamp(0.25rem, 1.1vw, 0.55rem) clamp(0.6rem, 2.2vw, 1.4rem);
       padding: clamp(1.65rem, 4vw, 2.5rem) clamp(1.45rem, 4.2vw, 2.6rem) clamp(1.85rem, 4.4vw, 2.75rem) clamp(1.45rem, 4.2vw, 2.6rem);
       border-radius: clamp(2rem, 7vw, 3.2rem);
       background: linear-gradient(135deg, rgba(90, 35, 148, 0.1), rgba(90, 35, 148, 0.02));
@@ -767,7 +767,23 @@
         </a>
       </nav>
 
-      <main class="main"><section class="panel" aria-live="polite">
+      <main class="main">
+        <div class="panel-heading">
+          <div class="panel-title" id="panel-title">
+            <span class="panel-title__short">ACE</span>
+            <span class="panel-title__full">
+              <span class="panel-word">ACE</span>
+              <span class="panel-word panel-word--symbol">–</span>
+              <span class="panel-word">Autonomic</span>
+              <span class="panel-word">Compliance</span>
+              <span class="panel-word">Ecosystem</span>
+            </span>
+          </div>
+          <a href="reports/state_guard_report_20251001_152041_summary.html" class="panel-action-btn" id="statusReportBtn">
+            State Report
+          </a>
+        </div>
+        <section class="panel" aria-live="polite">
           <div class="panel-chip tone-4" id="panel-chip">
             <span class="panel-chip-dot" aria-hidden="true"></span>
             <span class="panel-chip-label" id="panel-chip-label">Overview</span>
@@ -808,10 +824,7 @@
           </div>
           <p class="detail" id="panel-detail">Ecosystem Energizing...  keep this channel open for updates</p>
         </section>
-<a href="reports/state_guard_report_20251001_152041_summary.html" class="panel-action-btn" id="statusReportBtn">
-            State Report
-          </a>
-        </div></main>
+      </main>
     </div>
 
     <footer>

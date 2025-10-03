@@ -89,30 +89,63 @@
       overflow-y: auto;
     }
 
-    pre {
-      margin: 0;
+    .json-tree {
       font-size: 0.9rem;
       line-height: 1.5;
+      color: #d4d4d4;
+      display: grid;
+      gap: 0.25rem;
+    }
+
+    .json-node {
+      list-style: none;
+    }
+
+    .json-node > summary {
+      cursor: pointer;
+      outline: none;
+      padding: 0.15rem 0.3rem;
+      border-radius: 0.3rem;
+      transition: background 120ms ease;
+    }
+
+    .json-node > summary:hover,
+    .json-node > summary:focus-visible {
+      background: rgba(168, 128, 243, 0.12);
     }
 
     .json-key {
       color: #9cdcfe;
     }
 
-    .json-string {
+    .json-value-string {
       color: #ce9178;
     }
 
-    .json-number {
+    .json-value-number {
       color: #b5cea8;
     }
 
-    .json-boolean {
+    .json-value-boolean,
+    .json-value-null {
       color: #569cd6;
     }
 
-    .json-null {
-      color: #569cd6;
+    .json-meta {
+      color: #858585;
+      font-size: 0.8rem;
+      margin-left: 0.4rem;
+    }
+
+    .json-leaf {
+      padding: 0.15rem 0.3rem;
+      border-radius: 0.3rem;
+    }
+
+    .json-leaf:hover,
+    .json-leaf:focus-visible {
+      background: rgba(168, 128, 243, 0.12);
+      outline: none;
     }
 
     .loading {
@@ -156,7 +189,7 @@
     </div>
 
     <div class="controls">
-      <button onclick="toggleCollapse()">Expand/Collapse All</button>
+      <button id="collapseToggle" onclick="toggleCollapse()">Collapse All</button>
       <button onclick="copyToClipboard()">Copy JSON</button>
       <button onclick="downloadJSON()">Download</button>
     </div>
@@ -173,32 +206,11 @@
 
   <script>
     let jsonData = null;
+    let allCollapsed = false;
 
     function getQueryParam(param) {
       const urlParams = new URLSearchParams(window.location.search);
       return urlParams.get(param);
-    }
-
-    function syntaxHighlight(json) {
-      if (typeof json !== 'string') {
-        json = JSON.stringify(json, null, 2);
-      }
-      json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-      return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
-        let cls = 'json-number';
-        if (/^"/.test(match)) {
-          if (/:$/.test(match)) {
-            cls = 'json-key';
-          } else {
-            cls = 'json-string';
-          }
-        } else if (/true|false/.test(match)) {
-          cls = 'json-boolean';
-        } else if (/null/.test(match)) {
-          cls = 'json-null';
-        }
-        return '<span class="' + cls + '">' + match + '</span>';
-      });
     }
 
     async function loadJSON() {
@@ -213,14 +225,12 @@
       document.getElementById('filename').textContent = filename;
 
       try {
-        const response = await fetch(filename);
+        const response = await fetch(new URL(filename, window.location.href));
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         jsonData = await response.json();
-        
-        const highlighted = syntaxHighlight(jsonData);
-        document.getElementById('json-container').innerHTML = '<pre>' + highlighted + '</pre>';
+        renderTree(jsonData);
       } catch (error) {
         document.getElementById('error-container').innerHTML = 
           '<div class="error">Error loading JSON: ' + error.message + '</div>';
@@ -228,9 +238,88 @@
       }
     }
 
+    function escapeHTML(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function renderTree(data) {
+      const container = document.getElementById('json-container');
+      container.innerHTML = '';
+
+      const tree = document.createElement('div');
+      tree.className = 'json-tree';
+
+      if (Array.isArray(data)) {
+        buildNode(tree, '[root]', data);
+      } else {
+        Object.entries(data).forEach(([key, value]) => {
+          buildNode(tree, key, value);
+        });
+      }
+
+      container.appendChild(tree);
+    }
+
+    function buildNode(parent, key, value) {
+      if (value !== null && typeof value === 'object') {
+        const details = document.createElement('details');
+        details.className = 'json-node';
+        details.open = true;
+
+        const summary = document.createElement('summary');
+        summary.innerHTML = `<span class="json-key">${escapeHTML(key)}</span><span class="json-meta">${Array.isArray(value) ? ` [Array, ${value.length}]` : ' {Object}'}</span>`;
+        details.appendChild(summary);
+
+        const wrapper = document.createElement('div');
+        wrapper.style.marginLeft = '1.2rem';
+        wrapper.style.display = 'grid';
+        wrapper.style.gap = '0.25rem';
+
+        if (Array.isArray(value)) {
+          value.forEach((item, index) => {
+            buildNode(wrapper, `[${index}]`, item);
+          });
+        } else {
+          Object.entries(value).forEach(([childKey, childValue]) => {
+            buildNode(wrapper, childKey, childValue);
+          });
+        }
+
+        details.appendChild(wrapper);
+        parent.appendChild(details);
+      } else {
+        const leaf = document.createElement('div');
+        leaf.className = 'json-leaf';
+        const valueClass = value === null ? 'json-value-null' : `json-value-${typeof value}`;
+        leaf.innerHTML = `<span class="json-key">${escapeHTML(key)}</span>: <span class="${valueClass}">${formatValue(value)}</span>`;
+        parent.appendChild(leaf);
+      }
+    }
+
+    function formatValue(value) {
+      if (typeof value === 'string') {
+        return `"${escapeHTML(value)}"`;
+      }
+      if (value === null) {
+        return 'null';
+      }
+      return value;
+    }
+
     function toggleCollapse() {
-      // Simple implementation - would need more complex code for actual collapsing
-      alert('Expand/Collapse functionality - use browser DevTools for full JSON tree navigation');
+      const nodes = document.querySelectorAll('.json-node');
+      allCollapsed = !allCollapsed;
+      nodes.forEach(node => {
+        node.open = !allCollapsed;
+      });
+      const toggleBtn = document.getElementById('collapseToggle');
+      if (toggleBtn) {
+        toggleBtn.textContent = allCollapsed ? 'Expand All' : 'Collapse All';
+      }
     }
 
     function copyToClipboard() {

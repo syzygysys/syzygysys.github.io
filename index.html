@@ -551,12 +551,38 @@
 
     .status-body {
       margin: 0;
-      padding: 0 clamp(0.9rem, 3vw, 1.2rem) clamp(0.9rem, 3vw, 1.2rem) clamp(0.9rem, 3vw, 1.2rem);
+      padding: clamp(0.9rem, 3vw, 1.2rem);
       font-size: 0.96rem;
       line-height: 1.6;
       color: rgba(42, 31, 61, 0.75);
       border-top: 1px dashed rgba(90, 35, 148, 0.18);
       background: rgba(240, 236, 255, 0.45);
+      display: grid;
+      gap: clamp(0.75rem, 2vw, 1.2rem);
+      justify-items: start;
+    }
+
+    .status-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(0.45rem, 1.4vw, 0.65rem) clamp(1.2rem, 3.6vw, 1.8rem);
+      border-radius: clamp(1.5rem, 4vw, 2.4rem);
+      background: var(--syzygy-purple-4);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 0.8rem 1.6rem rgba(90, 35, 148, 0.28);
+      transition: transform 160ms ease, box-shadow 160ms ease;
+      justify-self: start;
+    }
+
+    .status-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 1.1rem 2rem rgba(90, 35, 148, 0.36);
     }
 
     .detail {
@@ -567,7 +593,7 @@
       color: rgba(42, 31, 61, 0.6);
     }
 
-    .status-body a {
+    .status-body a:not(.status-link) {
       color: var(--syzygy-purple-4);
       text-decoration: none;
       font-weight: 600;
@@ -576,7 +602,7 @@
       cursor: pointer;
     }
 
-    .status-body a:hover {
+    .status-body a:not(.status-link):hover {
       opacity: 0.75;
       border-bottom-color: var(--syzygy-purple-4);
     }
@@ -589,7 +615,7 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background: rgba(10, 7, 16, 0.94);
+      background: rgba(160, 7, 16, 0.94);
       backdrop-filter: blur(8px);
       align-items: center;
       justify-content: center;
@@ -779,7 +805,10 @@
                 <span class="status-heading">Engineering Sovereign Autonomic Systems</span>
                 <span class="status-toggle" aria-hidden="true">›</span>
               </summary>
-              <p class="status-body">Building ACE: a self-managing platform where policy and infrastructure stay aligned. Systems anticipate compliance drift and remediate before incidents occur.</p>
+              <p class="status-body">
+                The ACE Autonomic Compliance Ecosystem gives multiplayer engineering teams a structured environment to design, ship, and iterate safely. Policy and infrastructure stay locked to spec, with deterministic change windows and continual conformance against the standards you define up front.
+                <a class="status-link" href="#" data-image="assets/images/syzygysys.png">The Plan</a>
+              </p>
             </details>
             <details class="status-item">
               <summary>
@@ -787,7 +816,7 @@
                 <span class="status-heading">Seamless Human + Agent Collaboration</span>
                 <span class="status-toggle" aria-hidden="true">›</span>
               </summary>
-              <p class="status-body">Authoring shared schemas and control surfaces so engineers and agentic services exchange signals with zero ambiguity across the delivery lifecycle.</p>
+              <p class="status-body">Every initiative starts with Intelligence As Spec—formal declarations that capture the desired end-state before code is written. Those specs anchor design, test, and deployment plans, giving both humans and agents an unambiguous definition of done.</p>
             </details>
             <details class="status-item">
               <summary>
@@ -795,7 +824,7 @@
                 <span class="status-heading">Operational Guardrails, Built-In</span>
                 <span class="status-toggle" aria-hidden="true">›</span>
               </summary>
-              <p class="status-body">Provisioning ACE services with SDF + StateGuard diagnostics to validate guardrails and enforce compliance continuously.</p>
+              <p class="status-body">ACE ships with HITL-gated autonomics. When risk climbs or epistemic confidence drops, the system pauses, routes context to the right owner, and waits for explicit human approval before execution resumes.</p>
             </details>
             <details class="status-item">
               <summary>
@@ -844,15 +873,15 @@
           status: [
             {
               heading: 'Engineering Sovereign Autonomic Systems',
-              body: 'Building ACE: a self-managing platform where policy and infrastructure stay aligned. Systems anticipate compliance drift and remediate before incidents occur.'
+              body: 'The ACE Autonomic Compliance Ecosystem gives multiplayer engineering teams a structured environment to design, ship, and iterate safely. Policy and infrastructure stay locked to spec, with deterministic change windows and continual conformance against the standards you define up front.'
             },
             {
               heading: 'Seamless Human + Agent Collaboration',
-              body: 'Authoring shared schemas and control surfaces so engineers and agentic services exchange signals with zero ambiguity across the delivery lifecycle.'
+              body: 'Every initiative starts with Intelligence As Spec—formal declarations that capture the desired end-state before code is written. Those specs anchor design, test, and deployment plans, giving both humans and agents an unambiguous definition of done.'
             },
             {
               heading: 'Operational Guardrails, Built-In',
-              body: 'Provisioning ACE services with SDF + StateGuard diagnostics to validate guardrails and enforce compliance continuously.'
+              body: 'ACE ships with HITL-gated autonomics. When risk climbs or epistemic confidence drops, the system pauses, routes context to the right owner, and waits for explicit human approval before execution resumes.'
             }
           ]
         },
@@ -1016,6 +1045,15 @@
             }
             
             body.innerHTML = bodyHTML;
+
+            if (data.heading === 'Engineering Sovereign Autonomic Systems') {
+              const planLink = document.createElement('a');
+              planLink.className = 'status-link';
+              planLink.href = '#';
+              planLink.dataset.image = 'assets/images/syzygysys.png';
+              planLink.textContent = 'The Plan';
+              body.appendChild(planLink);
+            }
 
             wrapper.append(summary, body);
             statusEl.append(wrapper);

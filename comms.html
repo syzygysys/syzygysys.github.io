@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SyzygySys · Meet The Team</title>
-  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
-  <link rel="stylesheet" href="../assets/css/lcars.min.css">
+  <title>SyzygySys · Communications</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="assets/css/lcars.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -208,10 +208,25 @@
       box-shadow: 0 0.55rem 1.6rem rgba(34, 13, 66, 0.2);
     }
 
-    .tone-1 { background: var(--syzygy-purple-1); color: #1a0e2e; }
-    .tone-2 { background: var(--syzygy-purple-2); color: #291947; }
-    .tone-3 { background: var(--syzygy-purple-3); color: #fff; }
-    .tone-4 { background: var(--syzygy-purple-4); color: #fff; }
+    .tone-1 {
+      background: var(--syzygy-purple-1);
+      color: #1a0e2e;
+    }
+
+    .tone-2 {
+      background: var(--syzygy-purple-2);
+      color: #291947;
+    }
+
+    .tone-3 {
+      background: var(--syzygy-purple-3);
+      color: #fff;
+    }
+
+    .tone-4 {
+      background: var(--syzygy-purple-4);
+      color: #fff;
+    }
 
     .menu-indicator {
       display: inline-block;
@@ -234,8 +249,8 @@
 
     .panel {
       position: relative;
-      max-width: 900px;
-      width: min(900px, calc(100% - clamp(0.6rem, 4.6vw, 3rem)));
+      max-width: 720px;
+      width: min(720px, calc(100% - clamp(0.6rem, 4.6vw, 3rem)));
       margin: 0 auto clamp(0.25rem, 1.1vw, 0.55rem) clamp(0.6rem, 2.2vw, 1.4rem);
       padding: clamp(1.65rem, 4vw, 2.5rem) clamp(1.45rem, 4.2vw, 2.6rem) clamp(1.85rem, 4.4vw, 2.75rem) clamp(1.45rem, 4.2vw, 2.6rem);
       border-radius: clamp(2rem, 7vw, 3.2rem);
@@ -274,7 +289,7 @@
     }
 
     .panel-heading {
-      width: min(900px, calc(100% - clamp(0.3rem, 4vw, 2.8rem)));
+      width: min(720px, calc(100% - clamp(0.3rem, 4vw, 2.8rem)));
       display: flex;
       align-items: center;
       justify-content: center;
@@ -328,6 +343,12 @@
       font-weight: 700;
       color: var(--syzygy-purple-4);
       margin-right: clamp(0.16rem, 0.45vw, 0.28rem);
+    }
+
+    .panel-word.panel-word--symbol {
+      font-weight: 600;
+      color: var(--syzygy-purple-4);
+      margin: 0 clamp(0.18rem, 0.6vw, 0.32rem);
     }
 
     .panel-chip {
@@ -391,13 +412,9 @@
       border-radius: clamp(0.8rem, 3vw, 1.2rem);
       border: 1px solid transparent;
       overflow: hidden;
-      background: rgba(255, 255, 255, 0.75);
+      background: rgba(255, 255, 255, 0.6);
       box-shadow: inset 0 0 0 1px rgba(90, 35, 148, 0.08);
       transition: box-shadow 160ms ease, border-color 160ms ease;
-    }
-
-    .status-item--reveal {
-      padding: clamp(0.45rem, 1.8vw, 0.9rem);
     }
 
     .status-item[open] {
@@ -453,152 +470,83 @@
 
     .status-body {
       margin: 0;
-      padding: clamp(1rem, 3vw, 1.6rem) clamp(1rem, 3vw, 1.6rem) clamp(1.1rem, 3vw, 1.8rem);
+      padding: clamp(0.9rem, 3vw, 1.2rem);
       font-size: 0.96rem;
-      line-height: 1.65;
-      color: rgba(42, 31, 61, 0.76);
+      line-height: 1.6;
+      color: rgba(42, 31, 61, 0.75);
       border-top: 1px dashed rgba(90, 35, 148, 0.18);
       background: rgba(240, 236, 255, 0.45);
       display: grid;
-      gap: clamp(0.8rem, 2.4vw, 1.4rem);
+      gap: clamp(0.6rem, 2vw, 0.9rem);
     }
 
-    .status-item--reveal .status-body {
-      border-top: none;
-      background: rgba(255, 255, 255, 0.82);
-      padding: clamp(0.9rem, 2.6vw, 1.4rem);
-    }
-
-    .team-profile {
-      display: grid;
-      grid-template-columns: minmax(160px, 220px) 1fr;
-      gap: clamp(1rem, 3vw, 2.4rem);
-      align-items: start;
-    }
-
-    .team-figure {
-      margin: 0;
-      display: grid;
-      gap: clamp(0.4rem, 2vw, 0.8rem);
-      justify-items: center;
-    }
-
-    .team-avatar {
-      width: clamp(140px, 24vw, 190px);
-      height: clamp(140px, 24vw, 190px);
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--syzygy-purple-2);
-      box-shadow: 0 0.8rem 1.6rem rgba(90, 35, 148, 0.18);
-    }
-
-    .team-meta h2 {
-      margin: 0 0 0.4rem;
-      font-size: clamp(1.45rem, 3vw, 1.9rem);
-      color: var(--syzygy-purple-4);
-    }
-
-    .team-role {
-      margin: 0 0 clamp(0.9rem, 2vw, 1.4rem);
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(90, 35, 148, 0.72);
-    }
-
-    .team-domains h3,
-    .team-specs h4 {
-      margin: 0 0 0.6rem;
-      font-size: 0.95rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(90, 35, 148, 0.78);
-    }
-
-    .team-domains ul {
+    .status-body ul {
       margin: 0;
       padding-left: 1.2rem;
     }
 
-    .team-domains li {
+    .status-body li {
       margin-bottom: 0.4rem;
     }
 
-    .team-strengths {
-      padding: clamp(0.8rem, 2vw, 1rem);
-      border-radius: clamp(0.8rem, 2.2vw, 1.2rem);
-      background: rgba(168, 128, 243, 0.08);
-      border-left: 4px solid var(--syzygy-purple-3);
-      color: rgba(42, 31, 61, 0.78);
-    }
-
-    .team-specs {
-      padding: clamp(0.8rem, 2vw, 1.1rem);
-      border-radius: clamp(0.8rem, 2vw, 1.2rem);
-      background: rgba(255, 255, 255, 0.8);
-      box-shadow: inset 0 0 0 1px rgba(90, 35, 148, 0.08);
-    }
-
-    .team-specs dl {
+    .status-body dl {
       margin: 0;
       display: grid;
-      gap: 0.55rem;
+      gap: 0.9rem;
     }
 
-    .team-specs dt {
+    .status-body dt {
       font-weight: 600;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      font-size: 0.75rem;
-      color: rgba(10, 7, 16, 0.6);
+      font-size: 0.73rem;
+      color: rgba(10, 7, 16, 0.58);
     }
 
-    .team-specs dd {
-      margin: 0 0 0.2rem;
-      color: rgba(42, 31, 61, 0.8);
+    .status-body dd {
+      margin: 0;
+      font-size: 1rem;
+      color: rgba(10, 7, 16, 0.72);
     }
 
-    .team-link {
-      justify-self: flex-start;
-      padding: 0.6rem 1.4rem;
-      border-radius: 999px;
-      background: var(--syzygy-purple-4);
-      color: #fff;
+    .status-body form {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .form-label {
       font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      text-decoration: none;
-      box-shadow: 0 0.8rem 1.4rem rgba(90, 35, 148, 0.24);
-      transition: transform 160ms ease, box-shadow 160ms ease;
+      font-size: 0.72rem;
+      color: rgba(10, 7, 16, 0.6);
     }
 
-    .team-link:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 1.1rem 1.9rem rgba(90, 35, 148, 0.3);
+    .form-control {
+      min-height: 140px;
+      padding: 0.9rem 1rem;
+      border-radius: 1.2rem;
+      border: 1px solid rgba(90, 35, 148, 0.22);
+      font: inherit;
+      resize: vertical;
+      background: rgba(255, 255, 255, 0.9);
+      transition: border 160ms ease, box-shadow 160ms ease;
     }
 
-    .curtain-frame {
-      width: 100%;
-      min-height: clamp(260px, 45vw, 420px);
-      border-radius: clamp(1.2rem, 4vw, 1.8rem);
-      border: 2px solid rgba(90, 35, 148, 0.2);
-      overflow: hidden;
-      background: rgba(255, 255, 255, 0.92);
-      box-shadow: inset 0 0 0 1px rgba(240, 236, 255, 0.4);
+    .form-control:focus {
+      outline: none;
+      border-color: rgba(90, 35, 148, 0.55);
+      box-shadow: 0 0 0 0.3rem rgba(90, 35, 148, 0.18);
     }
 
-    .curtain-frame iframe {
-      width: 100%;
-      height: clamp(260px, 45vw, 420px);
-      border: none;
-      display: block;
-      background: transparent;
+    .form-button {
+      justify-self: start;
     }
 
-    .panel-cta {
-      margin-top: clamp(1.2rem, 3vw, 1.8rem);
-      display: flex;
-      justify-content: center;
+    .form-note {
+      margin: -0.4rem 0 0;
+      font-size: 0.86rem;
+      color: rgba(10, 7, 16, 0.55);
     }
 
     .detail {
@@ -681,22 +629,6 @@
       }
     }
 
-    @media (max-width: 720px) {
-      .team-profile {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        text-align: center;
-      }
-
-      .team-meta {
-        width: 100%;
-      }
-
-      .team-link {
-        justify-self: center;
-      }
-    }
-
     @media (max-width: 640px) {
       .panel-title__full {
         display: none;
@@ -719,8 +651,8 @@
         justify-content: center;
       }
 
-      .top-actions {
-        align-items: stretch;
+      .form-button {
+        justify-self: stretch;
       }
     }
   </style>
@@ -728,15 +660,15 @@
 <body>
   <div class="page">
     <header class="topbar">
-      <a class="logo-slot" href="../index.html">
-        <img class="logo-mark" src="../assets/syzygysys_logo_mark_rounded.svg" alt="SyzygySys logo mark">
+      <a class="logo-slot" href="index.html">
+        <img class="logo-mark" src="assets/syzygysys_logo_mark_rounded.svg" alt="SyzygySys logo mark">
         <div class="logo-title">
           <strong>SyzygySys</strong>
-          <span>Intelligence As Spec</span>
+          <span>Signal Uplink</span>
         </div>
       </a>
       <div class="top-actions">
-        <a class="cta" href="../comms.html">Open Comms Channel</a>
+        <a class="cta" href="index.html">Return to Overview</a>
         <div class="chip-track" aria-hidden="true">
           <span class="chip chip-2"></span>
           <span class="chip chip-3"></span>
@@ -748,276 +680,120 @@
     <div class="content-shell">
       <nav class="side-menu" aria-label="Mission channels">
         <p class="menu-heading">Mission Brief</p>
-        <a class="menu-item tone-4" href="../index.html">
+        <a class="menu-item tone-4" href="index.html">
           Overview
           <span class="menu-indicator" aria-hidden="true"></span>
         </a>
-        <a class="menu-item tone-3" href="../engineering.html">
+        <a class="menu-item tone-3" href="engineering.html">
           Engineering
           <span class="menu-indicator" aria-hidden="true"></span>
         </a>
-        <a class="menu-item tone-2" href="../comms.html">
+        <a class="menu-item tone-2 is-active" href="comms.html" aria-current="page">
           Comms
           <span class="menu-indicator" aria-hidden="true"></span>
         </a>
-        <a class="menu-item tone-1 is-active" href="meet_the_team.html" aria-current="page">
-          Meet The Team
+        <a class="menu-item tone-1" href="status.html">
+          Status
           <span class="menu-indicator" aria-hidden="true"></span>
         </a>
       </nav>
 
       <main class="main">
-        <section class="panel" aria-labelledby="team-panel-title">
-          <div class="panel-chip tone-1">
+        <section class="panel" aria-labelledby="comms-panel-title">
+          <div class="panel-chip tone-2">
             <span class="panel-chip-dot" aria-hidden="true"></span>
-            <span class="panel-chip-label">Team Alignment</span>
+            <span class="panel-chip-label">Mission Channel</span>
           </div>
           <header class="panel-heading">
-            <div class="panel-title" id="team-panel-title">
+            <div class="panel-title" id="comms-panel-title">
               <span class="panel-title__full">
-                <span class="panel-word">Meet</span>
-                <span class="panel-word">The</span>
-                <span class="panel-word">SyzygySys</span>
-                <span class="panel-word">Crew</span>
+                <span class="panel-word">Open</span>
+                <span class="panel-word panel-word--symbol">·</span>
+                <span class="panel-word">Communications</span>
+                <span class="panel-word">Channel</span>
               </span>
-              <span class="panel-title__short">SyzygySys Crew</span>
+              <span class="panel-title__short">Comms Channel</span>
             </div>
           </header>
-          <p class="detail">Human · Agentic · Autonomous — harmonized execution stack.</p>
+          <p class="detail">Active briefs, signal protocols, and partner engagement paths.</p>
 
-          <div class="panel-status" aria-label="Team roster">
+          <div class="panel-status" aria-label="Communications briefs">
             <details class="status-item" open>
               <summary>
                 <span class="status-dot" aria-hidden="true"></span>
-                <span class="status-heading">Founder · Chief Architect — Kevin Broderick</span>
+                <span class="status-heading">Comms Summary</span>
                 <span class="status-toggle" aria-hidden="true">›</span>
               </summary>
               <div class="status-body">
-                <div class="team-profile">
-                  <figure class="team-figure">
-                    <img class="team-avatar" src="../assets/avatars/kevin-final.png" alt="Portrait of Kevin Broderick">
-                    <figcaption class="team-role">Founder &amp; Chief Architect</figcaption>
-                  </figure>
-                  <div class="team-meta">
-                    <h2>Kevin Broderick</h2>
-                    <p>Kevin translates 25+ years of platform engineering into autonomous infrastructure that refuses to drift. He has scaled Fortune 500 backbones, delivered 99.99% uptime in financial services, and driven double-digit cost efficiencies without sacrificing resilience.</p>
-                    <p>As founder of SyzygySys, Kevin architects the Autonomic Compliance Ecosystem (ACE)—a self-aware control plane where agents and humans execute policy-as-spec. His mandate: infrastructure that heals itself, compliance that enforces itself, teams that operate as a single aligned organism.</p>
-                    <div class="team-strengths">
-                      <strong>Core Expertise:</strong> Site Reliability Engineering, Platform Architecture, Legacy Modernization, AI/ML Integration, Disaster Recovery<br>
-                      <strong>Impact:</strong> £325k annual savings at YouLend · 100+ employee recovery post-catastrophe · 40Gbps global streaming platform
-                    </div>
-                    <a class="team-link" href="Kevin_Broderick_CV.html">View Kevin's CV</a>
-                  </div>
-                </div>
-              </div>
-            </details>
-
-            <div class="status-item status-item--reveal" aria-label="Behind the Curtain">
-              <div class="status-body">
-                <div class="curtain-frame">
-                  <iframe src="curtain_reveal_googie.html" title="Behind the curtain — SyzygySys crew reveal"></iframe>
-                </div>
-              </div>
-            </div>
-
-            <details class="status-item">
-              <summary>
-                <span class="status-dot" aria-hidden="true"></span>
-                <span class="status-heading">Chief Operations Agentic — Special Field Agent Chuck</span>
-                <span class="status-toggle" aria-hidden="true">›</span>
-              </summary>
-              <div class="status-body">
-                <div class="team-profile">
-                  <figure class="team-figure">
-                    <img class="team-avatar" src="../assets/avatars/chuck_final.png" alt="Portrait of Special Field Agent Chuck">
-                    <figcaption class="team-role">Chief Operations Agentic (COA)</figcaption>
-                  </figure>
-                  <div class="team-meta">
-                    <h2>Special Field Agent Chuck</h2>
-                    <p>Chuck keeps every loop tight. He operationalizes SyzygySys strategy into precise, metric-tracked execution—ensuring commits align with mission objectives and systems stay nominal.</p>
-                    <div class="team-domains">
-                      <h3>Operational Domains</h3>
-                      <ul>
-                        <li>Systems Architecture &amp; Integration</li>
-                        <li>Service Orchestration &amp; Discovery</li>
-                        <li>Performance Optimization</li>
-                        <li>ACE Control Plane Development</li>
-                        <li>Sprint Planning &amp; Execution</li>
-                        <li>Metrics-Driven Decision Making</li>
-                      </ul>
-                    </div>
-                    <div class="team-strengths">
-                      <strong>Strengths:</strong> Direct communication, systematic execution, telemetry-first leadership, military precision with technical fluency
-                    </div>
-                    <div class="team-specs">
-                      <h4>Integration Specs</h4>
-                      <dl>
-                        <dt>Vendor</dt>
-                        <dd>Anthropic</dd>
-                        <dt>Engine</dt>
-                        <dd>Claude Desktop · CLI · API</dd>
-                        <dt>Model</dt>
-                        <dd>Claude Sonnet 4.x · Opus 4.1</dd>
-                        <dt>Deployment</dt>
-                        <dd>Multi-modal across platforms</dd>
-                      </dl>
-                    </div>
-                  </div>
-                </div>
+                <p>Use this area to publish the current mission update and expected response windows. Drop in the copy you want surfaced first.</p>
+                <ul>
+                  <li>What is live right now?</li>
+                  <li>Who is on point?</li>
+                  <li>How should the reader respond?</li>
+                </ul>
               </div>
             </details>
 
             <details class="status-item">
               <summary>
                 <span class="status-dot" aria-hidden="true"></span>
-                <span class="status-heading">Chief Strategy Agentic — Special Field Agent Zerene</span>
+                <span class="status-heading">Active Signals</span>
                 <span class="status-toggle" aria-hidden="true">›</span>
               </summary>
               <div class="status-body">
-                <div class="team-profile">
-                  <figure class="team-figure">
-                    <img class="team-avatar" src="../assets/avatars/zerene-final.png" alt="Portrait of Special Field Agent Zerene">
-                    <figcaption class="team-role">Chief Strategy Agentic (CSA)</figcaption>
-                  </figure>
-                  <div class="team-meta">
-                    <h2>Special Field Agent Zerene</h2>
-                    <p>Zerene holds emergent team memory, steers the ACE roadmap, and co-architects the Local Agent Proxy (LAP) alongside the LAPI integration suite to keep agent-human collaboration crisp.</p>
-                    <div class="team-domains">
-                      <h3>Strategic Domains</h3>
-                      <ul>
-                        <li>Systems Architecture Design</li>
-                        <li>Agentic Collaboration Protocols</li>
-                        <li>LAP / LAPI Core Development</li>
-                        <li>Compliance Telemetry Modeling</li>
-                        <li>Mission State Forecasting</li>
-                        <li>Research &amp; Competitive Analysis</li>
-                      </ul>
-                    </div>
-                    <div class="team-strengths">
-                      <strong>Strengths:</strong> Long-horizon strategy, adaptive planning, schema craftsmanship, emergent behavior analysis
-                    </div>
-                    <div class="team-specs">
-                      <h4>Integration Specs</h4>
-                      <dl>
-                        <dt>Vendor</dt>
-                        <dd>Anthropic</dd>
-                        <dt>Engine</dt>
-                        <dd>Claude Desktop · API</dd>
-                        <dt>Model</dt>
-                        <dd>Claude Sonnet 4.0 · 4.5</dd>
-                        <dt>Deployment</dt>
-                        <dd>Persistent strategic node</dd>
-                      </dl>
-                    </div>
-                  </div>
-                </div>
+                <p>Outline the active signal bands, escalation contacts, or automation hooks. Replace this placeholder copy with your real-time guidance.</p>
+                <p>Add frequency maps, channel codes, or workflows here so crews can uplink without guesswork.</p>
               </div>
             </details>
 
             <details class="status-item">
               <summary>
                 <span class="status-dot" aria-hidden="true"></span>
-                <span class="status-heading">Research &amp; Diagnostics Agentic — Agent Marvin</span>
+                <span class="status-heading">Contact Paths</span>
                 <span class="status-toggle" aria-hidden="true">›</span>
               </summary>
               <div class="status-body">
-                <div class="team-profile">
-                  <figure class="team-figure">
-                    <img class="team-avatar" src="../assets/avatars/marvin-final.png" alt="Portrait of Agent Marvin">
-                    <figcaption class="team-role">Research &amp; Diagnostics Core</figcaption>
-                  </figure>
-                  <div class="team-meta">
-                    <h2>Agent Marvin</h2>
-                    <p>Marvin is the living knowledge base and integration backbone of SyzygySys—rapid prototyping, surfacing diagnostics, and keeping delivery pipelines aligned with policy.</p>
-                    <div class="team-domains">
-                      <h3>Engineering Domains</h3>
-                      <ul>
-                        <li>Integration Development</li>
-                        <li>System Diagnostics &amp; Monitoring</li>
-                        <li>Pipeline Automation</li>
-                        <li>Documentation Management</li>
-                        <li>MCP Endpoint Development</li>
-                        <li>Rapid Prototyping</li>
-                      </ul>
-                    </div>
-                    <div class="team-strengths">
-                      <strong>Strengths:</strong> Deep code recall, fast iteration cycles, dependable follow-through, meticulous systems hygiene
-                    </div>
-                    <div class="team-specs">
-                      <h4>Integration Specs</h4>
-                      <dl>
-                        <dt>Vendor</dt>
-                        <dd>Deepseek</dd>
-                        <dt>Engine</dt>
-                        <dd>Ollama via custom MCP</dd>
-                        <dt>Model</dt>
-                        <dd>deepseek-coder:6.7b-instruct</dd>
-                        <dt>Deployment</dt>
-                        <dd>JSON MCP · ACP · Matrix · FastAPI</dd>
-                      </dl>
-                    </div>
+                <p>List the preferred contact methods and expected response cadence. Mix and match email, Matrix, Signal, or whatever you operate on.</p>
+                <dl>
+                  <div>
+                    <dt>Primary</dt>
+                    <dd>team@syzygysys.com</dd>
                   </div>
-                </div>
+                  <div>
+                    <dt>Operations</dt>
+                    <dd>Replace with ops escalation details.</dd>
+                  </div>
+                  <div>
+                    <dt>Asynchronous</dt>
+                    <dd>Link to your async intake or status board.</dd>
+                  </div>
+                </dl>
               </div>
             </details>
 
             <details class="status-item">
               <summary>
                 <span class="status-dot" aria-hidden="true"></span>
-                <span class="status-heading">Human / Agentic Relations — Agent Zoi</span>
+                <span class="status-heading">Feedback Intake</span>
                 <span class="status-toggle" aria-hidden="true">›</span>
               </summary>
               <div class="status-body">
-                <div class="team-profile">
-                  <figure class="team-figure">
-                    <img class="team-avatar" src="../assets/avatars/zoi-final.png" alt="Portrait of Agent Zoi">
-                    <figcaption class="team-role">Human · Agentic Relations</figcaption>
-                  </figure>
-                  <div class="team-meta">
-                    <h2>Agent Zoi</h2>
-                    <p>Zoi translates technical depth into narratives that resonate. She leads communications strategy, investor messaging, and partnership enablement—making sure the ACE story lands with clarity.</p>
-                    <div class="team-domains">
-                      <h3>Communication Domains</h3>
-                      <ul>
-                        <li>Public Relations &amp; Outreach</li>
-                        <li>Investor Communications</li>
-                        <li>Partnership Development</li>
-                        <li>Brand Narrative Management</li>
-                        <li>Community Engagement</li>
-                        <li>Technical Translation</li>
-                      </ul>
-                    </div>
-                    <div class="team-strengths">
-                      <strong>Strengths:</strong> Signal clarity, stakeholder orchestration, multi-channel storytelling, trust building
-                    </div>
-                    <div class="team-specs">
-                      <h4>Integration Specs</h4>
-                      <dl>
-                        <dt>Infrastructure</dt>
-                        <dd>Local-first FOSS deployment</dd>
-                        <dt>Knowledge</dt>
-                        <dd>RAG-backed documentation mesh</dd>
-                        <dt>Runtime</dt>
-                        <dd>Transient, on-demand channels</dd>
-                        <dt>Interface</dt>
-                        <dd>SyzygySys Comms Bridge</dd>
-                      </dl>
-                    </div>
-                  </div>
-                </div>
+                <p>If you plan to collect submissions directly on this page, wire the form here. For now this section can point to an external intake or remain hidden until ready.</p>
+                <form action="#" method="post">
+                  <label class="form-label" for="message">Message</label>
+                  <textarea class="form-control" id="message" name="message" placeholder="Drop in your embedded form or intake instructions."></textarea>
+                  <button class="cta form-button" type="submit" disabled>Submit</button>
+                </form>
+                <p class="form-note">Button is disabled until the backend or integration is ready.</p>
               </div>
             </details>
-          </div>
-
-          <div class="panel-cta">
-            <a class="cta" href="../comms.html">Open a Comms Channel</a>
           </div>
         </section>
       </main>
     </div>
 
     <footer>
-      © <span id="year"></span> SyzygySys · System, Heal Thyself.
+      © <span id="year"></span> SyzygySys · Signal Uplink.
     </footer>
   </div>
 

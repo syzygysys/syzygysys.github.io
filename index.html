@@ -29,6 +29,14 @@
       line-height: 1.55;
     }
 
+    a {
+      color: #ad5f00;
+    }
+
+    a:hover {
+      color: #7f4400;
+    }
+
     .page {
       min-height: 100vh;
       display: flex;
@@ -615,7 +623,7 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background: rgba(160, 7, 16, 0.94);
+      background: rgba(234, 223, 255, 0.94);
       backdrop-filter: blur(8px);
       align-items: center;
       justify-content: center;
@@ -802,29 +810,29 @@
             <details class="status-item" open>
               <summary>
                 <span class="status-dot" aria-hidden="true"></span>
-                <span class="status-heading">Engineering Sovereign Autonomic Systems</span>
+                <span class="status-heading">Autonomic Compliance Ecosystem (ACE)</span>
                 <span class="status-toggle" aria-hidden="true">›</span>
               </summary>
               <p class="status-body">
-                The ACE Autonomic Compliance Ecosystem gives multiplayer engineering teams a structured environment to design, ship, and iterate safely. Policy and infrastructure stay locked to spec, with deterministic change windows and continual conformance against the standards you define up front.
+                The <a href="terminology.html">Autonomic Compliance Ecosystem (ACE)</a> empowers engineering teams to safely design, develop, and deploy in a unique self-aware, self-managing, self-extending IDP greenfield — a collaborative human/agentic multiplayer ecosystem where policy and infrastructure stay locked to spec at every turn.
                 <a class="status-link" href="#" data-image="assets/images/syzygysys.png">The Plan</a>
               </p>
             </details>
             <details class="status-item">
               <summary>
                 <span class="status-dot" aria-hidden="true"></span>
-                <span class="status-heading">Seamless Human + Agent Collaboration</span>
+                <span class="status-heading">Codified Intelligence As Specification</span>
                 <span class="status-toggle" aria-hidden="true">›</span>
               </summary>
-              <p class="status-body">Every initiative starts with Intelligence As Spec—formal declarations that capture the desired end-state before code is written. Those specs anchor design, test, and deployment plans, giving both humans and agents an unambiguous definition of done.</p>
+              <p class="status-body">Every initiative starts with Intelligence As Spec—formal declarations that capture the designed healthy state before code is written. These specs anchor iterative design, develop, deploy cycles, empowering human+agentic multiplayer teams to engage at a deterministic cadence, controlled cost, and warp speed velocity.</p>
             </details>
             <details class="status-item">
               <summary>
                 <span class="status-dot" aria-hidden="true"></span>
-                <span class="status-heading">Operational Guardrails, Built-In</span>
+                <span class="status-heading">Operational Guardrails, Fully Entangled</span>
                 <span class="status-toggle" aria-hidden="true">›</span>
               </summary>
-              <p class="status-body">ACE ships with HITL-gated autonomics. When risk climbs or epistemic confidence drops, the system pauses, routes context to the right owner, and waits for explicit human approval before execution resumes.</p>
+              <p class="status-body">ACE ships with HITL-gated autonomics. When risk climbs or epistemic confidence is below tolerance, the system pauses, routes context to the right owner, and waits for explicit approval before execution resumes. Each proposed action and reasoning-based decision is co-signed by ACE::LEDGER and stored as immutable, idempotent artifacts on your retention schedule.</p>
             </details>
             <details class="status-item">
               <summary>
@@ -835,7 +843,7 @@
               <p class="status-body">Initiating live telemetry handshakes, promoting trusted pipelines, and unlocking comms for the compliance and research swarms.</p>
             </details>
           </div>
-          <p class="detail" id="panel-detail">Ecosystem Energizing...  keep this channel open for updates</p>
+          <p class="detail" id="panel-detail">Update orders streaming in realtime from the core of the control plane.</p>
         </section>
 <a href="reports/state_guard_report_20251001_152041_summary.html" class="panel-action-btn" id="statusReportBtn">
             State Report
@@ -872,16 +880,16 @@
           detail: 'Autonomic systems online… updates stream from the control plane.',
           status: [
             {
-              heading: 'Engineering Sovereign Autonomic Systems',
-              body: 'The ACE Autonomic Compliance Ecosystem gives multiplayer engineering teams a structured environment to design, ship, and iterate safely. Policy and infrastructure stay locked to spec, with deterministic change windows and continual conformance against the standards you define up front.'
+              heading: 'Autonomic Compliance Ecosystem (ACE)',
+              body: 'The Autonomic Compliance Ecosystem (ACE) empowers engineering teams to safely design, develop, and deploy in a unique self-aware, self-managing, self-extending IDP greenfield — a collaborative human/agentic multiplayer ecosystem where policy and infrastructure stay locked to spec at every turn.'
             },
             {
-              heading: 'Seamless Human + Agent Collaboration',
-              body: 'Every initiative starts with Intelligence As Spec—formal declarations that capture the desired end-state before code is written. Those specs anchor design, test, and deployment plans, giving both humans and agents an unambiguous definition of done.'
+              heading: 'Codified Intelligence As Specification',
+              body: 'Every initiative starts with Intelligence As Spec—formal declarations that capture the designed healthy state before code is written. These specs anchor iterative design, test, deployment, and extension cycles, giving human + agentic teams an unambiguous definition of done and compliance, all at a warp-speed cadence.'
             },
             {
-              heading: 'Operational Guardrails, Built-In',
-              body: 'ACE ships with HITL-gated autonomics. When risk climbs or epistemic confidence drops, the system pauses, routes context to the right owner, and waits for explicit human approval before execution resumes.'
+              heading: 'Operational Guardrails, Fully Entangled',
+              body: 'ACE ships with HITL-gated autonomics. When risk climbs or epistemic confidence is below tolerance, the system pauses, routes context to the right owner, and waits for explicit approval before execution resumes. Each proposed action and reasoning-based decision is co-signed by ACE::LEDGER and stored as immutable, idempotent artifacts on your retention schedule.'
             }
           ]
         },
@@ -1046,7 +1054,7 @@
             
             body.innerHTML = bodyHTML;
 
-            if (data.heading === 'Engineering Sovereign Autonomic Systems') {
+            if (data.heading === 'Autonomic Compliance Ecosystem (ACE)') {
               const planLink = document.createElement('a');
               planLink.className = 'status-link';
               planLink.href = '#';

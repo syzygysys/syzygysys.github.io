@@ -29,6 +29,14 @@
       line-height: 1.55;
     }
 
+    a {
+      color: #ad5f00;
+    }
+
+    a:hover {
+      color: #7f4400;
+    }
+
     .page {
       min-height: 100vh;
       display: flex;
@@ -480,6 +488,20 @@
       gap: clamp(0.6rem, 2vw, 0.9rem);
     }
 
+    .status-body a {
+      color: #ad5f00;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(173, 95, 0, 0.35);
+      transition: border-color 160ms ease, opacity 160ms ease;
+      cursor: pointer;
+    }
+
+    .status-body a:hover {
+      opacity: 0.75;
+      border-bottom-color: #ad5f00;
+    }
+
     .status-body ul {
       margin: 0;
       padding-left: 1.2rem;
@@ -664,7 +686,7 @@
         <img class="logo-mark" src="assets/syzygysys_logo_mark_rounded.svg" alt="SyzygySys logo mark">
         <div class="logo-title">
           <strong>SyzygySys</strong>
-          <span>Signal Uplink</span>
+          <span>Intelligence As Spec</span>
         </div>
       </a>
       <div class="top-actions">
@@ -688,12 +710,12 @@
           Engineering
           <span class="menu-indicator" aria-hidden="true"></span>
         </a>
-        <a class="menu-item tone-2 is-active" href="comms.html" aria-current="page">
-          Comms
+        <a class="menu-item tone-2" href="status.html">
+          Status
           <span class="menu-indicator" aria-hidden="true"></span>
         </a>
-        <a class="menu-item tone-1" href="status.html">
-          Status
+        <a class="menu-item tone-1" href="syzygysys_team/meet_the_team.html">
+          Meet The Team
           <span class="menu-indicator" aria-hidden="true"></span>
         </a>
       </nav>
@@ -707,84 +729,44 @@
           <header class="panel-heading">
             <div class="panel-title" id="comms-panel-title">
               <span class="panel-title__full">
-                <span class="panel-word">Open</span>
-                <span class="panel-word panel-word--symbol">·</span>
-                <span class="panel-word">Communications</span>
-                <span class="panel-word">Channel</span>
+                <span class="panel-word">Communication</span>
+                <span class="panel-word">Channels</span>
               </span>
-              <span class="panel-title__short">Comms Channel</span>
+              <span class="panel-title__short">Comms Channels</span>
             </div>
           </header>
-          <p class="detail">Active briefs, signal protocols, and partner engagement paths.</p>
+          <p class="detail">SyzygySys Engagement Paths, Active Updates, and Queries</p>
 
           <div class="panel-status" aria-label="Communications briefs">
             <details class="status-item" open>
               <summary>
                 <span class="status-dot" aria-hidden="true"></span>
-                <span class="status-heading">Comms Summary</span>
+                <span class="status-heading">Engagement Paths</span>
                 <span class="status-toggle" aria-hidden="true">›</span>
               </summary>
               <div class="status-body">
-                <p>Use this area to publish the current mission update and expected response windows. Drop in the copy you want surfaced first.</p>
+                <p>While we are hard at work building the SyzygySys Autonomic Compliance Ecosystem (ACE), you are welcome to reach out to our lead Public Liaison Agent Zoi (<a href="mailto:zoi@syzygysys.io">zoi@syzygysys.io</a>) with questions about our soon-to-be-released flagship product.</p>
+              </div>
+            </details>
+
+            <details class="status-item">
+              <summary>
+                <span class="status-dot" aria-hidden="true"></span>
+                <span class="status-heading">Active Channels</span>
+                <span class="status-toggle" aria-hidden="true">›</span>
+              </summary>
+              <div class="status-body">
                 <ul>
-                  <li>What is live right now?</li>
-                  <li>Who is on point?</li>
-                  <li>How should the reader respond?</li>
+                  <li>✅ Email: <a href="mailto:zoi@syzygysys.io">zoi@syzygysys.io</a></li>
+                  <li>💬 Direct Chat:</li>
+                  <li>⚠️ Synapse (in progress)</li>
+                  <li>⚠️ Mattermost (in progress)</li>
+                  <li>⚠️ Rocket (in progress)</li>
+                  <li>⚠️ Slack (in progress)</li>
+                  <li>⚠️ Discord (in progress)</li>
+                  <li>… Additional channels in progress</li>
+                  <li>📠 Fax: (lol no)</li>
                 </ul>
-              </div>
-            </details>
-
-            <details class="status-item">
-              <summary>
-                <span class="status-dot" aria-hidden="true"></span>
-                <span class="status-heading">Active Signals</span>
-                <span class="status-toggle" aria-hidden="true">›</span>
-              </summary>
-              <div class="status-body">
-                <p>Outline the active signal bands, escalation contacts, or automation hooks. Replace this placeholder copy with your real-time guidance.</p>
-                <p>Add frequency maps, channel codes, or workflows here so crews can uplink without guesswork.</p>
-              </div>
-            </details>
-
-            <details class="status-item">
-              <summary>
-                <span class="status-dot" aria-hidden="true"></span>
-                <span class="status-heading">Contact Paths</span>
-                <span class="status-toggle" aria-hidden="true">›</span>
-              </summary>
-              <div class="status-body">
-                <p>List the preferred contact methods and expected response cadence. Mix and match email, Matrix, Signal, or whatever you operate on.</p>
-                <dl>
-                  <div>
-                    <dt>Primary</dt>
-                    <dd>team@syzygysys.com</dd>
-                  </div>
-                  <div>
-                    <dt>Operations</dt>
-                    <dd>Replace with ops escalation details.</dd>
-                  </div>
-                  <div>
-                    <dt>Asynchronous</dt>
-                    <dd>Link to your async intake or status board.</dd>
-                  </div>
-                </dl>
-              </div>
-            </details>
-
-            <details class="status-item">
-              <summary>
-                <span class="status-dot" aria-hidden="true"></span>
-                <span class="status-heading">Feedback Intake</span>
-                <span class="status-toggle" aria-hidden="true">›</span>
-              </summary>
-              <div class="status-body">
-                <p>If you plan to collect submissions directly on this page, wire the form here. For now this section can point to an external intake or remain hidden until ready.</p>
-                <form action="#" method="post">
-                  <label class="form-label" for="message">Message</label>
-                  <textarea class="form-control" id="message" name="message" placeholder="Drop in your embedded form or intake instructions."></textarea>
-                  <button class="cta form-button" type="submit" disabled>Submit</button>
-                </form>
-                <p class="form-note">Button is disabled until the backend or integration is ready.</p>
               </div>
             </details>
           </div>

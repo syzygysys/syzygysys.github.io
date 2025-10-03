@@ -486,6 +486,15 @@
       box-shadow: inset 0 0 0 1px rgba(240, 236, 255, 0.3);
       display: grid;
       gap: clamp(0.55rem, 2vw, 0.9rem);
+      position: relative;
+    }
+
+    .panel-status .panel-action-btn {
+      position: absolute;
+      right: clamp(0.8rem, 2vw, 1.5rem);
+      bottom: clamp(0.8rem, 2.4vw, 1.4rem);
+      top: auto;
+      transform: none;
     }
 
     .status-item {
@@ -711,13 +720,13 @@
         text-align: left;
       }
 
-      .panel-heading {
-        align-self: stretch;
-        width: 100%;
-        padding: clamp(0.5rem, 4vw, 0.9rem) clamp(0.9rem, 6vw, 2rem);
-        justify-content: center;
-        flex-direction: column;
-      }
+    .panel-heading {
+      align-self: stretch;
+      width: 100%;
+      padding: clamp(0.5rem, 4vw, 0.9rem) clamp(0.9rem, 6vw, 2rem);
+      justify-content: center;
+      flex-direction: column;
+    }
 
       .panel-title {
         flex-wrap: wrap;
@@ -779,12 +788,12 @@
               <span class="panel-word">Ecosystem</span>
             </span>
           </div>
-          <a href="reports/state_guard_report_20251001_152041_summary.html" class="panel-action-btn" id="statusReportBtn">
-            State Report
-          </a>
         </div>
         <section class="panel" aria-live="polite"><div class="panel-chip tone-2" id="panel-chip"><span class="panel-chip-dot" aria-hidden="true"></span><span class="panel-chip-label" id="panel-chip-label">Status</span></div>
 <div class="panel-status" id="panel-status" aria-label="Session progress">
+<a href="reports/state_guard_report_20251001_152041_summary.html" class="panel-action-btn" id="statusReportBtn">
+            State Report
+          </a>
 <details class="status-item" open>
   <summary>
     <span class="status-dot" aria-hidden="true"></span>

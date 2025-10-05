@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SyzygySys · Marvin Schema Example</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="assets/css/lcars.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <style>
+    .schema-wrapper {
+      margin: clamp(1rem, 3vw, 1.6rem) auto 0;
+      max-width: 880px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(90, 35, 148, 0.18);
+      border-radius: clamp(1.6rem, 4vw, 2.4rem);
+      box-shadow: 0 1.1rem 2.2rem rgba(34, 13, 66, 0.1);
+      overflow: hidden;
+    }
+
+    .schema-header {
+      padding: clamp(1rem, 3vw, 1.4rem) clamp(1.2rem, 4vw, 2rem);
+      background: linear-gradient(135deg, rgba(90, 35, 148, 0.12), rgba(90, 35, 148, 0.03));
+      border-bottom: 1px solid rgba(90, 35, 148, 0.18);
+    }
+
+    .schema-header p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: rgba(42, 31, 61, 0.7);
+    }
+
+    pre {
+      margin: 0;
+      padding: clamp(1.2rem, 4vw, 2rem);
+      font-size: 0.88rem;
+      line-height: 1.65;
+      background: #1e1e1e;
+      color: #d4d4d4;
+      overflow-x: auto;
+    }
+
+    code {
+      font-family: "Fira Code", "Source Code Pro", monospace;
+    }
+
+    .json-tree {
+      display: grid;
+      gap: 0.4rem;
+      padding: clamp(1.2rem, 4vw, 2rem);
+      background: #1e1e1e;
+      color: #d4d4d4;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      border-top: 1px solid rgba(90, 35, 148, 0.25);
+    }
+
+    .json-node {
+      list-style: none;
+    }
+
+    .json-node > summary {
+      cursor: pointer;
+      outline: none;
+      padding: 0.2rem 0.6rem 0.2rem 1.2rem;
+      border-radius: 0.4rem;
+      transition: background 120ms ease;
+      position: relative;
+    }
+
+    .json-node > summary::-webkit-details-marker {
+      margin-left: -0.6rem;
+    }
+
+    .json-node > summary::marker {
+      margin-left: -0.6rem;
+    }
+
+    .json-node > summary:hover,
+    .json-node > summary:focus-visible {
+      background: rgba(168, 128, 243, 0.18);
+    }
+
+    .json-children {
+      display: grid;
+      gap: 0.35rem;
+      margin-left: 1.2rem;
+      padding-left: 0.4rem;
+      border-left: 1px dotted rgba(168, 128, 243, 0.35);
+    }
+
+    .json-leaf {
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.4rem;
+    }
+
+    .json-leaf:hover,
+    .json-leaf:focus-visible {
+      background: rgba(168, 128, 243, 0.18);
+      outline: none;
+    }
+
+    .json-key {
+      color: var(--syzygy-purple-4);
+    }
+
+    .json-meta {
+      color: rgba(168, 128, 243, 0.85);
+      font-size: 0.8rem;
+      margin-left: 0.3rem;
+    }
+
+    .json-value-string { color: #ce9178; }
+    .json-value-number { color: #b5cea8; }
+    .json-value-boolean { color: #569cd6; }
+    .json-value-null { color: #569cd6; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="logo-slot" href="index.html">
+        <img class="logo-mark" src="assets/syzygysys_logo_mark_rounded.svg" alt="SyzygySys logo mark">
+        <div class="logo-title">
+          <strong>SyzygySys</strong>
+          <span>Intelligence As Spec</span>
+        </div>
+      </a>
+      <div class="top-actions">
+        <a class="cta" href="comms.html">Open Comms Channel</a>
+        <div class="chip-track" aria-hidden="true">
+          <span class="chip chip-2"></span>
+          <span class="chip chip-3"></span>
+          <span class="chip chip-4"></span>
+        </div>
+      </div>
+    </header>
+
+    <div class="content-shell">
+      <nav class="side-menu" aria-label="Mission channels">
+        <p class="menu-heading">Mission Brief</p>
+        <a class="menu-item tone-4" href="index.html">
+          Overview
+          <span class="menu-indicator" aria-hidden="true"></span>
+        </a>
+        <a class="menu-item tone-3" href="engineering.html">
+          Engineering
+          <span class="menu-indicator" aria-hidden="true"></span>
+        </a>
+        <a class="menu-item tone-2" href="status.html">
+          Status
+          <span class="menu-indicator" aria-hidden="true"></span>
+        </a>
+        <a class="menu-item tone-1" href="syzygysys_team/meet_the_team.html">
+          Meet The Team
+          <span class="menu-indicator" aria-hidden="true"></span>
+        </a>
+        <a class="menu-item tone-4 is-active" href="terminology.html">
+          Terminology
+          <span class="menu-indicator" aria-hidden="true"></span>
+        </a>
+      </nav>
+
+      <main class="main">
+        <section class="panel" aria-labelledby="schema-title">
+          <div class="panel-chip tone-4">
+            <span class="panel-chip-dot" aria-hidden="true"></span>
+            <span class="panel-chip-label">Example Reference</span>
+          </div>
+          <header class="panel-heading">
+            <div class="panel-title" id="schema-title">
+              <span class="panel-title__full">
+                <span class="panel-word">Marvin</span>
+                <span class="panel-word">Schema</span>
+                <span class="panel-word">Sample</span>
+              </span>
+              <span class="panel-title__short">Marvin Schema</span>
+            </div>
+          </header>
+          <p class="detail">Illustrative configuration for the research & diagnostics agent.</p>
+
+          <div class="schema-wrapper">
+            <div class="schema-header">
+              <p>This JSON schema is provided as an example reference. Adapt as needed for your deployment.</p>
+            </div>
+            <div id="schemaContainer"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      © <span id="year"></span> SyzygySys · Intelligence As Spec.
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/json-formatter-js@2.3.4/dist/json-formatter.min.js" integrity="sha256-vjI4HgVq9Qq1cTHz2MBGAQB04dR/6Fmnlqx7WM24FFc=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/json-formatter-js@2.3.4/dist/json-formatter.min.css" integrity="sha256-oM0/2gQlL6n3IIVDRwvF2AXwaCI1PXGyl2Ulx21KF4c=" crossorigin="anonymous">
+  <script>
+    const MARVIN_SCHEMA = 
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://syzygysys.io/schemas/marvin_schema.json",
+  "title": "MarvinInternalLLM",
+  "description": "Schema describing configuration and capabilities for the SyzygySys research & diagnostics agent Marvin.",
+  "type": "object",
+  "required": [
+    "id",
+    "version",
+    "interfaces",
+    "capabilities",
+    "safety",
+    "telemetry"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Canonical identifier for this Marvin deployment (e.g., marvin-core, marvin-labs)."
+    },
+    "version": {
+      "type": "string",
+      "description": "Semantic version of the Marvin build being deployed."
+    },
+    "model": {
+      "type": "object",
+      "required": [
+        "provider",
+        "name",
+        "parameters"
+      ],
+      "properties": {
+        "provider": {
+          "type": "string",
+          "description": "Model provider or runtime (Anthropic, OpenAI, Local/Ollama, etc.)."
+        },
+        "name": {
+          "type": "string",
+          "description": "Model name or family (e.g., claude-sonnet-4.1, syz-marvin-finetune)."
+        },
+        "parameters": {
+          "type": "object",
+          "description": "Model invocation parameters (temperature, max_tokens, top_p, etc.).",
+          "additionalProperties": {
+            "type": [
+              "number",
+              "string",
+              "boolean"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "interfaces": {
+      "type": "array",
+      "description": "List of transport interfaces Marvin exposes.",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "endpoint"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "http",
+              "graphql",
+              "mcp",
+              "matrix",
+              "cli",
+              "grpc"
+            ]
+          },
+          "endpoint": {
+            "type": "string",
+            "description": "Connection string or URI for the interface."
+          },
+          "authentication": {
+            "type": "string",
+            "description": "Reference to the auth mechanism (service account, API key secret, etc.)."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "description": "Declarative feature toggles for Marvin.",
+      "properties": {
+        "research": {
+          "type": "boolean",
+          "description": "Allow Marvin to perform open research and synthesis."
+        },
+        "code_generation": {
+          "type": "boolean",
+          "description": "Allow Marvin to generate or modify code artifacts."
+        },
+        "diagnostics": {
+          "type": "boolean",
+          "description": "Allow Marvin to run SDF/StateGuard diagnostics."
+        },
+        "deployment": {
+          "type": "boolean",
+          "description": "Allow Marvin to trigger deploy workflows when EHI and policy gates pass."
+        }
+      },
+      "additionalProperties": false
+    },
+    "safety": {
+      "type": "object",
+      "description": "Safety rails and governance settings for Marvin.",
+      "properties": {
+        "hilt": {
+          "type": "boolean",
+          "description": "Require explicit human-in-the-loop approvals for moderated actions."
+        },
+        "ehi_threshold": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Epistemic Humility Index threshold (0=fully certain, 1=uncertain)."
+        },
+        "allowed_domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Whitelist of knowledge or system domains Marvin can operate within."
+        }
+      },
+      "additionalProperties": false
+    },
+    "telemetry": {
+      "type": "object",
+      "description": "Telemetry streams and audit sinks.",
+      "required": [
+        "sdf",
+        "ledger"
+      ],
+      "properties": {
+        "sdf": {
+          "type": "string",
+          "description": "SDF pipeline identifier for diagnostics reporting."
+        },
+        "ledger": {
+          "type": "string",
+          "description": "ACE::LEDGER stream where actions and reasoning artifacts are recorded."
+        },
+        "observability_tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Labels applied to observability events for filtering/search."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+};
+
+    (() => {
+      const yearEl = document.getElementById('year');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      const container = document.getElementById('schemaContainer');
+      if (!container) {
+        return;
+      }
+
+      if (window.JSONFormatter) {
+        try {
+          const formatter = new JSONFormatter(MARVIN_SCHEMA, 2, { theme: 'dark' });
+          container.appendChild(formatter.render());
+          return;
+        } catch (err) {
+          // fall back to manual renderer
+        }
+      }
+
+      container.appendChild(renderTree('marvin_schema', MARVIN_SCHEMA));
+
+      function renderTree(key, value) {
+        if (value && typeof value === 'object') {
+          const details = document.createElement('details');
+          details.className = 'json-node';
+          details.open = true;
+
+          const summary = document.createElement('summary');
+          const typeLabel = Array.isArray(value) ? `[Array, ${value.length}]` : '{Object}';
+          summary.innerHTML = `<span class="json-key">${key}</span> <span class="json-meta">${typeLabel}</span>`;
+          details.appendChild(summary);
+
+          const slot = document.createElement('div');
+          slot.className = 'json-children';
+
+          if (Array.isArray(value)) {
+            value.forEach((item, index) => {
+              slot.appendChild(renderTree(`[${index}]`, item));
+            });
+          } else {
+            Object.entries(value).forEach(([childKey, childValue]) => {
+              slot.appendChild(renderTree(childKey, childValue));
+            });
+          }
+
+          details.appendChild(slot);
+          return details;
+        }
+
+        const leaf = document.createElement('div');
+        leaf.className = 'json-leaf';
+        const valueClass = value === null ? 'json-value-null' : `json-value-${typeof value}`;
+        const text = typeof value === 'string' ? value : JSON.stringify(value);
+        leaf.innerHTML = `<span class="json-key">${key}</span>: <span class="${valueClass}">${text}</span>`;
+        return leaf;
+      }
+    })();
+  </script>
+</body>
+</html>

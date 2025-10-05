@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://syzygysys.io/schemas/marvin_schema.json",
+  "title": "MarvinInternalLLM",
+  "description": "Schema describing configuration and capabilities for the SyzygySys research & diagnostics agent Marvin.",
+  "type": "object",
+  "required": [
+    "id",
+    "version",
+    "interfaces",
+    "capabilities",
+    "safety",
+    "telemetry"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Canonical identifier for this Marvin deployment (e.g., marvin-core, marvin-labs)."
+    },
+    "version": {
+      "type": "string",
+      "description": "Semantic version of the Marvin build being deployed."
+    },
+    "model": {
+      "type": "object",
+      "required": ["provider", "name", "parameters"],
+      "properties": {
+        "provider": {
+          "type": "string",
+          "description": "Model provider or runtime (Anthropic, OpenAI, Local/Ollama, etc.)."
+        },
+        "name": {
+          "type": "string",
+          "description": "Model name or family (e.g., claude-sonnet-4.1, syz-marvin-finetune)."
+        },
+        "parameters": {
+          "type": "object",
+          "description": "Model invocation parameters (temperature, max_tokens, top_p, etc.).",
+          "additionalProperties": {
+            "type": ["number", "string", "boolean"]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "interfaces": {
+      "type": "array",
+      "description": "List of transport interfaces Marvin exposes.",
+      "items": {
+        "type": "object",
+        "required": ["type", "endpoint"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "http",
+              "graphql",
+              "mcp",
+              "matrix",
+              "cli",
+              "grpc"
+            ]
+          },
+          "endpoint": {
+            "type": "string",
+            "description": "Connection string or URI for the interface."
+          },
+          "authentication": {
+            "type": "string",
+            "description": "Reference to the auth mechanism (service account, API key secret, etc.)."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "description": "Declarative feature toggles for Marvin.",
+      "properties": {
+        "research": {
+          "type": "boolean",
+          "description": "Allow Marvin to perform open research and synthesis."
+        },
+        "code_generation": {
+          "type": "boolean",
+          "description": "Allow Marvin to generate or modify code artifacts."
+        },
+        "diagnostics": {
+          "type": "boolean",
+          "description": "Allow Marvin to run SDF/StateGuard diagnostics."
+        },
+        "deployment": {
+          "type": "boolean",
+          "description": "Allow Marvin to trigger deploy workflows when EHI and policy gates pass."
+        }
+      },
+      "additionalProperties": false
+    },
+    "safety": {
+      "type": "object",
+      "description": "Safety rails and governance settings for Marvin.",
+      "properties": {
+        "hilt": {
+          "type": "boolean",
+          "description": "Require explicit human-in-the-loop approvals for moderated actions."
+        },
+        "ehi_threshold": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Epistemic Humility Index threshold (0=fully certain, 1=uncertain)."
+        },
+        "allowed_domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Whitelist of knowledge or system domains Marvin can operate within."
+        }
+      },
+      "additionalProperties": false
+    },
+    "telemetry": {
+      "type": "object",
+      "description": "Telemetry streams and audit sinks.",
+      "required": ["sdf", "ledger"],
+      "properties": {
+        "sdf": {
+          "type": "string",
+          "description": "SDF pipeline identifier for diagnostics reporting."
+        },
+        "ledger": {
+          "type": "string",
+          "description": "ACE::LEDGER stream where actions and reasoning artifacts are recorded."
+        },
+        "observability_tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Labels applied to observability events for filtering/search."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

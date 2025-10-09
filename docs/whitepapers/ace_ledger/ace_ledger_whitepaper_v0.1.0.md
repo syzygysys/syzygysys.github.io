@@ -7,10 +7,10 @@ version: 0.1.0
 layout: whitepaper
 ---
 
-![ACE Ledger Flow](syzygysys.png)
+![ACE Ledger Flow](ace_ledger_flow.png)
 
 ## Abstract
-ACE::Ledger is the attestation backbone of the ACE platform. It ingests artifact evidence from distributed services and agents, enforces de‑duplication, persists provenance and integrity records, and publishes anchor material for verifiers across ACE. It is optimized for least‑privilege operation, cryptographic anchors, and first‑class observability.
+**ACE::Ledger** is the attestation backbone of the ACE platform. It ingests artifact evidence from distributed services and agents, enforces de‑duplication, persists provenance and integrity records, and publishes anchor material for verifiers across ACE. It is optimized for least‑privilege operation, cryptographic anchors, and first‑class observability.
 
 > Audience: Platform engineers, security & compliance teams, and researchers who need verifiable audit trails for agentic systems.
 
